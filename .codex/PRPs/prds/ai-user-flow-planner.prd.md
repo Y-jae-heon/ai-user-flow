@@ -254,9 +254,11 @@ flowchart TD
 
 ### Phase 1: Input Parsing and Completeness Gate
 
-Status: in-progress
+Status: complete
 
-Plan: `/Users/yeomjaeheon/Documents/dev/ai-user-flow/.codex/PRPs/plans/ai-user-flow-planner-phase-1.plan.md`
+Plan: `/Users/yeomjaeheon/Documents/dev/ai-user-flow/.codex/PRPs/plans/completed/ai-user-flow-planner-phase-1.plan.md`
+
+Report: `/Users/yeomjaeheon/Documents/dev/ai-user-flow/.codex/PRPs/reports/ai-user-flow-planner-phase-1-report.md`
 
 - Build MVP text input.
 - Define minimum information rules.

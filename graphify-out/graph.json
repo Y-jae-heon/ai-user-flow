@@ -35,6 +35,528 @@
   },
   "nodes": [
     {
+      "label": "vite.config.ts",
+      "file_type": "code",
+      "source_file": "vite.config.ts",
+      "source_location": "L1",
+      "id": "vite_config_ts",
+      "community": 8,
+      "norm_label": "vite.config.ts"
+    },
+    {
+      "label": "block-navigation.js",
+      "file_type": "code",
+      "source_file": "coverage/block-navigation.js",
+      "source_location": "L1",
+      "id": "coverage_block_navigation_js",
+      "community": 5,
+      "norm_label": "block-navigation.js"
+    },
+    {
+      "label": "toggleClass()",
+      "file_type": "code",
+      "source_file": "coverage/block-navigation.js",
+      "source_location": "L24",
+      "id": "block_navigation_toggleclass",
+      "community": 5,
+      "norm_label": "toggleclass()"
+    },
+    {
+      "label": "makeCurrent()",
+      "file_type": "code",
+      "source_file": "coverage/block-navigation.js",
+      "source_location": "L31",
+      "id": "block_navigation_makecurrent",
+      "community": 5,
+      "norm_label": "makecurrent()"
+    },
+    {
+      "label": "goToPrevious()",
+      "file_type": "code",
+      "source_file": "coverage/block-navigation.js",
+      "source_location": "L41",
+      "id": "block_navigation_gotoprevious",
+      "community": 5,
+      "norm_label": "gotoprevious()"
+    },
+    {
+      "label": "goToNext()",
+      "file_type": "code",
+      "source_file": "coverage/block-navigation.js",
+      "source_location": "L52",
+      "id": "block_navigation_gotonext",
+      "community": 5,
+      "norm_label": "gotonext()"
+    },
+    {
+      "label": "prettify.js",
+      "file_type": "code",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L1",
+      "id": "coverage_prettify_js",
+      "community": 2,
+      "norm_label": "prettify.js"
+    },
+    {
+      "label": "k()",
+      "file_type": "code",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "id": "prettify_k",
+      "community": 2,
+      "norm_label": "k()"
+    },
+    {
+      "label": "a()",
+      "file_type": "code",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "id": "prettify_a",
+      "community": 2,
+      "norm_label": "a()"
+    },
+    {
+      "label": "B()",
+      "file_type": "code",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "id": "prettify_b",
+      "community": 2,
+      "norm_label": "b()"
+    },
+    {
+      "label": "o()",
+      "file_type": "code",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "id": "prettify_o",
+      "community": 2,
+      "norm_label": "o()"
+    },
+    {
+      "label": "g()",
+      "file_type": "code",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "id": "prettify_g",
+      "community": 2,
+      "norm_label": "g()"
+    },
+    {
+      "label": "i()",
+      "file_type": "code",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "id": "prettify_i",
+      "community": 2,
+      "norm_label": "i()"
+    },
+    {
+      "label": "Q()",
+      "file_type": "code",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "id": "prettify_q",
+      "community": 2,
+      "norm_label": "q()"
+    },
+    {
+      "label": "D()",
+      "file_type": "code",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "id": "prettify_d",
+      "community": 2,
+      "norm_label": "d()"
+    },
+    {
+      "label": "c()",
+      "file_type": "code",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "id": "prettify_c",
+      "community": 2,
+      "norm_label": "c()"
+    },
+    {
+      "label": "y()",
+      "file_type": "code",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "id": "prettify_y",
+      "community": 2,
+      "norm_label": "y()"
+    },
+    {
+      "label": "sorter.js",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L1",
+      "id": "coverage_sorter_js",
+      "community": 0,
+      "norm_label": "sorter.js"
+    },
+    {
+      "label": "getTable()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L11",
+      "id": "sorter_gettable",
+      "community": 0,
+      "norm_label": "gettable()"
+    },
+    {
+      "label": "getTableHeader()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L15",
+      "id": "sorter_gettableheader",
+      "community": 0,
+      "norm_label": "gettableheader()"
+    },
+    {
+      "label": "getTableBody()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L19",
+      "id": "sorter_gettablebody",
+      "community": 0,
+      "norm_label": "gettablebody()"
+    },
+    {
+      "label": "getNthColumn()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L23",
+      "id": "sorter_getnthcolumn",
+      "community": 0,
+      "norm_label": "getnthcolumn()"
+    },
+    {
+      "label": "onFilterInput()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L27",
+      "id": "sorter_onfilterinput",
+      "community": 0,
+      "norm_label": "onfilterinput()"
+    },
+    {
+      "label": "addSearchBox()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L59",
+      "id": "sorter_addsearchbox",
+      "community": 0,
+      "norm_label": "addsearchbox()"
+    },
+    {
+      "label": "loadColumns()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L67",
+      "id": "sorter_loadcolumns",
+      "community": 0,
+      "norm_label": "loadcolumns()"
+    },
+    {
+      "label": "loadRowData()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L92",
+      "id": "sorter_loadrowdata",
+      "community": 0,
+      "norm_label": "loadrowdata()"
+    },
+    {
+      "label": "loadData()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L111",
+      "id": "sorter_loaddata",
+      "community": 0,
+      "norm_label": "loaddata()"
+    },
+    {
+      "label": "sortByIndex()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L120",
+      "id": "sorter_sortbyindex",
+      "community": 0,
+      "norm_label": "sortbyindex()"
+    },
+    {
+      "label": "removeSortIndicators()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L151",
+      "id": "sorter_removesortindicators",
+      "community": 0,
+      "norm_label": "removesortindicators()"
+    },
+    {
+      "label": "addSortIndicators()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L159",
+      "id": "sorter_addsortindicators",
+      "community": 0,
+      "norm_label": "addsortindicators()"
+    },
+    {
+      "label": "enableUI()",
+      "file_type": "code",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L165",
+      "id": "sorter_enableui",
+      "community": 0,
+      "norm_label": "enableui()"
+    },
+    {
+      "label": "App.tsx",
+      "file_type": "code",
+      "source_file": "src/App.tsx",
+      "source_location": "L1",
+      "id": "src_app_tsx",
+      "community": 6,
+      "norm_label": "app.tsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src/App.tsx",
+      "source_location": "L3",
+      "id": "app_app",
+      "community": 6,
+      "norm_label": "app()"
+    },
+    {
+      "label": "main.tsx",
+      "file_type": "code",
+      "source_file": "src/main.tsx",
+      "source_location": "L1",
+      "id": "src_main_tsx",
+      "community": 9,
+      "norm_label": "main.tsx"
+    },
+    {
+      "label": "App.test.tsx",
+      "file_type": "code",
+      "source_file": "src/App.test.tsx",
+      "source_location": "L1",
+      "id": "src_app_test_tsx",
+      "community": 10,
+      "norm_label": "app.test.tsx"
+    },
+    {
+      "label": "vite-env.d.ts",
+      "file_type": "code",
+      "source_file": "src/vite-env.d.ts",
+      "source_location": "L1",
+      "id": "src_vite_env_d_ts",
+      "community": 11,
+      "norm_label": "vite-env.d.ts"
+    },
+    {
+      "label": "setup.ts",
+      "file_type": "code",
+      "source_file": "src/test/setup.ts",
+      "source_location": "L1",
+      "id": "src_test_setup_ts",
+      "community": 12,
+      "norm_label": "setup.ts"
+    },
+    {
+      "label": "PlanningWorkspace.tsx",
+      "file_type": "code",
+      "source_file": "src/features/planning/PlanningWorkspace.tsx",
+      "source_location": "L1",
+      "id": "src_features_planning_planningworkspace_tsx",
+      "community": 7,
+      "norm_label": "planningworkspace.tsx"
+    },
+    {
+      "label": "PlanningWorkspace()",
+      "file_type": "code",
+      "source_file": "src/features/planning/PlanningWorkspace.tsx",
+      "source_location": "L7",
+      "id": "planningworkspace_planningworkspace",
+      "community": 7,
+      "norm_label": "planningworkspace()"
+    },
+    {
+      "label": "planningSchema.ts",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningSchema.ts",
+      "source_location": "L1",
+      "id": "src_features_planning_planningschema_ts",
+      "community": 13,
+      "norm_label": "planningschema.ts"
+    },
+    {
+      "label": "planningAnalyzer.test.ts",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.test.ts",
+      "source_location": "L1",
+      "id": "src_features_planning_planninganalyzer_test_ts",
+      "community": 14,
+      "norm_label": "planninganalyzer.test.ts"
+    },
+    {
+      "label": "planningAnalyzer.ts",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L1",
+      "id": "src_features_planning_planninganalyzer_ts",
+      "community": 1,
+      "norm_label": "planninganalyzer.ts"
+    },
+    {
+      "label": "analyzePlanningInput()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L34",
+      "id": "planninganalyzer_analyzeplanninginput",
+      "community": 1,
+      "norm_label": "analyzeplanninginput()"
+    },
+    {
+      "label": "normalizeText()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L64",
+      "id": "planninganalyzer_normalizetext",
+      "community": 1,
+      "norm_label": "normalizetext()"
+    },
+    {
+      "label": "tokenizeLines()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L68",
+      "id": "planninganalyzer_tokenizelines",
+      "community": 1,
+      "norm_label": "tokenizelines()"
+    },
+    {
+      "label": "extractByKeywords()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L79",
+      "id": "planninganalyzer_extractbykeywords",
+      "community": 1,
+      "norm_label": "extractbykeywords()"
+    },
+    {
+      "label": "extractPersonas()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L83",
+      "id": "planninganalyzer_extractpersonas",
+      "community": 1,
+      "norm_label": "extractpersonas()"
+    },
+    {
+      "label": "extractActions()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L96",
+      "id": "planninganalyzer_extractactions",
+      "community": 1,
+      "norm_label": "extractactions()"
+    },
+    {
+      "label": "extractEntities()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L111",
+      "id": "planninganalyzer_extractentities",
+      "community": 1,
+      "norm_label": "extractentities()"
+    },
+    {
+      "label": "getMissingFields()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L120",
+      "id": "planninganalyzer_getmissingfields",
+      "community": 1,
+      "norm_label": "getmissingfields()"
+    },
+    {
+      "label": "calculateScore()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L143",
+      "id": "planninganalyzer_calculatescore",
+      "community": 1,
+      "norm_label": "calculatescore()"
+    },
+    {
+      "label": "buildAssumptions()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L151",
+      "id": "planninganalyzer_buildassumptions",
+      "community": 1,
+      "norm_label": "buildassumptions()"
+    },
+    {
+      "label": "includesAny()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L165",
+      "id": "planninganalyzer_includesany",
+      "community": 1,
+      "norm_label": "includesany()"
+    },
+    {
+      "label": "cleanLabel()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L170",
+      "id": "planninganalyzer_cleanlabel",
+      "community": 1,
+      "norm_label": "cleanlabel()"
+    },
+    {
+      "label": "uniqueLimited()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L174",
+      "id": "planninganalyzer_uniquelimited",
+      "community": 1,
+      "norm_label": "uniquelimited()"
+    },
+    {
+      "label": "PlanningWorkspace.test.tsx",
+      "file_type": "code",
+      "source_file": "src/features/planning/PlanningWorkspace.test.tsx",
+      "source_location": "L1",
+      "id": "src_features_planning_planningworkspace_test_tsx",
+      "community": 15,
+      "norm_label": "planningworkspace.test.tsx"
+    },
+    {
+      "label": "AnalysisPanel.tsx",
+      "file_type": "code",
+      "source_file": "src/features/planning/components/AnalysisPanel.tsx",
+      "source_location": "L1",
+      "id": "src_features_planning_components_analysispanel_tsx",
+      "community": 16,
+      "norm_label": "analysispanel.tsx"
+    },
+    {
+      "label": "InputPanel.tsx",
+      "file_type": "code",
+      "source_file": "src/features/planning/components/InputPanel.tsx",
+      "source_location": "L1",
+      "id": "src_features_planning_components_inputpanel_tsx",
+      "community": 17,
+      "norm_label": "inputpanel.tsx"
+    },
+    {
       "label": "Graphify Knowledge Graph",
       "file_type": "document",
       "source_file": "AGENTS.md",
@@ -43,9 +565,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_graphify_knowledge_graph",
-      "community": 0,
-      "norm_label": "graphify knowledge graph"
+      "community": 3,
+      "norm_label": "graphify knowledge graph",
+      "id": "agents_graphify_knowledge_graph"
     },
     {
       "label": "GRAPH_REPORT.md",
@@ -56,9 +578,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_graph_report",
-      "community": 0,
-      "norm_label": "graph_report.md"
+      "community": 3,
+      "norm_label": "graph_report.md",
+      "id": "agents_graph_report"
     },
     {
       "label": "God Nodes and Community Structure",
@@ -69,9 +591,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_god_nodes_and_community_structure",
-      "community": 0,
-      "norm_label": "god nodes and community structure"
+      "community": 3,
+      "norm_label": "god nodes and community structure",
+      "id": "agents_god_nodes_and_community_structure"
     },
     {
       "label": "Graphify Wiki Index",
@@ -82,9 +604,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_graphify_wiki_index",
-      "community": 0,
-      "norm_label": "graphify wiki index"
+      "community": 3,
+      "norm_label": "graphify wiki index",
+      "id": "agents_graphify_wiki_index"
     },
     {
       "label": "Raw Files",
@@ -95,9 +617,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_raw_files",
-      "community": 0,
-      "norm_label": "raw files"
+      "community": 3,
+      "norm_label": "raw files",
+      "id": "agents_raw_files"
     },
     {
       "label": "Cross-Module Relationship Questions",
@@ -108,9 +630,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_cross_module_relationship_questions",
-      "community": 1,
-      "norm_label": "cross-module relationship questions"
+      "community": 4,
+      "norm_label": "cross-module relationship questions",
+      "id": "agents_cross_module_relationship_questions"
     },
     {
       "label": "graphify query",
@@ -121,9 +643,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_graphify_query",
-      "community": 1,
-      "norm_label": "graphify query"
+      "community": 4,
+      "norm_label": "graphify query",
+      "id": "agents_graphify_query"
     },
     {
       "label": "graphify path",
@@ -134,9 +656,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_graphify_path",
-      "community": 1,
-      "norm_label": "graphify path"
+      "community": 4,
+      "norm_label": "graphify path",
+      "id": "agents_graphify_path"
     },
     {
       "label": "graphify explain",
@@ -147,9 +669,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_graphify_explain",
-      "community": 1,
-      "norm_label": "graphify explain"
+      "community": 4,
+      "norm_label": "graphify explain",
+      "id": "agents_graphify_explain"
     },
     {
       "label": "grep",
@@ -160,9 +682,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_grep",
-      "community": 1,
-      "norm_label": "grep"
+      "community": 4,
+      "norm_label": "grep",
+      "id": "agents_grep"
     },
     {
       "label": "EXTRACTED and INFERRED Edges",
@@ -173,9 +695,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_extracted_and_inferred_edges",
-      "community": 1,
-      "norm_label": "extracted and inferred edges"
+      "community": 4,
+      "norm_label": "extracted and inferred edges",
+      "id": "agents_extracted_and_inferred_edges"
     },
     {
       "label": "graphify update",
@@ -186,9 +708,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_graphify_update",
-      "community": 2,
-      "norm_label": "graphify update"
+      "community": 3,
+      "norm_label": "graphify update",
+      "id": "agents_graphify_update"
     },
     {
       "label": "Code Modification Session",
@@ -199,9 +721,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_code_modification_session",
-      "community": 2,
-      "norm_label": "code modification session"
+      "community": 3,
+      "norm_label": "code modification session",
+      "id": "agents_code_modification_session"
     },
     {
       "label": "AST-Only No API Cost Update",
@@ -212,9 +734,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_ast_only_no_api_cost",
-      "community": 2,
-      "norm_label": "ast-only no api cost update"
+      "community": 3,
+      "norm_label": "ast-only no api cost update",
+      "id": "agents_ast_only_no_api_cost"
     },
     {
       "label": "Rationale: Prefer Graph Navigation Over Raw File Reading",
@@ -225,9 +747,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_rationale_graph_navigation_over_raw_reading",
-      "community": 0,
-      "norm_label": "rationale: prefer graph navigation over raw file reading"
+      "community": 3,
+      "norm_label": "rationale: prefer graph navigation over raw file reading",
+      "id": "agents_rationale_graph_navigation_over_raw_reading"
     },
     {
       "label": "Rationale: Keep Graph Current After Code Changes",
@@ -238,12 +760,924 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_rationale_keep_graph_current",
-      "community": 2,
-      "norm_label": "rationale: keep graph current after code changes"
+      "community": 3,
+      "norm_label": "rationale: keep graph current after code changes",
+      "id": "agents_rationale_keep_graph_current"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/block-navigation.js",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "coverage_block_navigation_js",
+      "_tgt": "block_navigation_toggleclass",
+      "source": "coverage_block_navigation_js",
+      "target": "block_navigation_toggleclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/block-navigation.js",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_src": "coverage_block_navigation_js",
+      "_tgt": "block_navigation_makecurrent",
+      "source": "coverage_block_navigation_js",
+      "target": "block_navigation_makecurrent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/block-navigation.js",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_src": "coverage_block_navigation_js",
+      "_tgt": "block_navigation_gotoprevious",
+      "source": "coverage_block_navigation_js",
+      "target": "block_navigation_gotoprevious",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/block-navigation.js",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_src": "coverage_block_navigation_js",
+      "_tgt": "block_navigation_gotonext",
+      "source": "coverage_block_navigation_js",
+      "target": "block_navigation_gotonext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/block-navigation.js",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "block_navigation_makecurrent",
+      "_tgt": "block_navigation_toggleclass",
+      "source": "block_navigation_toggleclass",
+      "target": "block_navigation_makecurrent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/block-navigation.js",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_src": "block_navigation_gotoprevious",
+      "_tgt": "block_navigation_makecurrent",
+      "source": "block_navigation_makecurrent",
+      "target": "block_navigation_gotoprevious",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/block-navigation.js",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_src": "block_navigation_gotonext",
+      "_tgt": "block_navigation_makecurrent",
+      "source": "block_navigation_makecurrent",
+      "target": "block_navigation_gotonext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "coverage_prettify_js",
+      "_tgt": "prettify_k",
+      "source": "coverage_prettify_js",
+      "target": "prettify_k",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "coverage_prettify_js",
+      "_tgt": "prettify_a",
+      "source": "coverage_prettify_js",
+      "target": "prettify_a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "coverage_prettify_js",
+      "_tgt": "prettify_b",
+      "source": "coverage_prettify_js",
+      "target": "prettify_b",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "coverage_prettify_js",
+      "_tgt": "prettify_o",
+      "source": "coverage_prettify_js",
+      "target": "prettify_o",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "coverage_prettify_js",
+      "_tgt": "prettify_g",
+      "source": "coverage_prettify_js",
+      "target": "prettify_g",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "coverage_prettify_js",
+      "_tgt": "prettify_i",
+      "source": "coverage_prettify_js",
+      "target": "prettify_i",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "coverage_prettify_js",
+      "_tgt": "prettify_q",
+      "source": "coverage_prettify_js",
+      "target": "prettify_q",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "coverage_prettify_js",
+      "_tgt": "prettify_d",
+      "source": "coverage_prettify_js",
+      "target": "prettify_d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "coverage_prettify_js",
+      "_tgt": "prettify_c",
+      "source": "coverage_prettify_js",
+      "target": "prettify_c",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "coverage_prettify_js",
+      "_tgt": "prettify_y",
+      "source": "coverage_prettify_js",
+      "target": "prettify_y",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "prettify_g",
+      "_tgt": "prettify_k",
+      "source": "prettify_k",
+      "target": "prettify_g",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "prettify_d",
+      "_tgt": "prettify_a",
+      "source": "prettify_a",
+      "target": "prettify_d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "prettify_g",
+      "_tgt": "prettify_b",
+      "source": "prettify_b",
+      "target": "prettify_g",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "prettify_b",
+      "_tgt": "prettify_y",
+      "source": "prettify_b",
+      "target": "prettify_y",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "prettify_g",
+      "_tgt": "prettify_q",
+      "source": "prettify_g",
+      "target": "prettify_q",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "prettify_i",
+      "_tgt": "prettify_g",
+      "source": "prettify_g",
+      "target": "prettify_i",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "prettify_d",
+      "_tgt": "prettify_q",
+      "source": "prettify_q",
+      "target": "prettify_d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "prettify_y",
+      "_tgt": "prettify_q",
+      "source": "prettify_q",
+      "target": "prettify_y",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/prettify.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "prettify_y",
+      "_tgt": "prettify_d",
+      "source": "prettify_d",
+      "target": "prettify_y",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_gettable",
+      "source": "coverage_sorter_js",
+      "target": "sorter_gettable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_gettableheader",
+      "source": "coverage_sorter_js",
+      "target": "sorter_gettableheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_gettablebody",
+      "source": "coverage_sorter_js",
+      "target": "sorter_gettablebody",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_getnthcolumn",
+      "source": "coverage_sorter_js",
+      "target": "sorter_getnthcolumn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_onfilterinput",
+      "source": "coverage_sorter_js",
+      "target": "sorter_onfilterinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_addsearchbox",
+      "source": "coverage_sorter_js",
+      "target": "sorter_addsearchbox",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_loadcolumns",
+      "source": "coverage_sorter_js",
+      "target": "sorter_loadcolumns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_loadrowdata",
+      "source": "coverage_sorter_js",
+      "target": "sorter_loadrowdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_loaddata",
+      "source": "coverage_sorter_js",
+      "target": "sorter_loaddata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_sortbyindex",
+      "source": "coverage_sorter_js",
+      "target": "sorter_sortbyindex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L151",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_removesortindicators",
+      "source": "coverage_sorter_js",
+      "target": "sorter_removesortindicators",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L159",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_addsortindicators",
+      "source": "coverage_sorter_js",
+      "target": "sorter_addsortindicators",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L165",
+      "weight": 1.0,
+      "_src": "coverage_sorter_js",
+      "_tgt": "sorter_enableui",
+      "source": "coverage_sorter_js",
+      "target": "sorter_enableui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "sorter_gettableheader",
+      "_tgt": "sorter_gettable",
+      "source": "sorter_gettable",
+      "target": "sorter_gettableheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "sorter_gettablebody",
+      "_tgt": "sorter_gettable",
+      "source": "sorter_gettable",
+      "target": "sorter_gettablebody",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "sorter_getnthcolumn",
+      "_tgt": "sorter_gettableheader",
+      "source": "sorter_gettableheader",
+      "target": "sorter_getnthcolumn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_src": "sorter_loadcolumns",
+      "_tgt": "sorter_gettableheader",
+      "source": "sorter_gettableheader",
+      "target": "sorter_loadcolumns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L112",
+      "weight": 1.0,
+      "_src": "sorter_loaddata",
+      "_tgt": "sorter_gettablebody",
+      "source": "sorter_gettablebody",
+      "target": "sorter_loaddata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L152",
+      "weight": 1.0,
+      "_src": "sorter_removesortindicators",
+      "_tgt": "sorter_getnthcolumn",
+      "source": "sorter_getnthcolumn",
+      "target": "sorter_removesortindicators",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L160",
+      "weight": 1.0,
+      "_src": "sorter_addsortindicators",
+      "_tgt": "sorter_getnthcolumn",
+      "source": "sorter_getnthcolumn",
+      "target": "sorter_addsortindicators",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L188",
+      "weight": 1.0,
+      "_src": "sorter_enableui",
+      "_tgt": "sorter_getnthcolumn",
+      "source": "sorter_getnthcolumn",
+      "target": "sorter_enableui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_src": "sorter_loaddata",
+      "_tgt": "sorter_loadrowdata",
+      "source": "sorter_loadrowdata",
+      "target": "sorter_loaddata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L177",
+      "weight": 1.0,
+      "_src": "sorter_enableui",
+      "_tgt": "sorter_sortbyindex",
+      "source": "sorter_sortbyindex",
+      "target": "sorter_enableui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L178",
+      "weight": 1.0,
+      "_src": "sorter_enableui",
+      "_tgt": "sorter_removesortindicators",
+      "source": "sorter_removesortindicators",
+      "target": "sorter_enableui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "coverage/sorter.js",
+      "source_location": "L181",
+      "weight": 1.0,
+      "_src": "sorter_enableui",
+      "_tgt": "sorter_addsortindicators",
+      "source": "sorter_addsortindicators",
+      "target": "sorter_enableui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "src_app_tsx",
+      "_tgt": "app_app",
+      "source": "src_app_tsx",
+      "target": "app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/PlanningWorkspace.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "src_features_planning_planningworkspace_tsx",
+      "_tgt": "planningworkspace_planningworkspace",
+      "source": "src_features_planning_planningworkspace_tsx",
+      "target": "planningworkspace_planningworkspace",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_analyzeplanninginput",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_analyzeplanninginput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_normalizetext",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_normalizetext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_tokenizelines",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_tokenizelines",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_extractbykeywords",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_extractbykeywords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_extractpersonas",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_extractpersonas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L96",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_extractactions",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_extractactions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_extractentities",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_extractentities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_getmissingfields",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_getmissingfields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L143",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_calculatescore",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_calculatescore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L151",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_buildassumptions",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_buildassumptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L165",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_includesany",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_includesany",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L170",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_cleanlabel",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_cleanlabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L174",
+      "weight": 1.0,
+      "_src": "src_features_planning_planninganalyzer_ts",
+      "_tgt": "planninganalyzer_uniquelimited",
+      "source": "src_features_planning_planninganalyzer_ts",
+      "target": "planninganalyzer_uniquelimited",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_src": "planninganalyzer_analyzeplanninginput",
+      "_tgt": "planninganalyzer_normalizetext",
+      "source": "planninganalyzer_analyzeplanninginput",
+      "target": "planninganalyzer_normalizetext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "planninganalyzer_analyzeplanninginput",
+      "_tgt": "planninganalyzer_tokenizelines",
+      "source": "planninganalyzer_analyzeplanninginput",
+      "target": "planninganalyzer_tokenizelines",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_src": "planninganalyzer_analyzeplanninginput",
+      "_tgt": "planninganalyzer_uniquelimited",
+      "source": "planninganalyzer_analyzeplanninginput",
+      "target": "planninganalyzer_uniquelimited",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_src": "planninganalyzer_analyzeplanninginput",
+      "_tgt": "planninganalyzer_extractpersonas",
+      "source": "planninganalyzer_analyzeplanninginput",
+      "target": "planninganalyzer_extractpersonas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "planninganalyzer_analyzeplanninginput",
+      "_tgt": "planninganalyzer_extractbykeywords",
+      "source": "planninganalyzer_analyzeplanninginput",
+      "target": "planninganalyzer_extractbykeywords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_src": "planninganalyzer_analyzeplanninginput",
+      "_tgt": "planninganalyzer_extractactions",
+      "source": "planninganalyzer_analyzeplanninginput",
+      "target": "planninganalyzer_extractactions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_src": "planninganalyzer_analyzeplanninginput",
+      "_tgt": "planninganalyzer_extractentities",
+      "source": "planninganalyzer_analyzeplanninginput",
+      "target": "planninganalyzer_extractentities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_src": "planninganalyzer_analyzeplanninginput",
+      "_tgt": "planninganalyzer_getmissingfields",
+      "source": "planninganalyzer_analyzeplanninginput",
+      "target": "planninganalyzer_getmissingfields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_src": "planninganalyzer_analyzeplanninginput",
+      "_tgt": "planninganalyzer_calculatescore",
+      "source": "planninganalyzer_analyzeplanninginput",
+      "target": "planninganalyzer_calculatescore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningAnalyzer.ts",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_src": "planninganalyzer_analyzeplanninginput",
+      "_tgt": "planninganalyzer_buildassumptions",
+      "source": "planninganalyzer_analyzeplanninginput",
+      "target": "planninganalyzer_buildassumptions",
+      "confidence_score": 1.0
+    },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
@@ -275,8 +1709,8 @@
       "source_file": "AGENTS.md",
       "source_location": "AGENTS.md:10",
       "weight": 1.0,
-      "_src": "agents_graphify_update",
-      "_tgt": "agents_graphify_knowledge_graph",
+      "_src": "agents_graphify_knowledge_graph",
+      "_tgt": "agents_graphify_update",
       "source": "agents_graphify_knowledge_graph",
       "target": "agents_graphify_update"
     },
@@ -287,8 +1721,8 @@
       "source_file": "AGENTS.md",
       "source_location": "AGENTS.md:7-9",
       "weight": 1.0,
-      "_src": "agents_rationale_graph_navigation_over_raw_reading",
-      "_tgt": "agents_graphify_knowledge_graph",
+      "_src": "agents_graphify_knowledge_graph",
+      "_tgt": "agents_rationale_graph_navigation_over_raw_reading",
       "source": "agents_graphify_knowledge_graph",
       "target": "agents_rationale_graph_navigation_over_raw_reading"
     },
@@ -359,8 +1793,8 @@
       "source_file": "AGENTS.md",
       "source_location": "AGENTS.md:9",
       "weight": 1.0,
-      "_src": "agents_rationale_graph_navigation_over_raw_reading",
-      "_tgt": "agents_cross_module_relationship_questions",
+      "_src": "agents_cross_module_relationship_questions",
+      "_tgt": "agents_rationale_graph_navigation_over_raw_reading",
       "source": "agents_cross_module_relationship_questions",
       "target": "agents_rationale_graph_navigation_over_raw_reading"
     },
@@ -467,8 +1901,8 @@
       "source_file": "AGENTS.md",
       "source_location": "AGENTS.md:10",
       "weight": 1.0,
-      "_src": "agents_code_modification_session",
-      "_tgt": "agents_graphify_update",
+      "_src": "agents_graphify_update",
+      "_tgt": "agents_code_modification_session",
       "source": "agents_graphify_update",
       "target": "agents_code_modification_session"
     },
@@ -491,8 +1925,8 @@
       "source_file": "AGENTS.md",
       "source_location": "AGENTS.md:10",
       "weight": 1.0,
-      "_src": "agents_rationale_keep_graph_current",
-      "_tgt": "agents_graphify_update",
+      "_src": "agents_graphify_update",
+      "_tgt": "agents_rationale_keep_graph_current",
       "source": "agents_graphify_update",
       "target": "agents_rationale_keep_graph_current"
     }
