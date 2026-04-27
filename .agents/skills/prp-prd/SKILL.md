@@ -24,7 +24,7 @@ Create a problem-first, hypothesis-driven PRD. Ask questions before inventing re
 6. Decisions
    - Define MVP, must-have vs nice-to-have, key hypothesis, out-of-scope, and open questions.
 7. Generate
-   - Write `.claude/PRPs/prds/<kebab-name>.prd.md`.
+   - Write `.codex/PRPs/prds/<kebab-name>.prd.md`.
 
 ## PRD Sections
 

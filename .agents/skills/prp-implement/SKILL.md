@@ -29,10 +29,10 @@ Execute a plan file with validation loops. Do not accumulate broken state.
    - Run static analysis, lint, targeted tests, build, integration checks, and edge-case checks specified by the plan.
    - Fix failures before moving to the next level.
 6. Report
-   - Write `.claude/PRPs/reports/<plan-name>-report.md`.
+   - Write `.codex/PRPs/reports/<plan-name>-report.md`.
    - Include tasks completed, validation results, files changed, deviations, issues, and tests written.
    - If tied to a PRD, mark the phase complete and link the report.
-   - Move the plan to `.claude/PRPs/plans/completed/`.
+   - Move the plan to `.codex/PRPs/plans/completed/`.
 7. Output
    - Summarize validation, files changed, deviations, artifacts, and next step.
 

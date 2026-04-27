@@ -28,7 +28,7 @@ Create a self-contained implementation plan that a developer can execute without
    - Define approach, alternatives, scope, and explicit non-goals.
 6. Generate
    - If tasks exceed 10, split into 5-10 task batch plans.
-   - Save to `.claude/PRPs/plans/<kebab-name>.plan.md`.
+   - Save to `.codex/PRPs/plans/<kebab-name>.plan.md`.
    - If generated from a PRD, update the phase to `in-progress` and link the plan.
 
 ## Required Plan Contents

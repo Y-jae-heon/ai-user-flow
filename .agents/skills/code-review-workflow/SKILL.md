@@ -32,7 +32,7 @@ Review as a senior engineer. Findings come first, ordered by severity. Focus on 
 1. Use `gh pr view` and `gh pr diff` to gather metadata and changed files.
 2. Read project rules, relevant PRP plans/reports, PR description, and full files at the PR head.
 3. Apply the same checklist as local review.
-4. Save an artifact to `.claude/PRPs/reviews/pr-<number>-review.md`.
+4. Save an artifact to `.codex/PRPs/reviews/pr-<number>-review.md`.
 5. Publish with `gh pr review` only when the user asked to post the review or the request clearly implies GitHub publishing.
 
 ## Severity
