@@ -33,6 +33,18 @@ button {
   cursor: pointer;
 }
 
+button.secondary-button {
+  min-height: 34px;
+  border-color: #c7d3c4;
+  color: #24342a;
+  background: #f8faf7;
+}
+
+button.secondary-button:hover:not(:disabled) {
+  border-color: #7e937f;
+  background: #eef4ec;
+}
+
 button:disabled {
   border-color: #c7cdc5;
   color: #768076;
@@ -226,6 +238,97 @@ textarea::placeholder {
   line-height: 1.45;
 }
 
+.section-title-row,
+.suggestion-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.audit-counts,
+.review-status {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.audit-counts {
+  color: #405045;
+  background: #eef2eb;
+}
+
+.suggestion-list,
+.contradiction-list {
+  display: grid;
+  gap: 12px;
+}
+
+.suggestion-item,
+.contradiction-item {
+  display: grid;
+  gap: 10px;
+  overflow-wrap: anywhere;
+  border: 1px solid #dfe8dc;
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.contradiction-section {
+  border-color: #e7c7be;
+  background: #fff7f4;
+}
+
+.contradiction-item {
+  border-color: #efcfc6;
+}
+
+.category-label {
+  margin-bottom: 3px;
+  color: #607065;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h4 {
+  margin: 0;
+  color: #18221b;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+}
+
+.review-status.pending {
+  color: #665000;
+  background: #fff4c7;
+}
+
+.review-status.accepted {
+  color: #1e5d37;
+  background: #dff4e6;
+}
+
+.review-status.rejected {
+  color: #704031;
+  background: #f5dfd8;
+}
+
+.review-status.blocking {
+  color: #7a2e1a;
+  background: #f8ddd5;
+}
+
+.review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .muted {
   color: #6a766e;
 }
@@ -249,5 +352,16 @@ textarea::placeholder {
 
   textarea {
     min-height: 320px;
+  }
+
+  .section-title-row,
+  .suggestion-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .audit-counts,
+  .review-status {
+    width: fit-content;
   }
 }

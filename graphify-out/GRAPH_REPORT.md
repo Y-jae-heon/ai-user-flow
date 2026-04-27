@@ -1,11 +1,11 @@
 # Graph Report - ai-user-flow  (2026-04-27)
 
 ## Corpus Check
-- 16 files · ~14,050 words
+- 16 files · ~22,970 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 74 nodes · 97 edges · 6 communities detected
+- 77 nodes · 103 edges · 6 communities detected
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
@@ -18,7 +18,7 @@
 - [[_COMMUNITY_Community 5|Community 5]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `analyzePlanningInput()` - 11 edges
+1. `analyzePlanningInput()` - 13 edges
 2. `g()` - 5 edges
 3. `getNthColumn()` - 5 edges
 4. `enableUI()` - 5 edges
@@ -40,12 +40,12 @@
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.27
-Nodes (11): addSortIndicators(), enableUI(), getNthColumn(), getTable(), getTableBody(), getTableHeader(), loadColumns(), loadData() (+3 more)
+Cohesion: 0.21
+Nodes (14): analyzePlanningInput(), buildAssumptions(), calculateScore(), detectContradictions(), extractActions(), extractByKeywords(), extractEntities(), extractPersonas() (+6 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.25
-Nodes (11): analyzePlanningInput(), buildAssumptions(), calculateScore(), extractActions(), extractByKeywords(), extractEntities(), extractPersonas(), getMissingFields() (+3 more)
+Cohesion: 0.27
+Nodes (11): addSortIndicators(), enableUI(), getNthColumn(), getTable(), getTableBody(), getTableHeader(), loadColumns(), loadData() (+3 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.35
@@ -71,9 +71,9 @@ Nodes (4): goToNext(), goToPrevious(), makeCurrent(), toggleClass()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Rationale: Prefer Graph Navigation Over Raw File Reading` connect `Community 3` to `Community 4`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
-- **Why does `Cross-Module Relationship Questions` connect `Community 4` to `Community 3`?**
   _High betweenness centrality (0.019) - this node is a cross-community bridge._
+- **Why does `Cross-Module Relationship Questions` connect `Community 4` to `Community 3`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `graphify query` (e.g. with `graphify explain` and `graphify path`) actually correct?**
   _`graphify query` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `God Nodes and Community Structure`, `Raw Files`, `Code Modification Session` to the rest of the system?**
