@@ -1,6 +1,7 @@
-import { render, screen } from '@testing-library/react'
+import { act, fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, test, vi } from 'vitest'
+import * as mermaidExport from './mermaidExport'
 import * as mermaidRenderer from './mermaidRenderer'
 import { PlanningWorkspace } from './PlanningWorkspace'
 
@@ -171,6 +172,37 @@ describe('PlanningWorkspace', () => {
     expect(codeBlock.textContent).not.toContain('Exception: Multi-persona notification gap')
   })
 
+  test('updates Mermaid code and preview when an editable node label changes', async () => {
+    vi.spyOn(mermaidRenderer, 'renderMermaidDocument').mockImplementation(async (code: string) => ({
+      code,
+      renderStatus: 'rendered',
+      retryCount: 0,
+      renderError: null,
+      svg: '<svg aria-label="Generated Mermaid preview"></svg>',
+      isHappyPathBiased: false,
+      blockedReason: null
+    }))
+    const user = userEvent.setup()
+    render(<PlanningWorkspace />)
+
+    await user.type(
+      screen.getByLabelText(/MVP 기획 텍스트/i),
+      `주요 사용자: PM, 개발자, QA
+문제: Mermaid 렌더러와 AI 분석 결과가 동기화되지 않아 재작업이 발생한다.
+핵심 기능: 사용자가 MVP 메모를 입력하면 시스템이 분석 결과를 생성하고 공유한다.
+상태: 입력 완료, 분석 성공, 오류`
+    )
+    await user.click(screen.getByRole('button', { name: /Analyze/i }))
+    await user.click(screen.getByRole('button', { name: /Generate Mermaid/i }))
+
+    const nodeInput = await screen.findByLabelText('Edit node MVP planning text received')
+    fireEvent.change(nodeInput, { target: { value: 'Imported PRD memo received' } })
+
+    const codeBlock = await screen.findByLabelText('Generated Mermaid code')
+    expect(codeBlock.textContent).toContain('Imported PRD memo received')
+    expect(mermaidRenderer.renderMermaidDocument).toHaveBeenCalledTimes(2)
+  })
+
   test('blocks Mermaid generation when contradictions are unresolved', async () => {
     const user = userEvent.setup()
     render(<PlanningWorkspace />)
@@ -208,6 +240,179 @@ describe('PlanningWorkspace', () => {
     await user.type(textarea, ' 추가')
 
     expect(screen.queryByLabelText('Generated Mermaid code')).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'Refine nodes' })).not.toBeInTheDocument()
+  })
+
+  test('disables export actions until a rendered SVG is available', async () => {
+    const user = userEvent.setup()
+    render(<PlanningWorkspace />)
+
+    await user.type(
+      screen.getByLabelText(/MVP 기획 텍스트/i),
+      `주요 사용자: PM, 개발자, QA
+문제: Mermaid 렌더러와 AI 분석 결과가 동기화되지 않아 재작업이 발생한다.
+핵심 기능: 사용자가 MVP 메모를 입력하면 시스템이 분석 결과를 생성하고 공유한다.`
+    )
+    await user.click(screen.getByRole('button', { name: /Analyze/i }))
+
+    expect(screen.getByRole('button', { name: 'Copy Mermaid' })).toBeDisabled()
+    expect(screen.getByRole('button', { name: 'Export SVG' })).toBeDisabled()
+    expect(screen.getByRole('button', { name: 'Export PNG' })).toBeDisabled()
+  })
+
+  test('copies Mermaid code with success feedback', async () => {
+    vi.spyOn(mermaidRenderer, 'renderMermaidDocument').mockImplementation(async (code: string) => ({
+      code,
+      renderStatus: 'rendered',
+      retryCount: 0,
+      renderError: null,
+      svg: '<svg aria-label="Generated Mermaid preview"></svg>',
+      isHappyPathBiased: false,
+      blockedReason: null
+    }))
+    vi.spyOn(mermaidExport, 'copyMermaidCode').mockResolvedValueOnce()
+    const user = userEvent.setup()
+    render(<PlanningWorkspace />)
+
+    await user.type(
+      screen.getByLabelText(/MVP 기획 텍스트/i),
+      `주요 사용자: PM, 개발자, QA
+문제: Mermaid 렌더러와 AI 분석 결과가 동기화되지 않아 재작업이 발생한다.
+핵심 기능: 사용자가 MVP 메모를 입력하면 시스템이 분석 결과를 생성하고 공유한다.`
+    )
+    await user.click(screen.getByRole('button', { name: /Analyze/i }))
+    await user.click(screen.getByRole('button', { name: /Generate Mermaid/i }))
+    await user.click(await screen.findByRole('button', { name: 'Copy Mermaid' }))
+
+    expect(mermaidExport.copyMermaidCode).toHaveBeenCalledWith(expect.stringContaining('flowchart TD'))
+    expect(await screen.findByText('Mermaid code copied.')).toBeInTheDocument()
+  })
+
+  test('ignores stale export success after suggestion changes during copy', async () => {
+    vi.spyOn(mermaidRenderer, 'renderMermaidDocument').mockImplementation(async (code: string) => ({
+      code,
+      renderStatus: 'rendered',
+      retryCount: 0,
+      renderError: null,
+      svg: '<svg aria-label="Generated Mermaid preview"></svg>',
+      isHappyPathBiased: false,
+      blockedReason: null
+    }))
+    let resolveCopy: () => void = () => undefined
+    const copyPromise = new Promise<void>((resolve) => {
+      resolveCopy = resolve
+    })
+    vi.spyOn(mermaidExport, 'copyMermaidCode').mockReturnValueOnce(copyPromise)
+    const user = userEvent.setup()
+    render(<PlanningWorkspace />)
+
+    const textarea = screen.getByLabelText(/MVP 기획 텍스트/i)
+    await user.type(
+      textarea,
+      `주요 사용자: PM, 개발자, QA
+문제: Mermaid 렌더러와 AI 분석 결과가 동기화되지 않아 재작업이 발생한다.
+핵심 기능: 사용자가 MVP 메모를 입력하면 시스템이 분석 결과를 생성하고 공유한다.`
+    )
+    await user.click(screen.getByRole('button', { name: /Analyze/i }))
+    await user.click(screen.getByRole('button', { name: /Generate Mermaid/i }))
+    await user.click(await screen.findByRole('button', { name: 'Copy Mermaid' }))
+
+    await user.click(screen.getByRole('button', { name: 'Accept Data sync failure' }))
+    await act(async () => {
+      resolveCopy()
+      await copyPromise
+    })
+
+    expect(screen.queryByText('Mermaid code copied.')).not.toBeInTheDocument()
+    expect(screen.queryByLabelText('Generated Mermaid code')).not.toBeInTheDocument()
+  })
+
+  test('shows copy failure while preserving generated code', async () => {
+    vi.spyOn(mermaidRenderer, 'renderMermaidDocument').mockImplementation(async (code: string) => ({
+      code,
+      renderStatus: 'rendered',
+      retryCount: 0,
+      renderError: null,
+      svg: '<svg aria-label="Generated Mermaid preview"></svg>',
+      isHappyPathBiased: false,
+      blockedReason: null
+    }))
+    vi.spyOn(mermaidExport, 'copyMermaidCode').mockRejectedValueOnce(new Error('Clipboard denied'))
+    const user = userEvent.setup()
+    render(<PlanningWorkspace />)
+
+    await user.type(
+      screen.getByLabelText(/MVP 기획 텍스트/i),
+      `주요 사용자: PM, 개발자, QA
+문제: Mermaid 렌더러와 AI 분석 결과가 동기화되지 않아 재작업이 발생한다.
+핵심 기능: 사용자가 MVP 메모를 입력하면 시스템이 분석 결과를 생성하고 공유한다.`
+    )
+    await user.click(screen.getByRole('button', { name: /Analyze/i }))
+    await user.click(screen.getByRole('button', { name: /Generate Mermaid/i }))
+    await user.click(await screen.findByRole('button', { name: 'Copy Mermaid' }))
+
+    expect(await screen.findByText('Clipboard denied')).toBeInTheDocument()
+    expect(screen.getByLabelText('Generated Mermaid code')).toBeInTheDocument()
+  })
+
+  test('exports SVG from the rendered preview', async () => {
+    vi.spyOn(mermaidRenderer, 'renderMermaidDocument').mockImplementation(async (code: string) => ({
+      code,
+      renderStatus: 'rendered',
+      retryCount: 0,
+      renderError: null,
+      svg: '<svg aria-label="Generated Mermaid preview"></svg>',
+      isHappyPathBiased: false,
+      blockedReason: null
+    }))
+    vi.spyOn(mermaidExport, 'exportSvg').mockImplementationOnce(() => undefined)
+    const user = userEvent.setup()
+    render(<PlanningWorkspace />)
+
+    await user.type(
+      screen.getByLabelText(/MVP 기획 텍스트/i),
+      `주요 사용자: PM, 개발자, QA
+문제: Mermaid 렌더러와 AI 분석 결과가 동기화되지 않아 재작업이 발생한다.
+핵심 기능: 사용자가 MVP 메모를 입력하면 시스템이 분석 결과를 생성하고 공유한다.`
+    )
+    await user.click(screen.getByRole('button', { name: /Analyze/i }))
+    await user.click(screen.getByRole('button', { name: /Generate Mermaid/i }))
+    await user.click(await screen.findByRole('button', { name: 'Export SVG' }))
+
+    expect(mermaidExport.exportSvg).toHaveBeenCalledWith(
+      '<svg aria-label="Generated Mermaid preview"></svg>',
+      'ai-user-flow.svg'
+    )
+    expect(await screen.findByText('SVG export prepared.')).toBeInTheDocument()
+  })
+
+  test('shows PNG export failure while preserving code and preview', async () => {
+    vi.spyOn(mermaidRenderer, 'renderMermaidDocument').mockImplementation(async (code: string) => ({
+      code,
+      renderStatus: 'rendered',
+      retryCount: 0,
+      renderError: null,
+      svg: '<svg aria-label="Generated Mermaid preview"></svg>',
+      isHappyPathBiased: false,
+      blockedReason: null
+    }))
+    vi.spyOn(mermaidExport, 'exportSvgToPng').mockRejectedValueOnce(new Error('PNG failed'))
+    const user = userEvent.setup()
+    render(<PlanningWorkspace />)
+
+    await user.type(
+      screen.getByLabelText(/MVP 기획 텍스트/i),
+      `주요 사용자: PM, 개발자, QA
+문제: Mermaid 렌더러와 AI 분석 결과가 동기화되지 않아 재작업이 발생한다.
+핵심 기능: 사용자가 MVP 메모를 입력하면 시스템이 분석 결과를 생성하고 공유한다.`
+    )
+    await user.click(screen.getByRole('button', { name: /Analyze/i }))
+    await user.click(screen.getByRole('button', { name: /Generate Mermaid/i }))
+    await user.click(await screen.findByRole('button', { name: 'Export PNG' }))
+
+    expect(await screen.findByText('PNG failed')).toBeInTheDocument()
+    expect(screen.getByLabelText('Generated Mermaid code')).toBeInTheDocument()
+    expect(screen.getByLabelText('Rendered Mermaid preview')).toBeInTheDocument()
   })
 
   test('shows happy-path warning while allowing generation when all suggestions are rejected', async () => {

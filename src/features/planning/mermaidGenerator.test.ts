@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 import { analyzePlanningInput } from './planningAnalyzer'
-import { generateMermaidFlow } from './mermaidGenerator'
+import { createMermaidDraft, generateMermaidFlow, serializeMermaidDraft, updateMermaidDraftNode } from './mermaidGenerator'
 import type { LogicGapSuggestion } from './planningSchema'
 
 function createSufficientAnalysis() {
@@ -89,5 +89,44 @@ describe('generateMermaidFlow', () => {
     expect(result.code).toContain('PM &quot;리드&quot; [검토자]')
     expect(result.code).toContain('[조건](초안)')
     expect(result.code).not.toContain('PM "리드"')
+  })
+
+  test('creates an editable draft with stable sections and nodes', () => {
+    const analysis = createSufficientAnalysis()
+    const suggestions = withStatus(analysis.suggestions, 'edge-data-sync-failure', 'accepted')
+    const draft = createMermaidDraft({ analysis, suggestions })
+
+    expect(draft.sections.map((section) => section.label)).toEqual([
+      'Input',
+      'Analysis',
+      'Review',
+      'Exception Paths',
+      'Output'
+    ])
+    expect(draft.nodes.find((node) => node.id === 'input_text')).toMatchObject({
+      label: 'MVP planning text received',
+      editable: true
+    })
+    expect(draft.nodes.find((node) => node.id === 'start')).toMatchObject({
+      editable: false
+    })
+  })
+
+  test('updates one editable node and serializes the changed label', () => {
+    const analysis = createSufficientAnalysis()
+    const draft = createMermaidDraft({ analysis, suggestions: analysis.suggestions })
+    const updatedDraft = updateMermaidDraftNode(draft, 'input_text', 'Imported PRD memo received')
+
+    expect(draft.nodes.find((node) => node.id === 'input_text')?.label).toBe('MVP planning text received')
+    expect(updatedDraft.nodes.find((node) => node.id === 'input_text')?.label).toBe('Imported PRD memo received')
+    expect(serializeMermaidDraft(updatedDraft)).toContain('Imported PRD memo received')
+  })
+
+  test('does not update locked nodes', () => {
+    const analysis = createSufficientAnalysis()
+    const draft = createMermaidDraft({ analysis, suggestions: analysis.suggestions })
+    const updatedDraft = updateMermaidDraftNode(draft, 'start', 'Changed start')
+
+    expect(updatedDraft.nodes.find((node) => node.id === 'start')?.label).toBe('Start')
   })
 })

@@ -56,6 +56,41 @@ export const mermaidDocumentSchema = z.object({
   blockedReason: z.string().nullable()
 })
 
+export const flowNodeShapeSchema = z.enum(['rectangle', 'decision', 'terminal'])
+
+export const flowNodeSchema = z.object({
+  id: z.string(),
+  sectionId: z.string().nullable(),
+  label: z.string(),
+  shape: flowNodeShapeSchema,
+  editable: z.boolean()
+})
+
+export const flowEdgeSchema = z.object({
+  from: z.string(),
+  to: z.string(),
+  label: z.string().nullable()
+})
+
+export const flowSectionSchema = z.object({
+  id: z.string(),
+  label: z.string()
+})
+
+export const flowDraftSchema = z.object({
+  nodes: z.array(flowNodeSchema),
+  edges: z.array(flowEdgeSchema),
+  sections: z.array(flowSectionSchema),
+  isHappyPathBiased: z.boolean()
+})
+
+export const exportActionSchema = z.enum(['copy', 'svg', 'png'])
+export const exportStatusSchema = z.object({
+  status: z.enum(['idle', 'working', 'success', 'failed']),
+  action: exportActionSchema.nullable(),
+  message: z.string().nullable()
+})
+
 export const planningAnalysisSchema = z.object({
   rawText: z.string(),
   personas: z.array(z.string()),
@@ -78,4 +113,11 @@ export type ContradictionSeverity = z.infer<typeof contradictionSeveritySchema>
 export type Contradiction = z.infer<typeof contradictionSchema>
 export type MermaidRenderStatus = z.infer<typeof mermaidRenderStatusSchema>
 export type MermaidDocument = z.infer<typeof mermaidDocumentSchema>
+export type FlowNodeShape = z.infer<typeof flowNodeShapeSchema>
+export type FlowNode = z.infer<typeof flowNodeSchema>
+export type FlowEdge = z.infer<typeof flowEdgeSchema>
+export type FlowSection = z.infer<typeof flowSectionSchema>
+export type FlowDraft = z.infer<typeof flowDraftSchema>
+export type ExportAction = z.infer<typeof exportActionSchema>
+export type ExportStatus = z.infer<typeof exportStatusSchema>
 export type PlanningAnalysis = z.infer<typeof planningAnalysisSchema>

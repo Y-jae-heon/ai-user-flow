@@ -1,11 +1,11 @@
-# Graph Report - ai-user-flow  (2026-04-28)
+# Graph Report - ai-user-flow  (2026-04-29)
 
 ## Corpus Check
-- 22 files · ~31,108 words
+- 24 files · ~38,945 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 101 nodes · 135 edges · 8 communities detected
+- 119 nodes · 161 edges · 8 communities detected
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
@@ -21,7 +21,7 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `analyzePlanningInput()` - 14 edges
-2. `buildMermaidCode()` - 7 edges
+2. `createMermaidDraft()` - 8 edges
 3. `g()` - 5 edges
 4. `getNthColumn()` - 5 edges
 5. `enableUI()` - 5 edges
@@ -42,8 +42,8 @@
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.21
-Nodes (14): analyzePlanningInput(), buildAssumptions(), calculateScore(), detectContradictions(), extractActions(), extractByKeywords(), extractEntities(), extractPersonas() (+6 more)
+Cohesion: 0.17
+Nodes (15): createSufficientAnalysis(), analyzePlanningInput(), buildAssumptions(), calculateScore(), detectContradictions(), extractActions(), extractByKeywords(), extractEntities() (+7 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.17
@@ -51,38 +51,34 @@ Nodes (16): AST-Only No API Cost Update, Code Modification Session, Cross-Module
 
 ### Community 2 - "Community 2"
 Cohesion: 0.27
-Nodes (11): addSortIndicators(), enableUI(), getNthColumn(), getTable(), getTableBody(), getTableHeader(), loadColumns(), loadData() (+3 more)
+Nodes (13): buildExceptionEdges(), buildExceptionNodes(), buildListEdges(), buildListNodes(), createBlockedDocument(), createEdge(), createMermaidDraft(), createNode() (+5 more)
 
 ### Community 3 - "Community 3"
+Cohesion: 0.27
+Nodes (11): addSortIndicators(), enableUI(), getNthColumn(), getTable(), getTableBody(), getTableHeader(), loadColumns(), loadData() (+3 more)
+
+### Community 4 - "Community 4"
 Cohesion: 0.35
 Nodes (8): a(), B(), D(), g(), i(), k(), Q(), y()
 
-### Community 4 - "Community 4"
-Cohesion: 0.44
-Nodes (8): buildExceptionEdges(), buildExceptionNodes(), buildListEdges(), buildListNodes(), buildMermaidCode(), createBlockedDocument(), escapeMermaidLabel(), generateMermaidFlow()
-
 ### Community 5 - "Community 5"
+Cohesion: 0.39
+Nodes (5): canvasToBlob(), downloadBlob(), exportSvg(), exportSvgToPng(), loadSvgImage()
+
+### Community 6 - "Community 6"
 Cohesion: 0.43
 Nodes (6): correctMermaidSyntax(), createRenderedDocument(), ensureMermaidInitialized(), getErrorMessage(), renderMermaidDocument(), renderOnce()
 
-### Community 6 - "Community 6"
+### Community 7 - "Community 7"
 Cohesion: 0.7
 Nodes (4): goToNext(), goToPrevious(), makeCurrent(), toggleClass()
-
-### Community 7 - "Community 7"
-Cohesion: 0.67
-Nodes (1): createSufficientAnalysis()
 
 ## Knowledge Gaps
 - **5 isolated node(s):** `God Nodes and Community Structure`, `Raw Files`, `Code Modification Session`, `AST-Only No API Cost Update`, `Rationale: Keep Graph Current After Code Changes`
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 7`** (3 nodes): `createSufficientAnalysis()`, `withStatus()`, `mermaidGenerator.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `analyzePlanningInput()` connect `Community 0` to `Community 7`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **What connects `God Nodes and Community Structure`, `Raw Files`, `Code Modification Session` to the rest of the system?**
   _5 weakly-connected nodes found - possible documentation gaps or missing edges._

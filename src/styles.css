@@ -378,6 +378,17 @@ h4 {
   background: #fff7f4;
 }
 
+.output-banner.success {
+  border-color: #b9e4c7;
+  background: #eef9f1;
+}
+
+.export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .mermaid-preview {
   min-height: 180px;
   overflow: auto;
@@ -392,6 +403,53 @@ h4 {
   width: 100%;
   min-width: 640px;
   height: auto;
+}
+
+.node-editor {
+  display: grid;
+  gap: 10px;
+  border: 1px solid #dfe8dc;
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.node-editor-list {
+  display: grid;
+  gap: 12px;
+}
+
+.node-editor-group {
+  display: grid;
+  gap: 8px;
+}
+
+.node-editor-row {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.3fr) minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+}
+
+.node-editor-row span {
+  overflow-wrap: anywhere;
+  color: #607065;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.node-editor-row input {
+  min-width: 0;
+  border: 1px solid #cfd8cc;
+  border-radius: 6px;
+  padding: 9px 10px;
+  color: #18221b;
+  background: #fbfcfa;
+}
+
+.node-editor-row input:focus-visible {
+  outline: 3px solid #6aa6ff;
+  outline-offset: 2px;
 }
 
 .mermaid-code {
@@ -441,5 +499,9 @@ h4 {
   .audit-counts,
   .review-status {
     width: fit-content;
+  }
+
+  .node-editor-row {
+    grid-template-columns: 1fr;
   }
 }

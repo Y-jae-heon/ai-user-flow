@@ -295,7 +295,11 @@ Report: `/Users/yeomjaeheon/Documents/dev/ai-user-flow/.codex/PRPs/reports/ai-us
 
 ### Phase 4: Refinement and Export
 
-Status: pending
+Status: complete
+
+Plan: `/Users/yeomjaeheon/Documents/dev/ai-user-flow/.codex/PRPs/plans/completed/ai-user-flow-planner-phase-4-refinement-export.plan.md`
+
+Report: `/Users/yeomjaeheon/Documents/dev/ai-user-flow/.codex/PRPs/reports/ai-user-flow-planner-phase-4-refinement-export-report.md`
 
 - Support node-level edits.
 - Recalculate connected conditions and exceptions.

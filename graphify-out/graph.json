@@ -40,7 +40,7 @@
       "source_file": "vite.config.ts",
       "source_location": "L1",
       "id": "vite_config_ts",
-      "community": 11,
+      "community": 13,
       "norm_label": "vite.config.ts"
     },
     {
@@ -49,7 +49,7 @@
       "source_file": "coverage/block-navigation.js",
       "source_location": "L1",
       "id": "coverage_block_navigation_js",
-      "community": 6,
+      "community": 7,
       "norm_label": "block-navigation.js"
     },
     {
@@ -58,7 +58,7 @@
       "source_file": "coverage/block-navigation.js",
       "source_location": "L24",
       "id": "block_navigation_toggleclass",
-      "community": 6,
+      "community": 7,
       "norm_label": "toggleclass()"
     },
     {
@@ -67,7 +67,7 @@
       "source_file": "coverage/block-navigation.js",
       "source_location": "L31",
       "id": "block_navigation_makecurrent",
-      "community": 6,
+      "community": 7,
       "norm_label": "makecurrent()"
     },
     {
@@ -76,7 +76,7 @@
       "source_file": "coverage/block-navigation.js",
       "source_location": "L41",
       "id": "block_navigation_gotoprevious",
-      "community": 6,
+      "community": 7,
       "norm_label": "gotoprevious()"
     },
     {
@@ -85,7 +85,7 @@
       "source_file": "coverage/block-navigation.js",
       "source_location": "L52",
       "id": "block_navigation_gotonext",
-      "community": 6,
+      "community": 7,
       "norm_label": "gotonext()"
     },
     {
@@ -94,7 +94,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L1",
       "id": "coverage_prettify_js",
-      "community": 3,
+      "community": 4,
       "norm_label": "prettify.js"
     },
     {
@@ -103,7 +103,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_k",
-      "community": 3,
+      "community": 4,
       "norm_label": "k()"
     },
     {
@@ -112,7 +112,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_a",
-      "community": 3,
+      "community": 4,
       "norm_label": "a()"
     },
     {
@@ -121,7 +121,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_b",
-      "community": 3,
+      "community": 4,
       "norm_label": "b()"
     },
     {
@@ -130,7 +130,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_o",
-      "community": 3,
+      "community": 4,
       "norm_label": "o()"
     },
     {
@@ -139,7 +139,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_g",
-      "community": 3,
+      "community": 4,
       "norm_label": "g()"
     },
     {
@@ -148,7 +148,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_i",
-      "community": 3,
+      "community": 4,
       "norm_label": "i()"
     },
     {
@@ -157,7 +157,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_q",
-      "community": 3,
+      "community": 4,
       "norm_label": "q()"
     },
     {
@@ -166,7 +166,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_d",
-      "community": 3,
+      "community": 4,
       "norm_label": "d()"
     },
     {
@@ -175,7 +175,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_c",
-      "community": 3,
+      "community": 4,
       "norm_label": "c()"
     },
     {
@@ -184,7 +184,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_y",
-      "community": 3,
+      "community": 4,
       "norm_label": "y()"
     },
     {
@@ -193,7 +193,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L1",
       "id": "coverage_sorter_js",
-      "community": 2,
+      "community": 3,
       "norm_label": "sorter.js"
     },
     {
@@ -202,7 +202,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L11",
       "id": "sorter_gettable",
-      "community": 2,
+      "community": 3,
       "norm_label": "gettable()"
     },
     {
@@ -211,7 +211,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L15",
       "id": "sorter_gettableheader",
-      "community": 2,
+      "community": 3,
       "norm_label": "gettableheader()"
     },
     {
@@ -220,7 +220,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L19",
       "id": "sorter_gettablebody",
-      "community": 2,
+      "community": 3,
       "norm_label": "gettablebody()"
     },
     {
@@ -229,7 +229,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L23",
       "id": "sorter_getnthcolumn",
-      "community": 2,
+      "community": 3,
       "norm_label": "getnthcolumn()"
     },
     {
@@ -238,7 +238,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L27",
       "id": "sorter_onfilterinput",
-      "community": 2,
+      "community": 3,
       "norm_label": "onfilterinput()"
     },
     {
@@ -247,7 +247,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L59",
       "id": "sorter_addsearchbox",
-      "community": 2,
+      "community": 3,
       "norm_label": "addsearchbox()"
     },
     {
@@ -256,7 +256,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L67",
       "id": "sorter_loadcolumns",
-      "community": 2,
+      "community": 3,
       "norm_label": "loadcolumns()"
     },
     {
@@ -265,7 +265,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L92",
       "id": "sorter_loadrowdata",
-      "community": 2,
+      "community": 3,
       "norm_label": "loadrowdata()"
     },
     {
@@ -274,7 +274,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L111",
       "id": "sorter_loaddata",
-      "community": 2,
+      "community": 3,
       "norm_label": "loaddata()"
     },
     {
@@ -283,7 +283,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L120",
       "id": "sorter_sortbyindex",
-      "community": 2,
+      "community": 3,
       "norm_label": "sortbyindex()"
     },
     {
@@ -292,7 +292,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L151",
       "id": "sorter_removesortindicators",
-      "community": 2,
+      "community": 3,
       "norm_label": "removesortindicators()"
     },
     {
@@ -301,7 +301,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L159",
       "id": "sorter_addsortindicators",
-      "community": 2,
+      "community": 3,
       "norm_label": "addsortindicators()"
     },
     {
@@ -310,7 +310,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L165",
       "id": "sorter_enableui",
-      "community": 2,
+      "community": 3,
       "norm_label": "enableui()"
     },
     {
@@ -319,7 +319,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L1",
       "id": "src_app_tsx",
-      "community": 8,
+      "community": 9,
       "norm_label": "app.tsx"
     },
     {
@@ -328,7 +328,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L3",
       "id": "app_app",
-      "community": 8,
+      "community": 9,
       "norm_label": "app()"
     },
     {
@@ -337,7 +337,7 @@
       "source_file": "src/main.tsx",
       "source_location": "L1",
       "id": "src_main_tsx",
-      "community": 12,
+      "community": 14,
       "norm_label": "main.tsx"
     },
     {
@@ -346,7 +346,7 @@
       "source_file": "src/App.test.tsx",
       "source_location": "L1",
       "id": "src_app_test_tsx",
-      "community": 13,
+      "community": 15,
       "norm_label": "app.test.tsx"
     },
     {
@@ -355,7 +355,7 @@
       "source_file": "src/vite-env.d.ts",
       "source_location": "L1",
       "id": "src_vite_env_d_ts",
-      "community": 14,
+      "community": 16,
       "norm_label": "vite-env.d.ts"
     },
     {
@@ -364,7 +364,7 @@
       "source_file": "src/types/mermaid-esm.d.ts",
       "source_location": "L1",
       "id": "src_types_mermaid_esm_d_ts",
-      "community": 15,
+      "community": 17,
       "norm_label": "mermaid-esm.d.ts"
     },
     {
@@ -373,7 +373,7 @@
       "source_file": "src/test/setup.ts",
       "source_location": "L1",
       "id": "src_test_setup_ts",
-      "community": 16,
+      "community": 18,
       "norm_label": "setup.ts"
     },
     {
@@ -382,17 +382,89 @@
       "source_file": "src/features/planning/PlanningWorkspace.tsx",
       "source_location": "L1",
       "id": "src_features_planning_planningworkspace_tsx",
-      "community": 9,
+      "community": 10,
       "norm_label": "planningworkspace.tsx"
     },
     {
       "label": "PlanningWorkspace()",
       "file_type": "code",
       "source_file": "src/features/planning/PlanningWorkspace.tsx",
-      "source_location": "L9",
+      "source_location": "L24",
       "id": "planningworkspace_planningworkspace",
-      "community": 9,
+      "community": 10,
       "norm_label": "planningworkspace()"
+    },
+    {
+      "label": "mermaidExport.ts",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L1",
+      "id": "src_features_planning_mermaidexport_ts",
+      "community": 5,
+      "norm_label": "mermaidexport.ts"
+    },
+    {
+      "label": "copyMermaidCode()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L19",
+      "id": "mermaidexport_copymermaidcode",
+      "community": 5,
+      "norm_label": "copymermaidcode()"
+    },
+    {
+      "label": "exportSvg()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L28",
+      "id": "mermaidexport_exportsvg",
+      "community": 5,
+      "norm_label": "exportsvg()"
+    },
+    {
+      "label": "exportSvgToPng()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L33",
+      "id": "mermaidexport_exportsvgtopng",
+      "community": 5,
+      "norm_label": "exportsvgtopng()"
+    },
+    {
+      "label": "downloadBlob()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L61",
+      "id": "mermaidexport_downloadblob",
+      "community": 5,
+      "norm_label": "downloadblob()"
+    },
+    {
+      "label": "loadSvgImage()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L81",
+      "id": "mermaidexport_loadsvgimage",
+      "community": 5,
+      "norm_label": "loadsvgimage()"
+    },
+    {
+      "label": "createDefaultCanvas()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L94",
+      "id": "mermaidexport_createdefaultcanvas",
+      "community": 5,
+      "norm_label": "createdefaultcanvas()"
+    },
+    {
+      "label": "canvasToBlob()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L101",
+      "id": "mermaidexport_canvastoblob",
+      "community": 5,
+      "norm_label": "canvastoblob()"
     },
     {
       "label": "planningSchema.ts",
@@ -400,7 +472,7 @@
       "source_file": "src/features/planning/planningSchema.ts",
       "source_location": "L1",
       "id": "src_features_planning_planningschema_ts",
-      "community": 17,
+      "community": 19,
       "norm_label": "planningschema.ts"
     },
     {
@@ -409,7 +481,7 @@
       "source_file": "src/features/planning/mermaidGenerator.test.ts",
       "source_location": "L1",
       "id": "src_features_planning_mermaidgenerator_test_ts",
-      "community": 7,
+      "community": 0,
       "norm_label": "mermaidgenerator.test.ts"
     },
     {
@@ -418,7 +490,7 @@
       "source_file": "src/features/planning/mermaidGenerator.test.ts",
       "source_location": "L6",
       "id": "mermaidgenerator_test_createsufficientanalysis",
-      "community": 7,
+      "community": 0,
       "norm_label": "createsufficientanalysis()"
     },
     {
@@ -427,7 +499,7 @@
       "source_file": "src/features/planning/mermaidGenerator.test.ts",
       "source_location": "L15",
       "id": "mermaidgenerator_test_withstatus",
-      "community": 7,
+      "community": 0,
       "norm_label": "withstatus()"
     },
     {
@@ -436,7 +508,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L1",
       "id": "src_features_planning_mermaidrenderer_ts",
-      "community": 5,
+      "community": 6,
       "norm_label": "mermaidrenderer.ts"
     },
     {
@@ -445,7 +517,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L44",
       "id": "mermaidrenderer_rendermermaiddocument",
-      "community": 5,
+      "community": 6,
       "norm_label": "rendermermaiddocument()"
     },
     {
@@ -454,7 +526,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L73",
       "id": "mermaidrenderer_correctmermaidsyntax",
-      "community": 5,
+      "community": 6,
       "norm_label": "correctmermaidsyntax()"
     },
     {
@@ -463,7 +535,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L83",
       "id": "mermaidrenderer_renderonce",
-      "community": 5,
+      "community": 6,
       "norm_label": "renderonce()"
     },
     {
@@ -472,7 +544,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L112",
       "id": "mermaidrenderer_ensuremermaidinitialized",
-      "community": 5,
+      "community": 6,
       "norm_label": "ensuremermaidinitialized()"
     },
     {
@@ -481,7 +553,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L127",
       "id": "mermaidrenderer_loadmermaidmodule",
-      "community": 5,
+      "community": 6,
       "norm_label": "loadmermaidmodule()"
     },
     {
@@ -490,7 +562,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L132",
       "id": "mermaidrenderer_createrendereddocument",
-      "community": 5,
+      "community": 6,
       "norm_label": "createrendereddocument()"
     },
     {
@@ -499,8 +571,35 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L144",
       "id": "mermaidrenderer_geterrormessage",
-      "community": 5,
+      "community": 6,
       "norm_label": "geterrormessage()"
+    },
+    {
+      "label": "mermaidExport.test.ts",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidExport.test.ts",
+      "source_location": "L1",
+      "id": "src_features_planning_mermaidexport_test_ts",
+      "community": 8,
+      "norm_label": "mermaidexport.test.ts"
+    },
+    {
+      "label": "createUrlDependencies()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidExport.test.ts",
+      "source_location": "L4",
+      "id": "mermaidexport_test_createurldependencies",
+      "community": 8,
+      "norm_label": "createurldependencies()"
+    },
+    {
+      "label": "createCanvas()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidExport.test.ts",
+      "source_location": "L29",
+      "id": "mermaidexport_test_createcanvas",
+      "community": 8,
+      "norm_label": "createcanvas()"
     },
     {
       "label": "planningAnalyzer.test.ts",
@@ -508,7 +607,7 @@
       "source_file": "src/features/planning/planningAnalyzer.test.ts",
       "source_location": "L1",
       "id": "src_features_planning_planninganalyzer_test_ts",
-      "community": 18,
+      "community": 20,
       "norm_label": "planninganalyzer.test.ts"
     },
     {
@@ -517,7 +616,7 @@
       "source_file": "src/features/planning/mermaidRenderer.test.ts",
       "source_location": "L1",
       "id": "src_features_planning_mermaidrenderer_test_ts",
-      "community": 10,
+      "community": 11,
       "norm_label": "mermaidrenderer.test.ts"
     },
     {
@@ -526,7 +625,7 @@
       "source_file": "src/features/planning/mermaidRenderer.test.ts",
       "source_location": "L11",
       "id": "mermaidrenderer_test_createadapter",
-      "community": 10,
+      "community": 11,
       "norm_label": "createadapter()"
     },
     {
@@ -688,8 +787,17 @@
       "source_file": "src/features/planning/PlanningWorkspace.test.tsx",
       "source_location": "L1",
       "id": "src_features_planning_planningworkspace_test_tsx",
-      "community": 19,
+      "community": 12,
       "norm_label": "planningworkspace.test.tsx"
+    },
+    {
+      "label": "resolveCopy()",
+      "file_type": "code",
+      "source_file": "src/features/planning/PlanningWorkspace.test.tsx",
+      "source_location": "L301",
+      "id": "planningworkspace_test_resolvecopy",
+      "community": 12,
+      "norm_label": "resolvecopy()"
     },
     {
       "label": "mermaidGenerator.ts",
@@ -697,79 +805,133 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L1",
       "id": "src_features_planning_mermaidgenerator_ts",
-      "community": 4,
+      "community": 2,
       "norm_label": "mermaidgenerator.ts"
     },
     {
       "label": "generateMermaidFlow()",
       "file_type": "code",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L14",
+      "source_location": "L24",
       "id": "mermaidgenerator_generatemermaidflow",
-      "community": 4,
+      "community": 2,
       "norm_label": "generatemermaidflow()"
+    },
+    {
+      "label": "createMermaidDraft()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L46",
+      "id": "mermaidgenerator_createmermaiddraft",
+      "community": 2,
+      "norm_label": "createmermaiddraft()"
+    },
+    {
+      "label": "updateMermaidDraftNode()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L99",
+      "id": "mermaidgenerator_updatemermaiddraftnode",
+      "community": 2,
+      "norm_label": "updatemermaiddraftnode()"
+    },
+    {
+      "label": "serializeMermaidDraft()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L115",
+      "id": "mermaidgenerator_serializemermaiddraft",
+      "community": 2,
+      "norm_label": "serializemermaiddraft()"
     },
     {
       "label": "createBlockedDocument()",
       "file_type": "code",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L38",
+      "source_location": "L135",
       "id": "mermaidgenerator_createblockeddocument",
-      "community": 4,
+      "community": 2,
       "norm_label": "createblockeddocument()"
-    },
-    {
-      "label": "buildMermaidCode()",
-      "file_type": "code",
-      "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L48",
-      "id": "mermaidgenerator_buildmermaidcode",
-      "community": 4,
-      "norm_label": "buildmermaidcode()"
     },
     {
       "label": "buildListNodes()",
       "file_type": "code",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L106",
+      "source_location": "L145",
       "id": "mermaidgenerator_buildlistnodes",
-      "community": 4,
+      "community": 2,
       "norm_label": "buildlistnodes()"
     },
     {
       "label": "buildListEdges()",
       "file_type": "code",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L112",
+      "source_location": "L151",
       "id": "mermaidgenerator_buildlistedges",
-      "community": 4,
+      "community": 2,
       "norm_label": "buildlistedges()"
     },
     {
       "label": "buildExceptionNodes()",
       "file_type": "code",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L116",
+      "source_location": "L155",
       "id": "mermaidgenerator_buildexceptionnodes",
-      "community": 4,
+      "community": 2,
       "norm_label": "buildexceptionnodes()"
     },
     {
       "label": "buildExceptionEdges()",
       "file_type": "code",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L134",
+      "source_location": "L173",
       "id": "mermaidgenerator_buildexceptionedges",
-      "community": 4,
+      "community": 2,
       "norm_label": "buildexceptionedges()"
+    },
+    {
+      "label": "createNode()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L188",
+      "id": "mermaidgenerator_createnode",
+      "community": 2,
+      "norm_label": "createnode()"
+    },
+    {
+      "label": "createEdge()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L204",
+      "id": "mermaidgenerator_createedge",
+      "community": 2,
+      "norm_label": "createedge()"
+    },
+    {
+      "label": "serializeNode()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L212",
+      "id": "mermaidgenerator_serializenode",
+      "community": 2,
+      "norm_label": "serializenode()"
+    },
+    {
+      "label": "serializeEdge()",
+      "file_type": "code",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L226",
+      "id": "mermaidgenerator_serializeedge",
+      "community": 2,
+      "norm_label": "serializeedge()"
     },
     {
       "label": "escapeMermaidLabel()",
       "file_type": "code",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L149",
+      "source_location": "L234",
       "id": "mermaidgenerator_escapemermaidlabel",
-      "community": 4,
+      "community": 2,
       "norm_label": "escapemermaidlabel()"
     },
     {
@@ -778,7 +940,7 @@
       "source_file": "src/features/planning/components/MermaidOutputPanel.tsx",
       "source_location": "L1",
       "id": "src_features_planning_components_mermaidoutputpanel_tsx",
-      "community": 20,
+      "community": 21,
       "norm_label": "mermaidoutputpanel.tsx"
     },
     {
@@ -787,7 +949,7 @@
       "source_file": "src/features/planning/components/AnalysisPanel.tsx",
       "source_location": "L1",
       "id": "src_features_planning_components_analysispanel_tsx",
-      "community": 21,
+      "community": 22,
       "norm_label": "analysispanel.tsx"
     },
     {
@@ -796,7 +958,7 @@
       "source_file": "src/features/planning/components/InputPanel.tsx",
       "source_location": "L1",
       "id": "src_features_planning_components_inputpanel_tsx",
-      "community": 22,
+      "community": 23,
       "norm_label": "inputpanel.tsx"
     },
     {
@@ -1637,12 +1799,144 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/PlanningWorkspace.tsx",
-      "source_location": "L9",
+      "source_location": "L24",
       "weight": 1.0,
       "_src": "src_features_planning_planningworkspace_tsx",
       "_tgt": "planningworkspace_planningworkspace",
       "source": "src_features_planning_planningworkspace_tsx",
       "target": "planningworkspace_planningworkspace",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidexport_ts",
+      "_tgt": "mermaidexport_copymermaidcode",
+      "source": "src_features_planning_mermaidexport_ts",
+      "target": "mermaidexport_copymermaidcode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidexport_ts",
+      "_tgt": "mermaidexport_exportsvg",
+      "source": "src_features_planning_mermaidexport_ts",
+      "target": "mermaidexport_exportsvg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidexport_ts",
+      "_tgt": "mermaidexport_exportsvgtopng",
+      "source": "src_features_planning_mermaidexport_ts",
+      "target": "mermaidexport_exportsvgtopng",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidexport_ts",
+      "_tgt": "mermaidexport_downloadblob",
+      "source": "src_features_planning_mermaidexport_ts",
+      "target": "mermaidexport_downloadblob",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidexport_ts",
+      "_tgt": "mermaidexport_loadsvgimage",
+      "source": "src_features_planning_mermaidexport_ts",
+      "target": "mermaidexport_loadsvgimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L94",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidexport_ts",
+      "_tgt": "mermaidexport_createdefaultcanvas",
+      "source": "src_features_planning_mermaidexport_ts",
+      "target": "mermaidexport_createdefaultcanvas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidexport_ts",
+      "_tgt": "mermaidexport_canvastoblob",
+      "source": "src_features_planning_mermaidexport_ts",
+      "target": "mermaidexport_canvastoblob",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "mermaidexport_exportsvg",
+      "_tgt": "mermaidexport_downloadblob",
+      "source": "mermaidexport_exportsvg",
+      "target": "mermaidexport_downloadblob",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_src": "mermaidexport_exportsvgtopng",
+      "_tgt": "mermaidexport_loadsvgimage",
+      "source": "mermaidexport_exportsvgtopng",
+      "target": "mermaidexport_loadsvgimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_src": "mermaidexport_exportsvgtopng",
+      "_tgt": "mermaidexport_canvastoblob",
+      "source": "mermaidexport_exportsvgtopng",
+      "target": "mermaidexport_canvastoblob",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "mermaidexport_exportsvgtopng",
+      "_tgt": "mermaidexport_downloadblob",
+      "source": "mermaidexport_exportsvgtopng",
+      "target": "mermaidexport_downloadblob",
       "confidence_score": 1.0
     },
     {
@@ -1823,6 +2117,30 @@
       "_tgt": "mermaidrenderer_geterrormessage",
       "source": "mermaidrenderer_renderonce",
       "target": "mermaidrenderer_geterrormessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidexport_test_ts",
+      "_tgt": "mermaidexport_test_createurldependencies",
+      "source": "src_features_planning_mermaidexport_test_ts",
+      "target": "mermaidexport_test_createurldependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidExport.test.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidexport_test_ts",
+      "_tgt": "mermaidexport_test_createcanvas",
+      "source": "src_features_planning_mermaidexport_test_ts",
+      "target": "mermaidexport_test_createcanvas",
       "confidence_score": 1.0
     },
     {
@@ -2188,8 +2506,20 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/PlanningWorkspace.test.tsx",
+      "source_location": "L301",
+      "weight": 1.0,
+      "_src": "src_features_planning_planningworkspace_test_tsx",
+      "_tgt": "planningworkspace_test_resolvecopy",
+      "source": "src_features_planning_planningworkspace_test_tsx",
+      "target": "planningworkspace_test_resolvecopy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L14",
+      "source_location": "L24",
       "weight": 1.0,
       "_src": "src_features_planning_mermaidgenerator_ts",
       "_tgt": "mermaidgenerator_generatemermaidflow",
@@ -2201,7 +2531,43 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L38",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidgenerator_ts",
+      "_tgt": "mermaidgenerator_createmermaiddraft",
+      "source": "src_features_planning_mermaidgenerator_ts",
+      "target": "mermaidgenerator_createmermaiddraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L99",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidgenerator_ts",
+      "_tgt": "mermaidgenerator_updatemermaiddraftnode",
+      "source": "src_features_planning_mermaidgenerator_ts",
+      "target": "mermaidgenerator_updatemermaiddraftnode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L115",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidgenerator_ts",
+      "_tgt": "mermaidgenerator_serializemermaiddraft",
+      "source": "src_features_planning_mermaidgenerator_ts",
+      "target": "mermaidgenerator_serializemermaiddraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L135",
       "weight": 1.0,
       "_src": "src_features_planning_mermaidgenerator_ts",
       "_tgt": "mermaidgenerator_createblockeddocument",
@@ -2213,19 +2579,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L48",
-      "weight": 1.0,
-      "_src": "src_features_planning_mermaidgenerator_ts",
-      "_tgt": "mermaidgenerator_buildmermaidcode",
-      "source": "src_features_planning_mermaidgenerator_ts",
-      "target": "mermaidgenerator_buildmermaidcode",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L106",
+      "source_location": "L145",
       "weight": 1.0,
       "_src": "src_features_planning_mermaidgenerator_ts",
       "_tgt": "mermaidgenerator_buildlistnodes",
@@ -2237,7 +2591,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L112",
+      "source_location": "L151",
       "weight": 1.0,
       "_src": "src_features_planning_mermaidgenerator_ts",
       "_tgt": "mermaidgenerator_buildlistedges",
@@ -2249,7 +2603,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L116",
+      "source_location": "L155",
       "weight": 1.0,
       "_src": "src_features_planning_mermaidgenerator_ts",
       "_tgt": "mermaidgenerator_buildexceptionnodes",
@@ -2261,7 +2615,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L134",
+      "source_location": "L173",
       "weight": 1.0,
       "_src": "src_features_planning_mermaidgenerator_ts",
       "_tgt": "mermaidgenerator_buildexceptionedges",
@@ -2273,7 +2627,55 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L149",
+      "source_location": "L188",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidgenerator_ts",
+      "_tgt": "mermaidgenerator_createnode",
+      "source": "src_features_planning_mermaidgenerator_ts",
+      "target": "mermaidgenerator_createnode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L204",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidgenerator_ts",
+      "_tgt": "mermaidgenerator_createedge",
+      "source": "src_features_planning_mermaidgenerator_ts",
+      "target": "mermaidgenerator_createedge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L212",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidgenerator_ts",
+      "_tgt": "mermaidgenerator_serializenode",
+      "source": "src_features_planning_mermaidgenerator_ts",
+      "target": "mermaidgenerator_serializenode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L226",
+      "weight": 1.0,
+      "_src": "src_features_planning_mermaidgenerator_ts",
+      "_tgt": "mermaidgenerator_serializeedge",
+      "source": "src_features_planning_mermaidgenerator_ts",
+      "target": "mermaidgenerator_serializeedge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L234",
       "weight": 1.0,
       "_src": "src_features_planning_mermaidgenerator_ts",
       "_tgt": "mermaidgenerator_escapemermaidlabel",
@@ -2285,7 +2687,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L16",
+      "source_location": "L26",
       "weight": 1.0,
       "_src": "mermaidgenerator_generatemermaidflow",
       "_tgt": "mermaidgenerator_createblockeddocument",
@@ -2297,35 +2699,47 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L27",
+      "source_location": "L34",
       "weight": 1.0,
       "_src": "mermaidgenerator_generatemermaidflow",
-      "_tgt": "mermaidgenerator_buildmermaidcode",
+      "_tgt": "mermaidgenerator_createmermaiddraft",
       "source": "mermaidgenerator_generatemermaidflow",
-      "target": "mermaidgenerator_buildmermaidcode",
+      "target": "mermaidgenerator_createmermaiddraft",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L59",
+      "source_location": "L35",
       "weight": 1.0,
-      "_src": "mermaidgenerator_buildmermaidcode",
-      "_tgt": "mermaidgenerator_escapemermaidlabel",
-      "source": "mermaidgenerator_buildmermaidcode",
-      "target": "mermaidgenerator_escapemermaidlabel",
+      "_src": "mermaidgenerator_generatemermaidflow",
+      "_tgt": "mermaidgenerator_serializemermaiddraft",
+      "source": "mermaidgenerator_generatemermaidflow",
+      "target": "mermaidgenerator_serializemermaiddraft",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L66",
+      "source_location": "L51",
       "weight": 1.0,
-      "_src": "mermaidgenerator_buildmermaidcode",
+      "_src": "mermaidgenerator_createmermaiddraft",
+      "_tgt": "mermaidgenerator_createnode",
+      "source": "mermaidgenerator_createmermaiddraft",
+      "target": "mermaidgenerator_createnode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_src": "mermaidgenerator_createmermaiddraft",
       "_tgt": "mermaidgenerator_buildlistnodes",
-      "source": "mermaidgenerator_buildmermaidcode",
+      "source": "mermaidgenerator_createmermaiddraft",
       "target": "mermaidgenerator_buildlistnodes",
       "confidence_score": 1.0
     },
@@ -2333,11 +2747,11 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L76",
+      "source_location": "L60",
       "weight": 1.0,
-      "_src": "mermaidgenerator_buildmermaidcode",
+      "_src": "mermaidgenerator_createmermaiddraft",
       "_tgt": "mermaidgenerator_buildexceptionnodes",
-      "source": "mermaidgenerator_buildmermaidcode",
+      "source": "mermaidgenerator_createmermaiddraft",
       "target": "mermaidgenerator_buildexceptionnodes",
       "confidence_score": 1.0
     },
@@ -2345,11 +2759,23 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L92",
+      "source_location": "L67",
       "weight": 1.0,
-      "_src": "mermaidgenerator_buildmermaidcode",
+      "_src": "mermaidgenerator_createmermaiddraft",
+      "_tgt": "mermaidgenerator_createedge",
+      "source": "mermaidgenerator_createmermaiddraft",
+      "target": "mermaidgenerator_createedge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_src": "mermaidgenerator_createmermaiddraft",
       "_tgt": "mermaidgenerator_buildlistedges",
-      "source": "mermaidgenerator_buildmermaidcode",
+      "source": "mermaidgenerator_createmermaiddraft",
       "target": "mermaidgenerator_buildlistedges",
       "confidence_score": 1.0
     },
@@ -2357,11 +2783,11 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L95",
+      "source_location": "L77",
       "weight": 1.0,
-      "_src": "mermaidgenerator_buildmermaidcode",
+      "_src": "mermaidgenerator_createmermaiddraft",
       "_tgt": "mermaidgenerator_buildexceptionedges",
-      "source": "mermaidgenerator_buildmermaidcode",
+      "source": "mermaidgenerator_createmermaiddraft",
       "target": "mermaidgenerator_buildexceptionedges",
       "confidence_score": 1.0
     },
@@ -2369,11 +2795,59 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/features/planning/mermaidGenerator.ts",
-      "source_location": "L128",
+      "source_location": "L125",
+      "weight": 1.0,
+      "_src": "mermaidgenerator_serializemermaiddraft",
+      "_tgt": "mermaidgenerator_escapemermaidlabel",
+      "source": "mermaidgenerator_serializemermaiddraft",
+      "target": "mermaidgenerator_escapemermaidlabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L167",
       "weight": 1.0,
       "_src": "mermaidgenerator_buildexceptionnodes",
-      "_tgt": "mermaidgenerator_escapemermaidlabel",
+      "_tgt": "mermaidgenerator_createnode",
       "source": "mermaidgenerator_buildexceptionnodes",
+      "target": "mermaidgenerator_createnode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L182",
+      "weight": 1.0,
+      "_src": "mermaidgenerator_buildexceptionedges",
+      "_tgt": "mermaidgenerator_createedge",
+      "source": "mermaidgenerator_buildexceptionedges",
+      "target": "mermaidgenerator_createedge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L213",
+      "weight": 1.0,
+      "_src": "mermaidgenerator_serializenode",
+      "_tgt": "mermaidgenerator_escapemermaidlabel",
+      "source": "mermaidgenerator_serializenode",
+      "target": "mermaidgenerator_escapemermaidlabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/mermaidGenerator.ts",
+      "source_location": "L228",
+      "weight": 1.0,
+      "_src": "mermaidgenerator_serializeedge",
+      "_tgt": "mermaidgenerator_escapemermaidlabel",
+      "source": "mermaidgenerator_serializeedge",
       "target": "mermaidgenerator_escapemermaidlabel",
       "confidence_score": 1.0
     },

@@ -1,4 +1,11 @@
-import type { Contradiction, LogicGapSuggestion, PlanningAnalysis, SuggestionStatus } from '../planningSchema'
+import type {
+  Contradiction,
+  ExportStatus,
+  FlowDraft,
+  LogicGapSuggestion,
+  PlanningAnalysis,
+  SuggestionStatus
+} from '../planningSchema'
 import type { MermaidDocument } from '../planningSchema'
 import { MermaidOutputPanel } from './MermaidOutputPanel'
 
@@ -7,7 +14,13 @@ interface AnalysisPanelProps {
   suggestions: readonly LogicGapSuggestion[]
   onSuggestionStatusChange: (id: string, status: SuggestionStatus) => void
   mermaidDocument: MermaidDocument | null
+  flowDraft: FlowDraft | null
+  exportStatus: ExportStatus
   onGenerateMermaid: () => Promise<void>
+  onNodeLabelChange: (nodeId: string, label: string) => Promise<void>
+  onCopyMermaid: () => Promise<void>
+  onExportSvg: () => Promise<void>
+  onExportPng: () => Promise<void>
 }
 
 export function AnalysisPanel({
@@ -15,7 +28,13 @@ export function AnalysisPanel({
   suggestions,
   onSuggestionStatusChange,
   mermaidDocument,
-  onGenerateMermaid
+  flowDraft,
+  exportStatus,
+  onGenerateMermaid,
+  onNodeLabelChange,
+  onCopyMermaid,
+  onExportSvg,
+  onExportPng
 }: AnalysisPanelProps) {
   if (!analysis) {
     return (
@@ -73,7 +92,13 @@ export function AnalysisPanel({
         analysis={analysis}
         suggestions={suggestions}
         mermaidDocument={mermaidDocument}
+        flowDraft={flowDraft}
+        exportStatus={exportStatus}
         onGenerateMermaid={onGenerateMermaid}
+        onNodeLabelChange={onNodeLabelChange}
+        onCopyMermaid={onCopyMermaid}
+        onExportSvg={onExportSvg}
+        onExportPng={onExportPng}
       />
 
       <AnalysisList title="Personas" items={analysis.personas} emptyText="사용자 정보가 아직 충분하지 않습니다." />
