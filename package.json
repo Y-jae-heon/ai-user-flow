@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "workspaces": [
+    "apps/backend"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -10,7 +13,12 @@
     "test": "vitest",
     "test:run": "vitest run",
     "coverage": "vitest run --coverage",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "backend:dev": "npm --workspace @ai-user-flow/backend run start:dev",
+    "backend:build": "npm --workspace @ai-user-flow/backend run build",
+    "backend:test": "npm --workspace @ai-user-flow/backend run test",
+    "backend:test:e2e": "npm --workspace @ai-user-flow/backend run test:e2e",
+    "backend:typecheck": "npm --workspace @ai-user-flow/backend run typecheck"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
