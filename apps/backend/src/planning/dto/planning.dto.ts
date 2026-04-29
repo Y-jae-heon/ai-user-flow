@@ -53,9 +53,56 @@ export const planningCompletenessSchema = z.object({
   guidance: z.array(z.string())
 })
 
+const safeIdSchema = z.string().regex(/^[a-z][a-z0-9_]*$/)
+const safeTextSchema = z.string().min(1).max(240)
+
+export const suggestionStatusSchema = z.enum(['pending', 'accepted', 'rejected'])
+export const logicGapCategorySchema = z.enum(['onboarding', 'permission', 'data', 'export', 'quality', 'fallback'])
 export const confidenceLevelSchema = z.enum(['high', 'medium', 'low'])
 export const contradictionSeveritySchema = z.enum(['warning', 'blocking'])
 export const riskLevelSchema = z.enum(['high', 'medium', 'low'])
+
+export const qaHandoffSchema = z
+  .object({
+    scenario: safeTextSchema,
+    precondition: safeTextSchema,
+    trigger: safeTextSchema,
+    expectedBehavior: safeTextSchema,
+    riskLevel: riskLevelSchema
+  })
+  .strict()
+
+export const logicGapSuggestionSchema = z
+  .object({
+    id: safeIdSchema,
+    category: logicGapCategorySchema,
+    title: safeTextSchema,
+    description: safeTextSchema,
+    rationale: safeTextSchema,
+    qaHandoff: qaHandoffSchema,
+    status: suggestionStatusSchema
+  })
+  .strict()
+
+export const planningAssumptionSchema = z
+  .object({
+    id: safeIdSchema,
+    confidence: confidenceLevelSchema,
+    statement: safeTextSchema,
+    followUpPrompt: safeTextSchema
+  })
+  .strict()
+
+export const contradictionSchema = z
+  .object({
+    id: safeIdSchema,
+    severity: contradictionSeveritySchema,
+    title: safeTextSchema,
+    description: safeTextSchema,
+    signals: z.array(safeTextSchema),
+    resolutionPrompt: safeTextSchema
+  })
+  .strict()
 
 export const planningAnalysisSchema = z.object({
   rawText: z.string(),
@@ -63,19 +110,82 @@ export const planningAnalysisSchema = z.object({
   entities: z.array(z.string()),
   actions: z.array(z.string()),
   states: z.array(z.string()),
-  assumptions: z.array(z.unknown()),
-  suggestions: z.array(z.unknown()),
-  contradictions: z.array(z.unknown()),
+  assumptions: z.array(planningAssumptionSchema),
+  suggestions: z.array(logicGapSuggestionSchema),
+  contradictions: z.array(contradictionSchema),
   completeness: planningCompletenessSchema
 })
 
-export const planningEntityMappingSchema = z.object({
-  actors: z.array(z.unknown()),
-  objects: z.array(z.unknown()),
-  actions: z.array(z.unknown()),
-  businessRules: z.array(z.unknown()),
-  exceptionPaths: z.array(z.unknown())
-})
+export const dependencyTypeSchema = z.enum(['requires', 'creates_failure_path', 'blocks', 'informs'])
+
+export const dependencyAnalysisItemSchema = z
+  .object({
+    from: planningElementKeySchema,
+    to: planningElementKeySchema,
+    type: dependencyTypeSchema,
+    rationale: safeTextSchema
+  })
+  .strict()
+
+export const planningActorSchema = z
+  .object({
+    id: safeIdSchema,
+    name: safeTextSchema,
+    sourceElement: planningElementKeySchema.nullable(),
+    confidence: confidenceLevelSchema
+  })
+  .strict()
+
+export const planningObjectSchema = z
+  .object({
+    id: safeIdSchema,
+    name: safeTextSchema,
+    storageTarget: safeIdSchema,
+    confidence: confidenceLevelSchema
+  })
+  .strict()
+
+export const planningActionSchema = z
+  .object({
+    id: safeIdSchema,
+    actorId: safeIdSchema,
+    objectId: safeIdSchema,
+    verb: safeTextSchema,
+    preconditions: z.array(safeTextSchema),
+    postconditions: z.array(safeTextSchema)
+  })
+  .strict()
+
+export const businessRuleSchema = z
+  .object({
+    id: safeIdSchema,
+    title: safeTextSchema,
+    description: safeTextSchema,
+    sourceElement: planningElementKeySchema.nullable(),
+    severity: contradictionSeveritySchema
+  })
+  .strict()
+
+export const exceptionPathSchema = z
+  .object({
+    id: safeIdSchema,
+    title: safeTextSchema,
+    trigger: safeTextSchema,
+    expectedBehavior: safeTextSchema,
+    recoveryAction: safeTextSchema,
+    riskLevel: riskLevelSchema
+  })
+  .strict()
+
+export const planningEntityMappingSchema = z
+  .object({
+    actors: z.array(planningActorSchema),
+    objects: z.array(planningObjectSchema),
+    actions: z.array(planningActionSchema),
+    businessRules: z.array(businessRuleSchema),
+    exceptionPaths: z.array(exceptionPathSchema)
+  })
+  .strict()
 
 export const planningStateSchema = z.object({
   id: nonEmptyStringSchema,
@@ -152,13 +262,40 @@ export const planningSessionSnapshotSchema = z.object({
   status: planningSessionStatusSchema,
   input: planningInputSchema,
   analysis: planningAnalysisSchema.nullable(),
-  dependencyAnalysis: z.array(z.unknown()),
+  dependencyAnalysis: z.array(dependencyAnalysisItemSchema),
   entities: planningEntityMappingSchema,
   stateMachine: planningStateMachineSchema.nullable(),
   validation: planningValidationReportSchema.nullable(),
   flowDraft: flowDraftSchema.nullable(),
   mermaidDocument: mermaidDocumentSchema.nullable()
 })
+
+export const planningExtractionResultSchema = z
+  .object({
+    analysis: planningAnalysisSchema,
+    dependencyAnalysis: z.array(dependencyAnalysisItemSchema),
+    entities: planningEntityMappingSchema,
+    statusRecommendation: z.enum(['ready_for_generation', 'needs_clarification']),
+    blockingReasons: z.array(safeTextSchema),
+    modelMetadata: z
+      .object({
+        provider: z.literal('openai'),
+        model: safeTextSchema,
+        usedFallback: z.boolean()
+      })
+      .strict()
+  })
+  .strict()
+
+export const planningAnalysisRequestSchema = z
+  .object({
+    session: planningSessionSnapshotSchema.optional(),
+    input: planningInputSchema.optional()
+  })
+  .strict()
+  .refine((value) => value.session !== undefined || value.input !== undefined, {
+    message: 'Either session or input is required.'
+  })
 
 export const mermaidValidationRequestSchema = z
   .object({
@@ -171,9 +308,14 @@ export type PlanningElements = z.infer<typeof planningElementsSchema>
 export type PlanningInput = z.infer<typeof planningInputSchema>
 export type PlanningCompleteness = z.infer<typeof planningCompletenessSchema>
 export type PlanningValidationReport = z.infer<typeof planningValidationReportSchema>
+export type PlanningAnalysis = z.infer<typeof planningAnalysisSchema>
+export type PlanningExtractionResult = z.infer<typeof planningExtractionResultSchema>
+export type PlanningAnalysisRequest = z.infer<typeof planningAnalysisRequestSchema>
 export type PlanningSessionSnapshot = z.infer<typeof planningSessionSnapshotSchema>
 export type FlowDraft = z.infer<typeof flowDraftSchema>
 export type FlowEdge = z.infer<typeof flowEdgeSchema>
 export type PlanningStateMachine = z.infer<typeof planningStateMachineSchema>
 export type MermaidDocument = z.infer<typeof mermaidDocumentSchema>
 export type MermaidValidationRequest = z.infer<typeof mermaidValidationRequestSchema>
+export type DependencyAnalysisItem = z.infer<typeof dependencyAnalysisItemSchema>
+export type PlanningEntityMapping = z.infer<typeof planningEntityMappingSchema>

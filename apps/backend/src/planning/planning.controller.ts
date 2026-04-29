@@ -10,6 +10,11 @@ export class PlanningController {
     return this.planningService.createPlanningSession(body)
   }
 
+  @Post(':sessionId/analyze')
+  analyzePlanningSession(@Param('sessionId') sessionId: string, @Body() body: unknown) {
+    return this.planningService.analyzePlanningSession(sessionId, body)
+  }
+
   @Post(':sessionId/mermaid/validate')
   validateMermaid(@Param('sessionId') _sessionId: string, @Body() body: unknown) {
     return this.planningService.validateMermaid(body)

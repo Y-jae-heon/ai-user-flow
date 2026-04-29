@@ -4,6 +4,7 @@ import { createSuccessEnvelope } from '../common/api-envelope'
 import { safeParseWithMessages } from '../common/validation/zod-validation'
 import {
   mermaidDocumentSchema,
+  planningAnalysisRequestSchema,
   mermaidValidationRequestSchema,
   planningInputSchema,
   planningSessionSnapshotSchema,
@@ -15,6 +16,7 @@ import {
   type PlanningSessionSnapshot,
   type PlanningValidationReport
 } from './dto/planning.dto'
+import { PlanningExtractionService } from './planning.extraction.service'
 import { MermaidSyntaxService } from './mermaid-syntax.service'
 import { createFailedReport, createPassedReport, PlanningValidator } from './planning.validator'
 
@@ -30,7 +32,8 @@ const GUIDANCE_BY_FIELD: Record<MissingField, string> = {
 export class PlanningService {
   constructor(
     private readonly planningValidator: PlanningValidator,
-    private readonly mermaidSyntaxService: MermaidSyntaxService
+    private readonly mermaidSyntaxService: MermaidSyntaxService,
+    private readonly planningExtractionService?: PlanningExtractionService
   ) {}
 
   createPlanningSession(input: unknown) {
@@ -48,6 +51,24 @@ export class PlanningService {
     const snapshot = createSessionSnapshot(normalizedInput, completeness, validation)
 
     return createSuccessEnvelope(snapshot)
+  }
+
+  async analyzePlanningSession(sessionId: string, request: unknown) {
+    if (!this.planningExtractionService) {
+      throwValidationError(['Planning extraction service is not configured.'])
+    }
+
+    const parsedRequest = safeParseWithMessages(planningAnalysisRequestSchema, request)
+    if (!parsedRequest.ok) {
+      throwValidationError(parsedRequest.errors)
+    }
+
+    const snapshot = parsedRequest.value.session ?? createSessionSnapshotFromInput(sessionId, parsedRequest.value.input)
+    if (snapshot.id !== sessionId) {
+      throwValidationError(['Route sessionId must match the supplied session id.'])
+    }
+
+    return createSuccessEnvelope(await this.planningExtractionService.analyzeSession(snapshot))
   }
 
   async validateMermaid(request: unknown) {
@@ -136,6 +157,19 @@ function createSessionSnapshot(
     },
     flowDraft: null,
     mermaidDocument: null
+  })
+}
+
+function createSessionSnapshotFromInput(sessionId: string, input: PlanningInput | undefined): PlanningSessionSnapshot {
+  if (!input) {
+    throwValidationError(['Either session or input is required.'])
+  }
+
+  const normalizedInput = normalizePlanningInput(input)
+  const validation = createPassedReport({ jsonSchema: 'passed', promptInjectionCheck: 'passed' })
+  return planningSessionSnapshotSchema.parse({
+    ...createSessionSnapshot(normalizedInput, calculateCompleteness(normalizedInput), validation),
+    id: sessionId
   })
 }
 
