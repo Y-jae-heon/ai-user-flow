@@ -306,6 +306,19 @@ Report: `/Users/yeomjaeheon/Documents/dev/ai-user-flow/.codex/PRPs/reports/ai-us
 - Support Mermaid copy, SVG export, and image export.
 - Add export failure handling.
 
+### Phase 5: Confidence Labels and QA Handoff
+
+Status: complete
+
+Plan: `/Users/yeomjaeheon/Documents/dev/ai-user-flow/.codex/PRPs/plans/completed/ai-user-flow-planner-phase-5-confidence-qa-handoff.plan.md`
+
+Report: `/Users/yeomjaeheon/Documents/dev/ai-user-flow/.codex/PRPs/reports/ai-user-flow-planner-phase-5-confidence-qa-handoff-report.md`
+
+- Add confidence labels for assumptions and unresolved constraints.
+- Add QA-friendly test-case framing to edge-case suggestions.
+- Show accepted, rejected, and pending exception paths as a compact QA handoff.
+- Preserve existing Mermaid generation, refinement, and export behavior.
+
 ## Decisions Log
 
 - Decision: MVP focuses on Mermaid flowchart output before sequence diagrams.
@@ -326,4 +339,4 @@ Report: `/Users/yeomjaeheon/Documents/dev/ai-user-flow/.codex/PRPs/reports/ai-us
 
 ## Next Step
 
-Use `$prp-plan` with `/Users/yeomjaeheon/Documents/dev/ai-user-flow/.codex/PRPs/prds/ai-user-flow-planner.prd.md` for the next pending phase.
+Use `$prp-plan` with `/Users/yeomjaeheon/Documents/dev/ai-user-flow/.codex/PRPs/prds/ai-user-flow-planner.prd.md` for the next pending phase or define the next PRD expansion.

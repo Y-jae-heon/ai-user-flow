@@ -3,6 +3,7 @@ import type {
   ExportStatus,
   FlowDraft,
   LogicGapSuggestion,
+  PlanningAssumption,
   PlanningAnalysis,
   SuggestionStatus
 } from '../planningSchema'
@@ -88,6 +89,8 @@ export function AnalysisPanel({
         <SuggestionReview suggestions={suggestions} onSuggestionStatusChange={onSuggestionStatusChange} />
       )}
 
+      {suggestions.length > 0 && <QAHandoffList suggestions={suggestions} />}
+
       <MermaidOutputPanel
         analysis={analysis}
         suggestions={suggestions}
@@ -105,7 +108,7 @@ export function AnalysisPanel({
       <AnalysisList title="Entities" items={analysis.entities} emptyText="시스템 또는 데이터 엔티티가 명시되지 않았습니다." />
       <AnalysisList title="Actions" items={analysis.actions} emptyText="핵심 액션이나 시나리오가 필요합니다." />
       <AnalysisList title="States" items={analysis.states} emptyText="명시적인 상태 후보가 없습니다." />
-      <AnalysisList title="Assumptions" items={analysis.assumptions} emptyText="현재 표시할 가정이 없습니다." />
+      <AssumptionList assumptions={analysis.assumptions} />
     </section>
   )
 }
@@ -163,6 +166,77 @@ function SuggestionReview({ suggestions, onSuggestionStatusChange }: SuggestionR
   )
 }
 
+function QAHandoffList({ suggestions }: { suggestions: readonly LogicGapSuggestion[] }) {
+  const acceptedSuggestions = suggestions.filter((suggestion) => suggestion.status === 'accepted')
+  const rejectedSuggestions = suggestions.filter((suggestion) => suggestion.status === 'rejected')
+  const pendingSuggestions = suggestions.filter((suggestion) => suggestion.status === 'pending')
+
+  return (
+    <section className="analysis-section qa-handoff-section" aria-labelledby="qa-handoff-title">
+      <div className="section-title-row">
+        <h3 id="qa-handoff-title">QA handoff</h3>
+        <span className="audit-counts">
+          {acceptedSuggestions.length} accepted / {rejectedSuggestions.length} rejected / {pendingSuggestions.length}{' '}
+          pending tests
+        </span>
+      </div>
+      <div className="qa-handoff-list">
+        <QAHandoffGroup title="Accepted candidate tests" suggestions={acceptedSuggestions} emptyText="No accepted tests yet." />
+        <QAHandoffGroup
+          title="Rejected audit exclusions"
+          suggestions={rejectedSuggestions}
+          emptyText="No rejected exclusions yet."
+        />
+        <QAHandoffGroup title="Pending QA review" suggestions={pendingSuggestions} emptyText="No pending review items." />
+      </div>
+    </section>
+  )
+}
+
+interface QAHandoffGroupProps {
+  title: string
+  suggestions: readonly LogicGapSuggestion[]
+  emptyText: string
+}
+
+function QAHandoffGroup({ title, suggestions, emptyText }: QAHandoffGroupProps) {
+  return (
+    <div className="qa-handoff-group">
+      <h4>{title}</h4>
+      {suggestions.length > 0 ? (
+        <div className="qa-handoff-items">
+          {suggestions.map((suggestion) => (
+            <article className="qa-handoff-item" key={suggestion.id}>
+              <div className="section-title-row">
+                <strong>{suggestion.qaHandoff.scenario}</strong>
+                <span className={`risk-label ${suggestion.qaHandoff.riskLevel}`}>
+                  {suggestion.qaHandoff.riskLevel} risk
+                </span>
+              </div>
+              <dl className="qa-handoff-details">
+                <div>
+                  <dt>Precondition</dt>
+                  <dd>{suggestion.qaHandoff.precondition}</dd>
+                </div>
+                <div>
+                  <dt>Trigger</dt>
+                  <dd>{suggestion.qaHandoff.trigger}</dd>
+                </div>
+                <div>
+                  <dt>Expected</dt>
+                  <dd>{suggestion.qaHandoff.expectedBehavior}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p className="muted">{emptyText}</p>
+      )}
+    </div>
+  )
+}
+
 interface ContradictionListProps {
   contradictions: readonly Contradiction[]
 }
@@ -188,6 +262,31 @@ function ContradictionList({ contradictions }: ContradictionListProps) {
           </article>
         ))}
       </div>
+    </section>
+  )
+}
+
+function AssumptionList({ assumptions }: { assumptions: readonly PlanningAssumption[] }) {
+  return (
+    <section className="analysis-section" aria-labelledby="assumptions-title">
+      <h3 id="assumptions-title">Assumptions</h3>
+      {assumptions.length > 0 ? (
+        <div className="assumption-list">
+          {assumptions.map((assumption) => (
+            <article className="assumption-item" key={assumption.id}>
+              <div className="section-title-row">
+                <strong>{assumption.statement}</strong>
+                <span className={`confidence-label ${assumption.confidence}`}>
+                  {assumption.confidence} confidence
+                </span>
+              </div>
+              <p className="muted">{assumption.followUpPrompt}</p>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p className="muted">현재 표시할 가정이 없습니다.</p>
+      )}
     </section>
   )
 }

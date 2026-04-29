@@ -54,6 +54,48 @@ describe('PlanningWorkspace', () => {
     expect(screen.getByRole('heading', { name: 'Logic gap suggestions' })).toBeInTheDocument()
   })
 
+  test('shows confidence labels for inferred planning assumptions', async () => {
+    const user = userEvent.setup()
+    render(<PlanningWorkspace />)
+
+    await user.type(
+      screen.getByLabelText(/MVP 기획 텍스트/i),
+      `사용자: PM
+문제: 기획서가 다르게 해석되어 재작업이 발생한다.
+핵심 기능: 사용자가 MVP 메모를 입력하고 분석 결과를 생성한다.`
+    )
+    await user.click(screen.getByRole('button', { name: /Analyze/i }))
+
+    expect(screen.getByRole('heading', { name: 'Assumptions' })).toBeInTheDocument()
+    expect(screen.getByText('medium confidence')).toBeInTheDocument()
+    expect(screen.getByText('low confidence')).toBeInTheDocument()
+    expect(screen.getByText(/입력 완료, 분석 성공, 오류, 보류/)).toBeInTheDocument()
+  })
+
+  test('shows QA handoff grouped by suggestion review status', async () => {
+    const user = userEvent.setup()
+    render(<PlanningWorkspace />)
+
+    await user.type(
+      screen.getByLabelText(/MVP 기획 텍스트/i),
+      `주요 사용자: PM, 개발자, QA
+문제: Mermaid 렌더러와 AI 분석 결과가 동기화되지 않아 재작업이 발생한다.
+핵심 기능: 사용자가 MVP 메모를 입력하면 시스템이 분석 결과를 생성하고 공유한다.
+상태: 입력 완료, 분석 성공, 오류`
+    )
+    await user.click(screen.getByRole('button', { name: /Analyze/i }))
+    await user.click(screen.getByRole('button', { name: 'Accept Data sync failure' }))
+    await user.click(screen.getByRole('button', { name: 'Reject Multi-persona notification gap' }))
+
+    expect(screen.getByRole('heading', { name: 'QA handoff' })).toBeInTheDocument()
+    expect(screen.getByText('1 accepted / 1 rejected / 3 pending tests')).toBeInTheDocument()
+    expect(screen.getByText('Accepted candidate tests')).toBeInTheDocument()
+    expect(screen.getByText('Rejected audit exclusions')).toBeInTheDocument()
+    expect(screen.getByText('Pending QA review')).toBeInTheDocument()
+    expect(screen.getByText('분석 결과와 렌더링 결과 동기화 실패')).toBeInTheDocument()
+    expect(screen.getByText(/오래된 결과를 숨기고 최신 요청 기준/)).toBeInTheDocument()
+  })
+
   test('clears prior analysis when input changes after analysis', async () => {
     const user = userEvent.setup()
     render(<PlanningWorkspace />)

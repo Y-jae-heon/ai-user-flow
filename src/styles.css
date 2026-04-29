@@ -262,13 +262,18 @@ textarea::placeholder {
 }
 
 .suggestion-list,
-.contradiction-list {
+.contradiction-list,
+.assumption-list,
+.qa-handoff-list,
+.qa-handoff-items {
   display: grid;
   gap: 12px;
 }
 
 .suggestion-item,
-.contradiction-item {
+.contradiction-item,
+.assumption-item,
+.qa-handoff-item {
   display: grid;
   gap: 10px;
   overflow-wrap: anywhere;
@@ -285,6 +290,69 @@ textarea::placeholder {
 
 .contradiction-item {
   border-color: #efcfc6;
+}
+
+.qa-handoff-section {
+  border-color: #cddbcf;
+  background: #f8fbf7;
+}
+
+.qa-handoff-group {
+  display: grid;
+  gap: 8px;
+}
+
+.qa-handoff-details {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+}
+
+.qa-handoff-details div {
+  display: grid;
+  grid-template-columns: minmax(88px, 0.28fr) minmax(0, 1fr);
+  gap: 10px;
+}
+
+.qa-handoff-details dt {
+  color: #607065;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.qa-handoff-details dd {
+  margin: 0;
+  color: #28342b;
+  line-height: 1.45;
+}
+
+.confidence-label,
+.risk-label {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.confidence-label.high,
+.risk-label.low {
+  color: #1e5d37;
+  background: #dff4e6;
+}
+
+.confidence-label.medium,
+.risk-label.medium {
+  color: #665000;
+  background: #fff4c7;
+}
+
+.confidence-label.low,
+.risk-label.high {
+  color: #7a2e1a;
+  background: #f8ddd5;
 }
 
 .category-label {

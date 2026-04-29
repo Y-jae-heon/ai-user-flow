@@ -207,7 +207,7 @@ export function PlanningWorkspace() {
   return (
     <main className="workspace-shell">
       <section className="workspace-header" aria-labelledby="workspace-title">
-        <p className="eyebrow">Phase 4 Refinement and export</p>
+        <p className="eyebrow">Phase 5 Confidence and QA handoff</p>
         <h1 id="workspace-title">AI User Flow Planner</h1>
         <p className="workspace-summary">
           Paste rough MVP notes to check minimum planning completeness before diagram generation.

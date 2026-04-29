@@ -15,6 +15,16 @@ export const planningCompletenessSchema = z.object({
 
 export const suggestionStatusSchema = z.enum(['pending', 'accepted', 'rejected'])
 export const logicGapCategorySchema = z.enum(['onboarding', 'permission', 'data', 'export', 'quality', 'fallback'])
+export const confidenceLevelSchema = z.enum(['high', 'medium', 'low'])
+export const riskLevelSchema = z.enum(['high', 'medium', 'low'])
+
+export const qaHandoffSchema = z.object({
+  scenario: z.string(),
+  precondition: z.string(),
+  trigger: z.string(),
+  expectedBehavior: z.string(),
+  riskLevel: riskLevelSchema
+})
 
 export const logicGapSuggestionSchema = z.object({
   id: z.string(),
@@ -22,7 +32,15 @@ export const logicGapSuggestionSchema = z.object({
   title: z.string(),
   description: z.string(),
   rationale: z.string(),
+  qaHandoff: qaHandoffSchema,
   status: suggestionStatusSchema
+})
+
+export const planningAssumptionSchema = z.object({
+  id: z.string(),
+  confidence: confidenceLevelSchema,
+  statement: z.string(),
+  followUpPrompt: z.string()
 })
 
 export const contradictionSeveritySchema = z.enum(['warning', 'blocking'])
@@ -97,7 +115,7 @@ export const planningAnalysisSchema = z.object({
   entities: z.array(z.string()),
   actions: z.array(z.string()),
   states: z.array(z.string()),
-  assumptions: z.array(z.string()),
+  assumptions: z.array(planningAssumptionSchema),
   suggestions: z.array(logicGapSuggestionSchema),
   contradictions: z.array(contradictionSchema),
   completeness: planningCompletenessSchema
@@ -108,7 +126,11 @@ export type PlanningInput = z.infer<typeof planningInputSchema>
 export type PlanningCompleteness = z.infer<typeof planningCompletenessSchema>
 export type SuggestionStatus = z.infer<typeof suggestionStatusSchema>
 export type LogicGapCategory = z.infer<typeof logicGapCategorySchema>
+export type ConfidenceLevel = z.infer<typeof confidenceLevelSchema>
+export type RiskLevel = z.infer<typeof riskLevelSchema>
+export type QAHandoff = z.infer<typeof qaHandoffSchema>
 export type LogicGapSuggestion = z.infer<typeof logicGapSuggestionSchema>
+export type PlanningAssumption = z.infer<typeof planningAssumptionSchema>
 export type ContradictionSeverity = z.infer<typeof contradictionSeveritySchema>
 export type Contradiction = z.infer<typeof contradictionSchema>
 export type MermaidRenderStatus = z.infer<typeof mermaidRenderStatusSchema>

@@ -44,6 +44,40 @@ describe('analyzePlanningInput', () => {
     expect(result.suggestions.map((suggestion) => suggestion.id)).toEqual(
       expect.arrayContaining(['edge-data-sync-failure', 'edge-multi-persona-notification', 'edge-onboarding-exit'])
     )
+    expect(result.suggestions[0].qaHandoff).toEqual(
+      expect.objectContaining({
+        scenario: expect.any(String),
+        precondition: expect.any(String),
+        trigger: expect.any(String),
+        expectedBehavior: expect.any(String),
+        riskLevel: expect.stringMatching(/^(high|medium|low)$/)
+      })
+    )
+  })
+
+  test('returns confidence labels for inferred assumptions', () => {
+    const result = analyzePlanningInput(`
+      사용자: PM
+      문제: 기획서가 다르게 해석되어 재작업이 발생한다.
+      핵심 기능: 사용자가 MVP 메모를 입력하고 분석 결과를 생성한다.
+    `)
+
+    expect(result.assumptions).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          id: 'assumption-missing-state-transition',
+          confidence: 'medium',
+          statement: expect.stringContaining('상태 전이'),
+          followUpPrompt: expect.stringContaining('상태')
+        }),
+        expect.objectContaining({
+          id: 'assumption-missing-system-entity',
+          confidence: 'low',
+          statement: expect.stringContaining('데이터 저장소'),
+          followUpPrompt: expect.stringContaining('시스템')
+        })
+      ])
+    )
   })
 
   test('does not generate suggestions for insufficient input', () => {

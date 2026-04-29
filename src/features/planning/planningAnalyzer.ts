@@ -4,6 +4,7 @@ import {
   type LogicGapCategory,
   type LogicGapSuggestion,
   type MissingField,
+  type PlanningAssumption,
   type PlanningAnalysis
 } from './planningSchema'
 
@@ -161,15 +162,29 @@ function calculateScore(normalizedText: string, missingFields: readonly MissingF
   return fieldScore + lengthScore
 }
 
-function buildAssumptions(normalizedText: string, states: readonly string[], entities: readonly string[]): string[] {
-  const assumptions: string[] = []
+function buildAssumptions(
+  normalizedText: string,
+  states: readonly string[],
+  entities: readonly string[]
+): PlanningAssumption[] {
+  const assumptions: PlanningAssumption[] = []
 
   if (normalizedText && states.length === 0) {
-    assumptions.push('명시적인 상태 전이가 부족해 Phase 1에서는 후보 상태를 제한적으로 추출했습니다.')
+    assumptions.push({
+      id: 'assumption-missing-state-transition',
+      confidence: 'medium',
+      statement: '명시적인 상태 전이가 부족해 후보 상태를 제한적으로 추출했습니다.',
+      followUpPrompt: '입력 완료, 분석 성공, 오류, 보류처럼 주요 상태를 명시하세요.'
+    })
   }
 
   if (normalizedText && entities.length === 0) {
-    assumptions.push('시스템이나 데이터 저장소가 명시되지 않아 사용자 중심 엔티티만 추정할 수 있습니다.')
+    assumptions.push({
+      id: 'assumption-missing-system-entity',
+      confidence: 'low',
+      statement: '시스템이나 데이터 저장소가 명시되지 않아 사용자 중심 엔티티만 추정할 수 있습니다.',
+      followUpPrompt: 'AI, DB, 렌더러, 세션 저장소처럼 흐름에 참여하는 시스템을 명시하세요.'
+    })
   }
 
   return assumptions
@@ -188,6 +203,13 @@ interface SuggestionTemplate {
   title: string
   description: string
   rationale: string
+  qaHandoff: {
+    scenario: string
+    precondition: string
+    trigger: string
+    expectedBehavior: string
+    riskLevel: 'high' | 'medium' | 'low'
+  }
   keywords: readonly string[]
 }
 
@@ -198,6 +220,13 @@ const BASE_SUGGESTIONS: readonly SuggestionTemplate[] = [
     title: 'Onboarding abandonment',
     description: '사용자가 입력 도중 이탈하거나 최소 정보를 끝까지 채우지 않는 경로를 정의합니다.',
     rationale: '초기 기획 메모는 정상 입력만 가정하기 쉬워 이탈 후 재진입 상태가 누락됩니다.',
+    qaHandoff: {
+      scenario: '입력 도중 이탈 후 재진입',
+      precondition: '사용자가 MVP 메모를 일부 입력했지만 분석을 실행하지 않았습니다.',
+      trigger: '사용자가 화면을 떠난 뒤 다시 입력 화면으로 돌아옵니다.',
+      expectedBehavior: '시스템은 사용자가 보완해야 할 최소 정보 가이드를 다시 보여주고 잘못된 분석 결과를 표시하지 않습니다.',
+      riskLevel: 'medium'
+    },
     keywords: []
   },
   {
@@ -206,6 +235,13 @@ const BASE_SUGGESTIONS: readonly SuggestionTemplate[] = [
     title: 'Permission or auth failure',
     description: '권한 부족, 로그인 실패, 세션 만료가 발생했을 때 차단 메시지와 복구 액션을 정의합니다.',
     rationale: '사용자별 접근 조건이 명확하지 않으면 개발 단계에서 인증 정책이 흔들립니다.',
+    qaHandoff: {
+      scenario: '권한 부족 또는 세션 만료',
+      precondition: '사용자가 보호된 기능이나 회원 전용 산출물에 접근하려고 합니다.',
+      trigger: '세션이 만료되었거나 요청 권한이 부족합니다.',
+      expectedBehavior: '시스템은 접근을 차단하고 로그인 또는 권한 요청 같은 복구 액션을 제공합니다.',
+      riskLevel: 'high'
+    },
     keywords: []
   },
   {
@@ -214,6 +250,13 @@ const BASE_SUGGESTIONS: readonly SuggestionTemplate[] = [
     title: 'Export or handoff failure',
     description: '복사, 다운로드, 외부 문서 첨부가 실패했을 때 대체 경로를 제공합니다.',
     rationale: '산출물을 공유하는 제품은 내보내기 실패가 곧 핵심 가치 실패로 이어집니다.',
+    qaHandoff: {
+      scenario: '산출물 내보내기 실패',
+      precondition: 'Mermaid 코드와 렌더링된 미리보기가 준비되어 있습니다.',
+      trigger: '클립보드, SVG, PNG 내보내기 중 하나가 실패합니다.',
+      expectedBehavior: '시스템은 오류 메시지를 보여주고 Mermaid 코드를 유지해 다른 내보내기 방식을 선택할 수 있게 합니다.',
+      riskLevel: 'high'
+    },
     keywords: []
   }
 ]
@@ -225,6 +268,13 @@ const DOMAIN_SUGGESTIONS: readonly SuggestionTemplate[] = [
     title: 'Data sync failure',
     description: '외부 시스템, DB, 렌더러, AI 응답이 지연되거나 실패할 때 재시도와 임시 저장 상태를 정의합니다.',
     rationale: '분석형 도구는 중간 처리 결과와 최종 결과가 어긋나는 동기화 문제가 자주 발생합니다.',
+    qaHandoff: {
+      scenario: '분석 결과와 렌더링 결과 동기화 실패',
+      precondition: '사용자가 분석을 완료하고 Mermaid 생성을 요청했습니다.',
+      trigger: 'AI 응답, 렌더러, 또는 저장 계층 중 하나가 지연되거나 실패합니다.',
+      expectedBehavior: '시스템은 오래된 결과를 숨기고 최신 요청 기준의 재시도 또는 fallback 상태를 표시합니다.',
+      riskLevel: 'high'
+    },
     keywords: ['db', 'database', '데이터', '동기화', 'renderer', '렌더', 'ai', 'mermaid', '시스템']
   },
   {
@@ -233,6 +283,13 @@ const DOMAIN_SUGGESTIONS: readonly SuggestionTemplate[] = [
     title: 'Payment cancellation or refund',
     description: '결제 취소, 환불, 구독 실패 시 권한과 산출물 접근 상태를 정의합니다.',
     rationale: '금전 흐름이 있는 서비스는 결제 실패 후 기능 접근 범위가 명확해야 합니다.',
+    qaHandoff: {
+      scenario: '결제 취소 후 기능 접근',
+      precondition: '사용자가 결제 또는 구독이 필요한 기능을 진행 중입니다.',
+      trigger: '결제가 취소되거나 환불 상태로 전환됩니다.',
+      expectedBehavior: '시스템은 유료 기능 접근 범위를 즉시 갱신하고 기존 산출물 접근 정책을 명확히 보여줍니다.',
+      riskLevel: 'medium'
+    },
     keywords: ['결제', '구독', '환불', '취소', 'payment', 'billing', 'refund']
   },
   {
@@ -241,6 +298,13 @@ const DOMAIN_SUGGESTIONS: readonly SuggestionTemplate[] = [
     title: 'Multi-persona notification gap',
     description: 'PM, 개발자, QA 등 여러 이해관계자에게 상태 변경과 승인 필요 여부를 어떻게 알릴지 정의합니다.',
     rationale: '다수 페르소나가 같은 플로우를 검토하면 알림 누락이 승인 지연과 재작업으로 이어집니다.',
+    qaHandoff: {
+      scenario: '다중 페르소나 상태 변경 알림',
+      precondition: 'PM, 개발자, QA가 같은 플로우 검토에 참여합니다.',
+      trigger: '사용자가 제안을 수락하거나 노드/분기 조건을 수정합니다.',
+      expectedBehavior: '시스템은 상태 변경과 승인 필요 여부를 이해관계자별로 추적 가능한 형태로 표시합니다.',
+      riskLevel: 'medium'
+    },
     keywords: ['pm', 'po', 'qa', '개발자', '기획자', '팀', '승인', '알림', '공유']
   }
 ]
@@ -256,6 +320,7 @@ function generateLogicGapSuggestions(context: SuggestionContext): LogicGapSugges
     title: template.title,
     description: template.description,
     rationale: template.rationale,
+    qaHandoff: template.qaHandoff,
     status: 'pending'
   }))
 }
