@@ -19,4 +19,9 @@ export class PlanningController {
   validateMermaid(@Param('sessionId') _sessionId: string, @Body() body: unknown) {
     return this.planningService.validateMermaid(body)
   }
+
+  @Post(':sessionId/mermaid')
+  generateMermaid(@Param('sessionId') sessionId: string, @Body() body: unknown) {
+    return this.planningService.generateMermaid(sessionId, body)
+  }
 }

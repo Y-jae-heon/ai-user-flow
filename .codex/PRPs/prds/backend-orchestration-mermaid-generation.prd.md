@@ -395,7 +395,7 @@ Start with NestJS or a TypeScript API route if the frontend remains TypeScript-h
 | 1. Contract alignment | complete | Define backend DTOs that mirror current `planningSchema.ts`, including nine planning elements and API response envelopes. Report: `.codex/PRPs/reports/backend-orchestration-contract-alignment-report.md`. |
 | 2. Deterministic backend validator | complete | Added a standalone NestJS backend app with non-AI completeness, schema validation, Mermaid safety, and parse-only validation endpoints. Report: `.codex/PRPs/reports/backend-orchestration-deterministic-validator-report.md`. |
 | 3. AI extraction workflow | complete | Added OpenAI ChatGPT structured extraction, bounded LangGraph orchestration, dependency analysis, contradiction handling, entity mapping, and deterministic fallback. Report: `.codex/PRPs/reports/backend-orchestration-ai-extraction-workflow-report.md`. |
-| 4. State-machine and Mermaid generation | pending | Generate typed flow drafts, nested subgraphs, recovery paths, and render-safe Mermaid code. |
+| 4. State-machine and Mermaid generation | complete | Generated typed flow drafts, nested subgraphs, recovery paths, and render-safe Mermaid code. Report: `.codex/PRPs/reports/backend-orchestration-state-machine-mermaid-generation-report.md`. |
 | 5. Persistence and resilience | pending | Add Redis sessions, idempotency, retry counters, audit logs, and rate limiting. |
 | 6. Frontend integration | pending | Replace local analysis/generation calls with API-backed calls while preserving current UI panels. |
 

@@ -188,16 +188,16 @@ export const planningEntityMappingSchema = z
   .strict()
 
 export const planningStateSchema = z.object({
-  id: nonEmptyStringSchema,
-  label: nonEmptyStringSchema,
-  description: z.string().optional(),
+  id: safeIdSchema,
+  label: safeTextSchema,
+  description: safeTextSchema.optional(),
   isTerminal: z.boolean().optional()
 })
 
 export const planningStateTransitionSchema = z.object({
-  from: nonEmptyStringSchema,
-  to: nonEmptyStringSchema,
-  condition: nonEmptyStringSchema,
+  from: safeIdSchema,
+  to: safeIdSchema,
+  condition: safeTextSchema,
   isRetry: z.boolean().optional()
 })
 
@@ -297,6 +297,20 @@ export const planningAnalysisRequestSchema = z
     message: 'Either session or input is required.'
   })
 
+export const mermaidGenerationRequestSchema = z
+  .object({
+    session: planningSessionSnapshotSchema
+  })
+  .strict()
+
+export const mermaidGenerationResponseSchema = z
+  .object({
+    flowDraft: flowDraftSchema,
+    mermaidDocument: mermaidDocumentSchema,
+    validation: planningValidationReportSchema
+  })
+  .strict()
+
 export const mermaidValidationRequestSchema = z
   .object({
     code: z.string().min(1)
@@ -311,9 +325,12 @@ export type PlanningValidationReport = z.infer<typeof planningValidationReportSc
 export type PlanningAnalysis = z.infer<typeof planningAnalysisSchema>
 export type PlanningExtractionResult = z.infer<typeof planningExtractionResultSchema>
 export type PlanningAnalysisRequest = z.infer<typeof planningAnalysisRequestSchema>
+export type MermaidGenerationRequest = z.infer<typeof mermaidGenerationRequestSchema>
+export type MermaidGenerationResponse = z.infer<typeof mermaidGenerationResponseSchema>
 export type PlanningSessionSnapshot = z.infer<typeof planningSessionSnapshotSchema>
 export type FlowDraft = z.infer<typeof flowDraftSchema>
 export type FlowEdge = z.infer<typeof flowEdgeSchema>
+export type FlowNode = z.infer<typeof flowNodeSchema>
 export type PlanningStateMachine = z.infer<typeof planningStateMachineSchema>
 export type MermaidDocument = z.infer<typeof mermaidDocumentSchema>
 export type MermaidValidationRequest = z.infer<typeof mermaidValidationRequestSchema>

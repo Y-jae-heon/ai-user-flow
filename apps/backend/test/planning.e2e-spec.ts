@@ -232,6 +232,104 @@ describe('Planning API (e2e)', () => {
       })
   })
 
+  it('generates Mermaid from an analyzed planning snapshot', async () => {
+    const analyzeResponse = await request(app.getHttpServer())
+      .post('/api/planning-sessions/session_mermaid/analyze')
+      .send({
+        input: {
+          rawText: '사용자: PM\n문제: Mermaid 재작업\n기능: MVP 메모를 분석하고 Mermaid 코드를 생성한다.',
+          elements: {
+            targetUser: 'Product planner',
+            problem: 'Incomplete user flows create rework.',
+            coreScenario: 'Planner submits notes and reviews generated gaps.',
+            dataDependency: 'Session cache',
+            exceptionCase: 'Mermaid parser fails.'
+          }
+        }
+      })
+      .expect(201)
+
+    await request(app.getHttpServer())
+      .post('/api/planning-sessions/session_mermaid/mermaid')
+      .send({
+        session: {
+          ...analyzeResponse.body.data,
+          analysis: {
+            ...analyzeResponse.body.data.analysis,
+            suggestions: [
+              {
+                id: 'suggestion_recovery_path',
+                category: 'fallback',
+                title: 'Recovery path review',
+                description: 'Define parser failure behavior.',
+                rationale: 'Fallback paths reduce failed handoffs.',
+                qaHandoff: {
+                  scenario: 'Parser fails',
+                  precondition: 'Mermaid code exists',
+                  trigger: 'Parser returns an error',
+                  expectedBehavior: 'System returns retry guidance',
+                  riskLevel: 'medium'
+                },
+                status: 'accepted'
+              }
+            ]
+          }
+        }
+      })
+      .expect(201)
+      .expect(({ body }) => {
+        expect(body.success).toBe(true)
+        expect(body.data.status).toBe('ready')
+        expect(body.data.flowDraft.nodes.some((node: { id: string }) => node.id === 'generate_code')).toBe(true)
+        expect(body.data.mermaidDocument.renderStatus).toBe('generated')
+        expect(body.data.mermaidDocument.code).toContain('subgraph state_group["State Machine"]')
+        expect(body.data.mermaidDocument.code).toContain('Suggestion: Recovery path review')
+        expect(body.data.validation.mermaidSyntax).toBe('passed')
+      })
+  })
+
+  it('blocks Mermaid generation when analysis is missing', async () => {
+    await request(app.getHttpServer())
+      .post('/api/planning-sessions/session_missing_analysis/mermaid')
+      .send({
+        session: {
+          id: 'session_missing_analysis',
+          version: '2026-04-29',
+          status: 'input_received',
+          input: {
+            rawText: '사용자: PM\n문제: 재작업\n기능: Mermaid 생성'
+          },
+          analysis: null,
+          dependencyAnalysis: [],
+          entities: {
+            actors: [],
+            objects: [],
+            actions: [],
+            businessRules: [],
+            exceptionPaths: []
+          },
+          stateMachine: null,
+          validation: {
+            jsonSchema: 'passed',
+            mermaidSyntax: 'skipped',
+            cycleCheck: 'skipped',
+            promptInjectionCheck: 'passed',
+            retryCount: 0,
+            errors: []
+          },
+          flowDraft: null,
+          mermaidDocument: null
+        }
+      })
+      .expect(201)
+      .expect(({ body }) => {
+        expect(body.data.status).toBe('needs_clarification')
+        expect(body.data.flowDraft).toBeNull()
+        expect(body.data.mermaidDocument.renderStatus).toBe('blocked')
+        expect(body.data.mermaidDocument.blockedReason).toContain('Planning analysis is required')
+      })
+  })
+
   it('blocks unsafe Mermaid directives before parser validation', async () => {
     await request(app.getHttpServer())
       .post('/api/planning-sessions/session_test/mermaid/validate')

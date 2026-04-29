@@ -4,8 +4,9 @@ import { createSuccessEnvelope } from '../common/api-envelope'
 import { safeParseWithMessages } from '../common/validation/zod-validation'
 import {
   mermaidDocumentSchema,
-  planningAnalysisRequestSchema,
+  mermaidGenerationRequestSchema,
   mermaidValidationRequestSchema,
+  planningAnalysisRequestSchema,
   planningInputSchema,
   planningSessionSnapshotSchema,
   type MermaidDocument,
@@ -19,6 +20,8 @@ import {
 import { PlanningExtractionService } from './planning.extraction.service'
 import { MermaidSyntaxService } from './mermaid-syntax.service'
 import { createFailedReport, createPassedReport, PlanningValidator } from './planning.validator'
+import { PlanningStateMachineService } from './planning.state-machine.service'
+import { PlanningMermaidGeneratorService } from './planning.mermaid-generator.service'
 
 const CONTRACT_VERSION = '2026-04-29'
 
@@ -33,7 +36,9 @@ export class PlanningService {
   constructor(
     private readonly planningValidator: PlanningValidator,
     private readonly mermaidSyntaxService: MermaidSyntaxService,
-    private readonly planningExtractionService?: PlanningExtractionService
+    private readonly planningExtractionService?: PlanningExtractionService,
+    private readonly planningStateMachineService?: PlanningStateMachineService,
+    private readonly planningMermaidGeneratorService?: PlanningMermaidGeneratorService
   ) {}
 
   createPlanningSession(input: unknown) {
@@ -89,6 +94,37 @@ export class PlanningService {
       mermaidDocument,
       validation
     })
+  }
+
+  async generateMermaid(sessionId: string, request: unknown) {
+    if (!this.planningStateMachineService || !this.planningMermaidGeneratorService) {
+      throwValidationError(['Planning Mermaid generation service is not configured.'])
+    }
+
+    const parsedRequest = safeParseWithMessages(mermaidGenerationRequestSchema, request)
+    if (!parsedRequest.ok) {
+      throwValidationError(parsedRequest.errors)
+    }
+
+    const snapshot = parsedRequest.value.session
+    if (snapshot.id !== sessionId) {
+      throwValidationError(['Route sessionId must match the supplied session id.'])
+    }
+
+    const stateMachine = this.planningStateMachineService.buildStateMachine(snapshot)
+    const generation = await this.planningMermaidGeneratorService.generate(snapshot, stateMachine)
+    const nextStatus = getGenerationSnapshotStatus(generation.mermaidDocument, generation.validation)
+
+    return createSuccessEnvelope(
+      planningSessionSnapshotSchema.parse({
+        ...snapshot,
+        status: nextStatus,
+        stateMachine,
+        flowDraft: generation.flowDraft,
+        mermaidDocument: generation.mermaidDocument,
+        validation: generation.validation
+      })
+    )
   }
 }
 
@@ -186,6 +222,25 @@ function createMermaidValidationDocument(
     isHappyPathBiased: false,
     blockedReason: null
   })
+}
+
+function getGenerationSnapshotStatus(
+  mermaidDocument: MermaidDocument,
+  validation: PlanningValidationReport
+): PlanningSessionSnapshot['status'] {
+  if (mermaidDocument.renderStatus === 'blocked') {
+    return 'needs_clarification'
+  }
+
+  if (validation.jsonSchema === 'failed' || validation.cycleCheck === 'failed') {
+    return 'failed'
+  }
+
+  if (mermaidDocument.renderStatus === 'generated') {
+    return 'ready'
+  }
+
+  return 'failed'
 }
 
 function throwValidationError(errors: readonly string[]): never {

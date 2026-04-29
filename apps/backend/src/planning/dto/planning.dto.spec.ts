@@ -4,10 +4,13 @@ import {
   planningInputSchema as frontendPlanningInputSchema
 } from '../../../../../src/features/planning/planningSchema'
 import {
+  mermaidGenerationRequestSchema,
+  mermaidGenerationResponseSchema,
   planningAnalysisSchema,
   planningEntityMappingSchema,
   planningExtractionResultSchema,
-  planningInputSchema
+  planningInputSchema,
+  planningSessionSnapshotSchema
 } from './planning.dto'
 
 const completeElements = {
@@ -156,6 +159,135 @@ describe('planning DTO compatibility', () => {
         actions: [],
         businessRules: [],
         exceptionPaths: []
+      })
+    ).toThrow()
+  })
+
+  it('accepts Mermaid generation requests and responses with frontend-compatible flow data', () => {
+    const session = planningSessionSnapshotSchema.parse({
+      id: 'session_test',
+      version: '2026-04-29',
+      status: 'ready_for_generation',
+      input: {
+        rawText: 'Structured backend contract input',
+        elements: completeElements
+      },
+      analysis: {
+        rawText: 'Structured backend contract input',
+        personas: ['Product planner'],
+        entities: ['Planning Session'],
+        actions: ['Generate Mermaid'],
+        states: ['ready_for_generation'],
+        assumptions: [],
+        suggestions: [],
+        contradictions: [],
+        completeness: {
+          isSufficient: true,
+          score: 100,
+          missingFields: [],
+          guidance: []
+        }
+      },
+      dependencyAnalysis: [],
+      entities: {
+        actors: [
+          {
+            id: 'actor_primary_user',
+            name: 'Product planner',
+            sourceElement: 'targetUser',
+            confidence: 'high'
+          }
+        ],
+        objects: [],
+        actions: [],
+        businessRules: [],
+        exceptionPaths: []
+      },
+      stateMachine: null,
+      validation: {
+        jsonSchema: 'passed',
+        mermaidSyntax: 'skipped',
+        cycleCheck: 'skipped',
+        promptInjectionCheck: 'passed',
+        retryCount: 0,
+        errors: []
+      },
+      flowDraft: null,
+      mermaidDocument: null
+    })
+    const flowDraft = {
+      nodes: [
+        {
+          id: 'start',
+          sectionId: null,
+          label: 'Start',
+          shape: 'terminal',
+          editable: false
+        },
+        {
+          id: 'preview',
+          sectionId: 'output_group',
+          label: 'Preview',
+          shape: 'rectangle',
+          editable: true
+        }
+      ],
+      edges: [{ from: 'start', to: 'preview', label: null }],
+      sections: [{ id: 'output_group', label: 'Output' }],
+      isHappyPathBiased: false
+    }
+
+    expect(mermaidGenerationRequestSchema.parse({ session }).session.id).toBe('session_test')
+    expect(() =>
+      mermaidGenerationResponseSchema.parse({
+        flowDraft,
+        mermaidDocument: {
+          code: 'flowchart TD\n  start([Start]) --> preview["Preview"]',
+          renderStatus: 'generated',
+          retryCount: 0,
+          renderError: null,
+          svg: null,
+          isHappyPathBiased: false,
+          blockedReason: null
+        },
+        validation: {
+          jsonSchema: 'passed',
+          mermaidSyntax: 'passed',
+          cycleCheck: 'passed',
+          promptInjectionCheck: 'passed',
+          retryCount: 0,
+          errors: []
+        }
+      })
+    ).not.toThrow()
+  })
+
+  it('rejects unsafe state-machine ids before graph validation', () => {
+    expect(() =>
+      planningSessionSnapshotSchema.parse({
+        id: 'session_test',
+        version: '2026-04-29',
+        status: 'ready_for_generation',
+        input: {
+          rawText: 'Structured backend contract input'
+        },
+        analysis: null,
+        dependencyAnalysis: [],
+        entities: {
+          actors: [],
+          objects: [],
+          actions: [],
+          businessRules: [],
+          exceptionPaths: []
+        },
+        stateMachine: {
+          initialState: 'Invalid State',
+          states: [{ id: 'Invalid State', label: 'Invalid', isTerminal: true }],
+          transitions: []
+        },
+        validation: null,
+        flowDraft: null,
+        mermaidDocument: null
       })
     ).toThrow()
   })

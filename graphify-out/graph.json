@@ -67,7 +67,7 @@
       "source_file": "apps/backend/src/main.ts",
       "source_location": "L1",
       "id": "apps_backend_src_main_ts",
-      "community": 12,
+      "community": 13,
       "norm_label": "main.ts"
     },
     {
@@ -76,7 +76,7 @@
       "source_file": "apps/backend/src/main.ts",
       "source_location": "L7",
       "id": "main_bootstrap",
-      "community": 12,
+      "community": 13,
       "norm_label": "bootstrap()"
     },
     {
@@ -130,7 +130,7 @@
       "source_file": "apps/backend/src/config/app.config.ts",
       "source_location": "L1",
       "id": "apps_backend_src_config_app_config_ts",
-      "community": 12,
+      "community": 13,
       "norm_label": "app.config.ts"
     },
     {
@@ -139,7 +139,7 @@
       "source_file": "apps/backend/src/config/app.config.ts",
       "source_location": "L10",
       "id": "app_config_getappconfig",
-      "community": 12,
+      "community": 13,
       "norm_label": "getappconfig()"
     },
     {
@@ -148,7 +148,7 @@
       "source_file": "apps/backend/src/config/app.config.ts",
       "source_location": "L21",
       "id": "app_config_parseport",
-      "community": 12,
+      "community": 13,
       "norm_label": "parseport()"
     },
     {
@@ -157,7 +157,7 @@
       "source_file": "apps/backend/src/config/app.config.ts",
       "source_location": "L34",
       "id": "app_config_parsepositiveinteger",
-      "community": 12,
+      "community": 13,
       "norm_label": "parsepositiveinteger()"
     },
     {
@@ -182,7 +182,7 @@
       "label": "PlanningService",
       "file_type": "code",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L32",
+      "source_location": "L35",
       "id": "planning_service_planningservice",
       "community": 1,
       "norm_label": "planningservice"
@@ -191,7 +191,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L33",
+      "source_location": "L36",
       "id": "planning_service_planningservice_constructor",
       "community": 1,
       "norm_label": ".constructor()"
@@ -200,7 +200,7 @@
       "label": ".createPlanningSession()",
       "file_type": "code",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L39",
+      "source_location": "L44",
       "id": "planning_service_planningservice_createplanningsession",
       "community": 1,
       "norm_label": ".createplanningsession()"
@@ -209,7 +209,7 @@
       "label": ".analyzePlanningSession()",
       "file_type": "code",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L56",
+      "source_location": "L61",
       "id": "planning_service_planningservice_analyzeplanningsession",
       "community": 1,
       "norm_label": ".analyzeplanningsession()"
@@ -218,16 +218,25 @@
       "label": ".validateMermaid()",
       "file_type": "code",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L74",
+      "source_location": "L79",
       "id": "planning_service_planningservice_validatemermaid",
       "community": 1,
       "norm_label": ".validatemermaid()"
     },
     {
+      "label": ".generateMermaid()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.service.ts",
+      "source_location": "L99",
+      "id": "planning_service_planningservice_generatemermaid",
+      "community": 1,
+      "norm_label": ".generatemermaid()"
+    },
+    {
       "label": "normalizePlanningInput()",
       "file_type": "code",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L95",
+      "source_location": "L131",
       "id": "planning_service_normalizeplanninginput",
       "community": 1,
       "norm_label": "normalizeplanninginput()"
@@ -236,7 +245,7 @@
       "label": "calculateCompleteness()",
       "file_type": "code",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L107",
+      "source_location": "L143",
       "id": "planning_service_calculatecompleteness",
       "community": 1,
       "norm_label": "calculatecompleteness()"
@@ -245,7 +254,7 @@
       "label": "createSessionSnapshot()",
       "file_type": "code",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L134",
+      "source_location": "L170",
       "id": "planning_service_createsessionsnapshot",
       "community": 1,
       "norm_label": "createsessionsnapshot()"
@@ -254,7 +263,7 @@
       "label": "createSessionSnapshotFromInput()",
       "file_type": "code",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L163",
+      "source_location": "L199",
       "id": "planning_service_createsessionsnapshotfrominput",
       "community": 1,
       "norm_label": "createsessionsnapshotfrominput()"
@@ -263,19 +272,73 @@
       "label": "createMermaidValidationDocument()",
       "file_type": "code",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L176",
+      "source_location": "L212",
       "id": "planning_service_createmermaidvalidationdocument",
       "community": 1,
       "norm_label": "createmermaidvalidationdocument()"
     },
     {
+      "label": "getGenerationSnapshotStatus()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.service.ts",
+      "source_location": "L227",
+      "id": "planning_service_getgenerationsnapshotstatus",
+      "community": 1,
+      "norm_label": "getgenerationsnapshotstatus()"
+    },
+    {
       "label": "throwValidationError()",
       "file_type": "code",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L191",
+      "source_location": "L246",
       "id": "planning_service_throwvalidationerror",
       "community": 1,
       "norm_label": "throwvalidationerror()"
+    },
+    {
+      "label": "planning.state-machine.service.spec.ts",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.state-machine.service.spec.ts",
+      "source_location": "L1",
+      "id": "apps_backend_src_planning_planning_state_machine_service_spec_ts",
+      "community": 0,
+      "norm_label": "planning.state-machine.service.spec.ts"
+    },
+    {
+      "label": "createSnapshot()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.state-machine.service.spec.ts",
+      "source_location": "L5",
+      "id": "planning_state_machine_service_spec_createsnapshot",
+      "community": 0,
+      "norm_label": "createsnapshot()"
+    },
+    {
+      "label": "planning.mermaid-generator.service.spec.ts",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.spec.ts",
+      "source_location": "L1",
+      "id": "apps_backend_src_planning_planning_mermaid_generator_service_spec_ts",
+      "community": 0,
+      "norm_label": "planning.mermaid-generator.service.spec.ts"
+    },
+    {
+      "label": "createSnapshot()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.spec.ts",
+      "source_location": "L7",
+      "id": "planning_mermaid_generator_service_spec_createsnapshot",
+      "community": 0,
+      "norm_label": "createsnapshot()"
+    },
+    {
+      "label": "createService()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.spec.ts",
+      "source_location": "L90",
+      "id": "planning_mermaid_generator_service_spec_createservice",
+      "community": 0,
+      "norm_label": "createservice()"
     },
     {
       "label": "planning.ai-client.spec.ts",
@@ -292,7 +355,7 @@
       "source_file": "apps/backend/src/planning/planning.ai-client.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_planning_ai_client_ts",
-      "community": 13,
+      "community": 14,
       "norm_label": "planning.ai-client.ts"
     },
     {
@@ -301,7 +364,7 @@
       "source_file": "apps/backend/src/planning/planning.ai-client.ts",
       "source_location": "L21",
       "id": "planning_ai_client_planningaiclientunavailableerror",
-      "community": 13,
+      "community": 14,
       "norm_label": "planningaiclientunavailableerror"
     },
     {
@@ -310,7 +373,7 @@
       "source_file": "apps/backend/src/planning/planning.ai-client.ts",
       "source_location": "L22",
       "id": "planning_ai_client_planningaiclientunavailableerror_constructor",
-      "community": 13,
+      "community": 14,
       "norm_label": ".constructor()"
     },
     {
@@ -319,7 +382,7 @@
       "source_file": "apps/backend/src/planning/planning.ai-client.ts",
       "source_location": "L27",
       "id": "planning_ai_client_openaiplanningaiclient",
-      "community": 13,
+      "community": 14,
       "norm_label": "openaiplanningaiclient"
     },
     {
@@ -328,7 +391,7 @@
       "source_file": "apps/backend/src/planning/planning.ai-client.ts",
       "source_location": "L28",
       "id": "planning_ai_client_openaiplanningaiclient_constructor",
-      "community": 13,
+      "community": 14,
       "norm_label": ".constructor()"
     },
     {
@@ -337,8 +400,224 @@
       "source_file": "apps/backend/src/planning/planning.ai-client.ts",
       "source_location": "L30",
       "id": "planning_ai_client_openaiplanningaiclient_extractplanninglogic",
-      "community": 13,
+      "community": 14,
       "norm_label": ".extractplanninglogic()"
+    },
+    {
+      "label": "planning.mermaid-generator.service.ts",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L1",
+      "id": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "community": 2,
+      "norm_label": "planning.mermaid-generator.service.ts"
+    },
+    {
+      "label": "PlanningMermaidGeneratorService",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L27",
+      "id": "planning_mermaid_generator_service_planningmermaidgeneratorservice",
+      "community": 2,
+      "norm_label": "planningmermaidgeneratorservice"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L28",
+      "id": "planning_mermaid_generator_service_planningmermaidgeneratorservice_constructor",
+      "community": 2,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".generate()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L33",
+      "id": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "community": 2,
+      "norm_label": ".generate()"
+    },
+    {
+      "label": ".validateSerializedDraft()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L68",
+      "id": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "community": 2,
+      "norm_label": ".validateserializeddraft()"
+    },
+    {
+      "label": "getBlockedReason()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L124",
+      "id": "planning_mermaid_generator_service_getblockedreason",
+      "community": 2,
+      "norm_label": "getblockedreason()"
+    },
+    {
+      "label": "createMermaidDraft()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L149",
+      "id": "planning_mermaid_generator_service_createmermaiddraft",
+      "community": 2,
+      "norm_label": "createmermaiddraft()"
+    },
+    {
+      "label": "buildRecoveryNodes()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L215",
+      "id": "planning_mermaid_generator_service_buildrecoverynodes",
+      "community": 2,
+      "norm_label": "buildrecoverynodes()"
+    },
+    {
+      "label": "buildRecoveryEdges()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L244",
+      "id": "planning_mermaid_generator_service_buildrecoveryedges",
+      "community": 2,
+      "norm_label": "buildrecoveryedges()"
+    },
+    {
+      "label": "buildListNodes()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L263",
+      "id": "planning_mermaid_generator_service_buildlistnodes",
+      "community": 2,
+      "norm_label": "buildlistnodes()"
+    },
+    {
+      "label": "buildListEdges()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L269",
+      "id": "planning_mermaid_generator_service_buildlistedges",
+      "community": 2,
+      "norm_label": "buildlistedges()"
+    },
+    {
+      "label": "createNode()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L273",
+      "id": "planning_mermaid_generator_service_createnode",
+      "community": 2,
+      "norm_label": "createnode()"
+    },
+    {
+      "label": "createEdge()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L289",
+      "id": "planning_mermaid_generator_service_createedge",
+      "community": 2,
+      "norm_label": "createedge()"
+    },
+    {
+      "label": "serializeMermaidDraft()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L297",
+      "id": "planning_mermaid_generator_service_serializemermaiddraft",
+      "community": 2,
+      "norm_label": "serializemermaiddraft()"
+    },
+    {
+      "label": "serializeNode()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L317",
+      "id": "planning_mermaid_generator_service_serializenode",
+      "community": 2,
+      "norm_label": "serializenode()"
+    },
+    {
+      "label": "serializeEdge()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L331",
+      "id": "planning_mermaid_generator_service_serializeedge",
+      "community": 2,
+      "norm_label": "serializeedge()"
+    },
+    {
+      "label": "normalizeFlowDraftLabels()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L339",
+      "id": "planning_mermaid_generator_service_normalizeflowdraftlabels",
+      "community": 2,
+      "norm_label": "normalizeflowdraftlabels()"
+    },
+    {
+      "label": "normalizeNode()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L354",
+      "id": "planning_mermaid_generator_service_normalizenode",
+      "community": 2,
+      "norm_label": "normalizenode()"
+    },
+    {
+      "label": "normalizeLabel()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L361",
+      "id": "planning_mermaid_generator_service_normalizelabel",
+      "community": 2,
+      "norm_label": "normalizelabel()"
+    },
+    {
+      "label": "escapeMermaidLabel()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L372",
+      "id": "planning_mermaid_generator_service_escapemermaidlabel",
+      "community": 2,
+      "norm_label": "escapemermaidlabel()"
+    },
+    {
+      "label": "dedupeNodes()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L376",
+      "id": "planning_mermaid_generator_service_dedupenodes",
+      "community": 2,
+      "norm_label": "dedupenodes()"
+    },
+    {
+      "label": "createGeneratedDocument()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L388",
+      "id": "planning_mermaid_generator_service_creategenerateddocument",
+      "community": 2,
+      "norm_label": "creategenerateddocument()"
+    },
+    {
+      "label": "createBlockedDocument()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L400",
+      "id": "planning_mermaid_generator_service_createblockeddocument",
+      "community": 2,
+      "norm_label": "createblockeddocument()"
+    },
+    {
+      "label": "createFallbackDocument()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L412",
+      "id": "planning_mermaid_generator_service_createfallbackdocument",
+      "community": 2,
+      "norm_label": "createfallbackdocument()"
     },
     {
       "label": "planning.workflow.ts",
@@ -346,7 +625,7 @@
       "source_file": "apps/backend/src/planning/planning.workflow.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_planning_workflow_ts",
-      "community": 2,
+      "community": 4,
       "norm_label": "planning.workflow.ts"
     },
     {
@@ -355,7 +634,7 @@
       "source_file": "apps/backend/src/planning/planning.workflow.ts",
       "source_location": "L26",
       "id": "planning_workflow_planningworkflow",
-      "community": 2,
+      "community": 4,
       "norm_label": "planningworkflow"
     },
     {
@@ -364,7 +643,7 @@
       "source_file": "apps/backend/src/planning/planning.workflow.ts",
       "source_location": "L27",
       "id": "planning_workflow_planningworkflow_run",
-      "community": 2,
+      "community": 4,
       "norm_label": ".run()"
     },
     {
@@ -373,7 +652,7 @@
       "source_file": "apps/backend/src/planning/planning.workflow.ts",
       "source_location": "L76",
       "id": "planning_workflow_geterrormessage",
-      "community": 2,
+      "community": 4,
       "norm_label": "geterrormessage()"
     },
     {
@@ -382,7 +661,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.spec.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_planning_extraction_service_spec_ts",
-      "community": 3,
+      "community": 0,
       "norm_label": "planning.extraction.service.spec.ts"
     },
     {
@@ -391,7 +670,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.spec.ts",
       "source_location": "L22",
       "id": "planning_extraction_service_spec_createsnapshot",
-      "community": 3,
+      "community": 0,
       "norm_label": "createsnapshot()"
     },
     {
@@ -400,7 +679,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.spec.ts",
       "source_location": "L48",
       "id": "planning_extraction_service_spec_createextraction",
-      "community": 3,
+      "community": 0,
       "norm_label": "createextraction()"
     },
     {
@@ -409,7 +688,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_planning_extraction_service_ts",
-      "community": 2,
+      "community": 4,
       "norm_label": "planning.extraction.service.ts"
     },
     {
@@ -418,7 +697,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L22",
       "id": "planning_extraction_service_planningextractionservice",
-      "community": 2,
+      "community": 4,
       "norm_label": "planningextractionservice"
     },
     {
@@ -427,7 +706,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L23",
       "id": "planning_extraction_service_planningextractionservice_constructor",
-      "community": 2,
+      "community": 4,
       "norm_label": ".constructor()"
     },
     {
@@ -436,7 +715,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L29",
       "id": "planning_extraction_service_planningextractionservice_analyzesession",
-      "community": 2,
+      "community": 4,
       "norm_label": ".analyzesession()"
     },
     {
@@ -445,7 +724,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L77",
       "id": "planning_extraction_service_getcompleteness",
-      "community": 2,
+      "community": 4,
       "norm_label": "getcompleteness()"
     },
     {
@@ -454,7 +733,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L90",
       "id": "planning_extraction_service_getsnapshotstatus",
-      "community": 2,
+      "community": 4,
       "norm_label": "getsnapshotstatus()"
     },
     {
@@ -463,7 +742,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L110",
       "id": "planning_extraction_service_createfallbackextraction",
-      "community": 2,
+      "community": 4,
       "norm_label": "createfallbackextraction()"
     },
     {
@@ -472,7 +751,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L221",
       "id": "planning_extraction_service_normalizetext",
-      "community": 2,
+      "community": 4,
       "norm_label": "normalizetext()"
     },
     {
@@ -481,7 +760,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L225",
       "id": "planning_extraction_service_extractvalues",
-      "community": 2,
+      "community": 4,
       "norm_label": "extractvalues()"
     },
     {
@@ -490,7 +769,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L239",
       "id": "planning_extraction_service_calculatefallbackcompleteness",
-      "community": 2,
+      "community": 4,
       "norm_label": "calculatefallbackcompleteness()"
     },
     {
@@ -499,7 +778,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L277",
       "id": "planning_extraction_service_detectcontradictions",
-      "community": 2,
+      "community": 4,
       "norm_label": "detectcontradictions()"
     },
     {
@@ -508,7 +787,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L294",
       "id": "planning_extraction_service_createdependencyanalysis",
-      "community": 2,
+      "community": 4,
       "norm_label": "createdependencyanalysis()"
     },
     {
@@ -517,7 +796,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L318",
       "id": "planning_extraction_service_cleanlabel",
-      "community": 2,
+      "community": 4,
       "norm_label": "cleanlabel()"
     },
     {
@@ -526,7 +805,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L322",
       "id": "planning_extraction_service_uniquelimited",
-      "community": 2,
+      "community": 4,
       "norm_label": "uniquelimited()"
     },
     {
@@ -535,7 +814,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L326",
       "id": "planning_extraction_service_limitgeneratedtext",
-      "community": 2,
+      "community": 4,
       "norm_label": "limitgeneratedtext()"
     },
     {
@@ -569,7 +848,7 @@
       "label": "PlanningModule",
       "file_type": "code",
       "source_file": "apps/backend/src/planning/planning.module.ts",
-      "source_location": "L28",
+      "source_location": "L32",
       "id": "planning_module_planningmodule",
       "community": 21,
       "norm_label": "planningmodule"
@@ -589,7 +868,7 @@
       "source_file": "apps/backend/src/planning/planning.controller.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_planning_controller_ts",
-      "community": 14,
+      "community": 12,
       "norm_label": "planning.controller.ts"
     },
     {
@@ -598,7 +877,7 @@
       "source_file": "apps/backend/src/planning/planning.controller.ts",
       "source_location": "L5",
       "id": "planning_controller_planningcontroller",
-      "community": 14,
+      "community": 12,
       "norm_label": "planningcontroller"
     },
     {
@@ -607,7 +886,7 @@
       "source_file": "apps/backend/src/planning/planning.controller.ts",
       "source_location": "L6",
       "id": "planning_controller_planningcontroller_constructor",
-      "community": 14,
+      "community": 12,
       "norm_label": ".constructor()"
     },
     {
@@ -616,7 +895,7 @@
       "source_file": "apps/backend/src/planning/planning.controller.ts",
       "source_location": "L9",
       "id": "planning_controller_planningcontroller_createplanningsession",
-      "community": 14,
+      "community": 12,
       "norm_label": ".createplanningsession()"
     },
     {
@@ -625,7 +904,7 @@
       "source_file": "apps/backend/src/planning/planning.controller.ts",
       "source_location": "L14",
       "id": "planning_controller_planningcontroller_analyzeplanningsession",
-      "community": 14,
+      "community": 12,
       "norm_label": ".analyzeplanningsession()"
     },
     {
@@ -634,8 +913,17 @@
       "source_file": "apps/backend/src/planning/planning.controller.ts",
       "source_location": "L19",
       "id": "planning_controller_planningcontroller_validatemermaid",
-      "community": 14,
+      "community": 12,
       "norm_label": ".validatemermaid()"
+    },
+    {
+      "label": ".generateMermaid()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.controller.ts",
+      "source_location": "L24",
+      "id": "planning_controller_planningcontroller_generatemermaid",
+      "community": 12,
+      "norm_label": ".generatemermaid()"
     },
     {
       "label": "planning.validator.ts",
@@ -643,7 +931,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_planning_validator_ts",
-      "community": 3,
+      "community": 0,
       "norm_label": "planning.validator.ts"
     },
     {
@@ -652,7 +940,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L42",
       "id": "planning_validator_planningvalidator",
-      "community": 3,
+      "community": 0,
       "norm_label": "planningvalidator"
     },
     {
@@ -661,7 +949,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L43",
       "id": "planning_validator_planningvalidator_validateplanninginput",
-      "community": 3,
+      "community": 0,
       "norm_label": ".validateplanninginput()"
     },
     {
@@ -670,7 +958,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L54",
       "id": "planning_validator_planningvalidator_validateplanningsessionsnapshot",
-      "community": 3,
+      "community": 0,
       "norm_label": ".validateplanningsessionsnapshot()"
     },
     {
@@ -679,7 +967,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L65",
       "id": "planning_validator_planningvalidator_validatepromptinjection",
-      "community": 3,
+      "community": 0,
       "norm_label": ".validatepromptinjection()"
     },
     {
@@ -688,7 +976,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L78",
       "id": "planning_validator_planningvalidator_validatemermaidsafety",
-      "community": 3,
+      "community": 0,
       "norm_label": ".validatemermaidsafety()"
     },
     {
@@ -697,7 +985,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L90",
       "id": "planning_validator_planningvalidator_validateflowdraftshape",
-      "community": 3,
+      "community": 0,
       "norm_label": ".validateflowdraftshape()"
     },
     {
@@ -706,7 +994,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L104",
       "id": "planning_validator_planningvalidator_validategraphcycles",
-      "community": 3,
+      "community": 0,
       "norm_label": ".validategraphcycles()"
     },
     {
@@ -724,7 +1012,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L142",
       "id": "planning_validator_createpassedreport",
-      "community": 3,
+      "community": 0,
       "norm_label": "createpassedreport()"
     },
     {
@@ -733,7 +1021,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L154",
       "id": "planning_validator_createfailedreport",
-      "community": 3,
+      "community": 0,
       "norm_label": "createfailedreport()"
     },
     {
@@ -742,7 +1030,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L170",
       "id": "planning_validator_getflowdraftshapeerrors",
-      "community": 3,
+      "community": 0,
       "norm_label": "getflowdraftshapeerrors()"
     },
     {
@@ -751,7 +1039,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L212",
       "id": "planning_validator_issafelabel",
-      "community": 3,
+      "community": 0,
       "norm_label": "issafelabel()"
     },
     {
@@ -760,7 +1048,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L222",
       "id": "planning_validator_validateedgesforcycles",
-      "community": 3,
+      "community": 0,
       "norm_label": "validateedgesforcycles()"
     },
     {
@@ -769,7 +1057,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L248",
       "id": "planning_validator_hascycle",
-      "community": 3,
+      "community": 0,
       "norm_label": "hascycle()"
     },
     {
@@ -778,7 +1066,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L275",
       "id": "planning_validator_mergestatus",
-      "community": 1,
+      "community": 0,
       "norm_label": "mergestatus()"
     },
     {
@@ -787,8 +1075,35 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L287",
       "id": "planning_validator_limiterrormessage",
-      "community": 3,
+      "community": 0,
       "norm_label": "limiterrormessage()"
+    },
+    {
+      "label": "planning.state-machine.service.ts",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.state-machine.service.ts",
+      "source_location": "L1",
+      "id": "apps_backend_src_planning_planning_state_machine_service_ts",
+      "community": 1,
+      "norm_label": "planning.state-machine.service.ts"
+    },
+    {
+      "label": "PlanningStateMachineService",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.state-machine.service.ts",
+      "source_location": "L9",
+      "id": "planning_state_machine_service_planningstatemachineservice",
+      "community": 1,
+      "norm_label": "planningstatemachineservice"
+    },
+    {
+      "label": ".buildStateMachine()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.state-machine.service.ts",
+      "source_location": "L10",
+      "id": "planning_state_machine_service_planningstatemachineservice_buildstatemachine",
+      "community": 1,
+      "norm_label": ".buildstatemachine()"
     },
     {
       "label": "planning.service.spec.ts",
@@ -796,8 +1111,17 @@
       "source_file": "apps/backend/src/planning/planning.service.spec.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_planning_service_spec_ts",
-      "community": 32,
+      "community": 0,
       "norm_label": "planning.service.spec.ts"
+    },
+    {
+      "label": "createReadySnapshot()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.service.spec.ts",
+      "source_location": "L77",
+      "id": "planning_service_spec_createreadysnapshot",
+      "community": 0,
+      "norm_label": "createreadysnapshot()"
     },
     {
       "label": "mermaid-syntax.service.ts",
@@ -805,7 +1129,7 @@
       "source_file": "apps/backend/src/planning/mermaid-syntax.service.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_mermaid_syntax_service_ts",
-      "community": 9,
+      "community": 5,
       "norm_label": "mermaid-syntax.service.ts"
     },
     {
@@ -814,7 +1138,7 @@
       "source_file": "apps/backend/src/planning/mermaid-syntax.service.ts",
       "source_location": "L15",
       "id": "mermaid_syntax_service_mermaidsyntaxservice",
-      "community": 9,
+      "community": 5,
       "norm_label": "mermaidsyntaxservice"
     },
     {
@@ -823,7 +1147,7 @@
       "source_file": "apps/backend/src/planning/mermaid-syntax.service.ts",
       "source_location": "L19",
       "id": "mermaid_syntax_service_mermaidsyntaxservice_constructor",
-      "community": 9,
+      "community": 5,
       "norm_label": ".constructor()"
     },
     {
@@ -832,7 +1156,7 @@
       "source_file": "apps/backend/src/planning/mermaid-syntax.service.ts",
       "source_location": "L23",
       "id": "mermaid_syntax_service_mermaidsyntaxservice_validatesyntax",
-      "community": 9,
+      "community": 5,
       "norm_label": ".validatesyntax()"
     },
     {
@@ -841,7 +1165,7 @@
       "source_file": "apps/backend/src/planning/mermaid-syntax.service.ts",
       "source_location": "L45",
       "id": "mermaid_syntax_service_mermaidsyntaxservice_ensureinitialized",
-      "community": 9,
+      "community": 5,
       "norm_label": ".ensureinitialized()"
     },
     {
@@ -850,7 +1174,7 @@
       "source_file": "apps/backend/src/planning/mermaid-syntax.service.ts",
       "source_location": "L61",
       "id": "mermaid_syntax_service_createofficialmermaidparseradapter",
-      "community": 9,
+      "community": 5,
       "norm_label": "createofficialmermaidparseradapter()"
     },
     {
@@ -859,7 +1183,7 @@
       "source_file": "apps/backend/src/planning/mermaid-syntax.service.ts",
       "source_location": "L83",
       "id": "mermaid_syntax_service_ensuredompurifystaticsanitize",
-      "community": 9,
+      "community": 5,
       "norm_label": "ensuredompurifystaticsanitize()"
     },
     {
@@ -868,7 +1192,7 @@
       "source_file": "apps/backend/src/planning/mermaid-syntax.service.ts",
       "source_location": "L92",
       "id": "mermaid_syntax_service_nativeimport",
-      "community": 9,
+      "community": 5,
       "norm_label": "nativeimport()"
     },
     {
@@ -877,7 +1201,7 @@
       "source_file": "apps/backend/src/planning/mermaid-syntax.service.ts",
       "source_location": "L97",
       "id": "mermaid_syntax_service_isparserruntimecompatibilityerror",
-      "community": 9,
+      "community": 5,
       "norm_label": "isparserruntimecompatibilityerror()"
     },
     {
@@ -886,7 +1210,7 @@
       "source_file": "apps/backend/src/planning/dto/planning.dto.spec.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_dto_planning_dto_spec_ts",
-      "community": 33,
+      "community": 32,
       "norm_label": "planning.dto.spec.ts"
     },
     {
@@ -895,7 +1219,7 @@
       "source_file": "apps/backend/src/planning/dto/planning.dto.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_dto_planning_dto_ts",
-      "community": 34,
+      "community": 33,
       "norm_label": "planning.dto.ts"
     },
     {
@@ -967,7 +1291,7 @@
       "source_file": "apps/backend/src/common/filters/http-exception.filter.ts",
       "source_location": "L1",
       "id": "apps_backend_src_common_filters_http_exception_filter_ts",
-      "community": 8,
+      "community": 9,
       "norm_label": "http-exception.filter.ts"
     },
     {
@@ -976,7 +1300,7 @@
       "source_file": "apps/backend/src/common/filters/http-exception.filter.ts",
       "source_location": "L13",
       "id": "http_exception_filter_httpexceptionfilter",
-      "community": 8,
+      "community": 9,
       "norm_label": "httpexceptionfilter"
     },
     {
@@ -985,7 +1309,7 @@
       "source_file": "apps/backend/src/common/filters/http-exception.filter.ts",
       "source_location": "L14",
       "id": "http_exception_filter_httpexceptionfilter_catch",
-      "community": 8,
+      "community": 9,
       "norm_label": ".catch()"
     },
     {
@@ -994,7 +1318,7 @@
       "source_file": "apps/backend/src/common/filters/http-exception.filter.ts",
       "source_location": "L42",
       "id": "http_exception_filter_normalizehttpexceptionbody",
-      "community": 8,
+      "community": 9,
       "norm_label": "normalizehttpexceptionbody()"
     },
     {
@@ -1003,7 +1327,7 @@
       "source_file": "apps/backend/src/common/filters/http-exception.filter.ts",
       "source_location": "L56",
       "id": "http_exception_filter_defaultcodeforstatus",
-      "community": 8,
+      "community": 9,
       "norm_label": "defaultcodeforstatus()"
     },
     {
@@ -1030,7 +1354,7 @@
       "source_file": "apps/backend/src/common/validation/zod-validation.ts",
       "source_location": "L31",
       "id": "zod_validation_formatzodissues",
-      "community": 3,
+      "community": 0,
       "norm_label": "formatzodissues()"
     },
     {
@@ -1093,7 +1417,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L1",
       "id": "coverage_prettify_js",
-      "community": 7,
+      "community": 10,
       "norm_label": "prettify.js"
     },
     {
@@ -1102,7 +1426,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_k",
-      "community": 7,
+      "community": 10,
       "norm_label": "k()"
     },
     {
@@ -1111,7 +1435,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_a",
-      "community": 7,
+      "community": 10,
       "norm_label": "a()"
     },
     {
@@ -1120,7 +1444,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_b",
-      "community": 7,
+      "community": 10,
       "norm_label": "b()"
     },
     {
@@ -1129,7 +1453,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_o",
-      "community": 7,
+      "community": 10,
       "norm_label": "o()"
     },
     {
@@ -1138,7 +1462,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_g",
-      "community": 7,
+      "community": 10,
       "norm_label": "g()"
     },
     {
@@ -1147,7 +1471,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_i",
-      "community": 7,
+      "community": 10,
       "norm_label": "i()"
     },
     {
@@ -1156,7 +1480,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_q",
-      "community": 7,
+      "community": 10,
       "norm_label": "q()"
     },
     {
@@ -1165,7 +1489,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_d",
-      "community": 7,
+      "community": 10,
       "norm_label": "d()"
     },
     {
@@ -1174,7 +1498,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_c",
-      "community": 7,
+      "community": 10,
       "norm_label": "c()"
     },
     {
@@ -1183,7 +1507,7 @@
       "source_file": "coverage/prettify.js",
       "source_location": "L2",
       "id": "prettify_y",
-      "community": 7,
+      "community": 10,
       "norm_label": "y()"
     },
     {
@@ -1192,7 +1516,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L1",
       "id": "coverage_sorter_js",
-      "community": 6,
+      "community": 8,
       "norm_label": "sorter.js"
     },
     {
@@ -1201,7 +1525,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L11",
       "id": "sorter_gettable",
-      "community": 6,
+      "community": 8,
       "norm_label": "gettable()"
     },
     {
@@ -1210,7 +1534,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L15",
       "id": "sorter_gettableheader",
-      "community": 6,
+      "community": 8,
       "norm_label": "gettableheader()"
     },
     {
@@ -1219,7 +1543,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L19",
       "id": "sorter_gettablebody",
-      "community": 6,
+      "community": 8,
       "norm_label": "gettablebody()"
     },
     {
@@ -1228,7 +1552,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L23",
       "id": "sorter_getnthcolumn",
-      "community": 6,
+      "community": 8,
       "norm_label": "getnthcolumn()"
     },
     {
@@ -1237,7 +1561,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L27",
       "id": "sorter_onfilterinput",
-      "community": 6,
+      "community": 8,
       "norm_label": "onfilterinput()"
     },
     {
@@ -1246,7 +1570,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L59",
       "id": "sorter_addsearchbox",
-      "community": 6,
+      "community": 8,
       "norm_label": "addsearchbox()"
     },
     {
@@ -1255,7 +1579,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L67",
       "id": "sorter_loadcolumns",
-      "community": 6,
+      "community": 8,
       "norm_label": "loadcolumns()"
     },
     {
@@ -1264,7 +1588,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L92",
       "id": "sorter_loadrowdata",
-      "community": 6,
+      "community": 8,
       "norm_label": "loadrowdata()"
     },
     {
@@ -1273,7 +1597,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L111",
       "id": "sorter_loaddata",
-      "community": 6,
+      "community": 8,
       "norm_label": "loaddata()"
     },
     {
@@ -1282,7 +1606,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L120",
       "id": "sorter_sortbyindex",
-      "community": 6,
+      "community": 8,
       "norm_label": "sortbyindex()"
     },
     {
@@ -1291,7 +1615,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L151",
       "id": "sorter_removesortindicators",
-      "community": 6,
+      "community": 8,
       "norm_label": "removesortindicators()"
     },
     {
@@ -1300,7 +1624,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L159",
       "id": "sorter_addsortindicators",
-      "community": 6,
+      "community": 8,
       "norm_label": "addsortindicators()"
     },
     {
@@ -1309,7 +1633,7 @@
       "source_file": "coverage/sorter.js",
       "source_location": "L165",
       "id": "sorter_enableui",
-      "community": 6,
+      "community": 8,
       "norm_label": "enableui()"
     },
     {
@@ -1336,7 +1660,7 @@
       "source_file": "src/main.tsx",
       "source_location": "L1",
       "id": "src_main_tsx",
-      "community": 35,
+      "community": 34,
       "norm_label": "main.tsx"
     },
     {
@@ -1345,7 +1669,7 @@
       "source_file": "src/App.test.tsx",
       "source_location": "L1",
       "id": "src_app_test_tsx",
-      "community": 36,
+      "community": 35,
       "norm_label": "app.test.tsx"
     },
     {
@@ -1354,7 +1678,7 @@
       "source_file": "src/vite-env.d.ts",
       "source_location": "L1",
       "id": "src_vite_env_d_ts",
-      "community": 37,
+      "community": 36,
       "norm_label": "vite-env.d.ts"
     },
     {
@@ -1363,7 +1687,7 @@
       "source_file": "src/types/mermaid-esm.d.ts",
       "source_location": "L1",
       "id": "src_types_mermaid_esm_d_ts",
-      "community": 38,
+      "community": 37,
       "norm_label": "mermaid-esm.d.ts"
     },
     {
@@ -1372,7 +1696,7 @@
       "source_file": "src/test/setup.ts",
       "source_location": "L1",
       "id": "src_test_setup_ts",
-      "community": 39,
+      "community": 38,
       "norm_label": "setup.ts"
     },
     {
@@ -1381,7 +1705,7 @@
       "source_file": "src/features/planning/planningContracts.ts",
       "source_location": "L1",
       "id": "src_features_planning_planningcontracts_ts",
-      "community": 8,
+      "community": 9,
       "norm_label": "planningcontracts.ts"
     },
     {
@@ -1390,7 +1714,7 @@
       "source_file": "src/features/planning/planningContracts.ts",
       "source_location": "L18",
       "id": "planningcontracts_normalizeplanningsessioninput",
-      "community": 8,
+      "community": 9,
       "norm_label": "normalizeplanningsessioninput()"
     },
     {
@@ -1399,7 +1723,7 @@
       "source_file": "src/features/planning/planningContracts.ts",
       "source_location": "L28",
       "id": "planningcontracts_createplanningsessionsnapshot",
-      "community": 8,
+      "community": 9,
       "norm_label": "createplanningsessionsnapshot()"
     },
     {
@@ -1417,7 +1741,7 @@
       "source_file": "src/features/planning/planningContracts.ts",
       "source_location": "L63",
       "id": "planningcontracts_createfailureenvelope",
-      "community": 8,
+      "community": 9,
       "norm_label": "createfailureenvelope()"
     },
     {
@@ -1426,7 +1750,7 @@
       "source_file": "src/features/planning/planningContracts.ts",
       "source_location": "L71",
       "id": "planningcontracts_normalizeelements",
-      "community": 8,
+      "community": 9,
       "norm_label": "normalizeelements()"
     },
     {
@@ -1435,7 +1759,7 @@
       "source_file": "src/features/planning/planningContracts.ts",
       "source_location": "L87",
       "id": "planningcontracts_getsessionstatus",
-      "community": 8,
+      "community": 9,
       "norm_label": "getsessionstatus()"
     },
     {
@@ -1462,7 +1786,7 @@
       "source_file": "src/features/planning/mermaidExport.ts",
       "source_location": "L1",
       "id": "src_features_planning_mermaidexport_ts",
-      "community": 10,
+      "community": 11,
       "norm_label": "mermaidexport.ts"
     },
     {
@@ -1471,7 +1795,7 @@
       "source_file": "src/features/planning/mermaidExport.ts",
       "source_location": "L19",
       "id": "mermaidexport_copymermaidcode",
-      "community": 10,
+      "community": 11,
       "norm_label": "copymermaidcode()"
     },
     {
@@ -1480,7 +1804,7 @@
       "source_file": "src/features/planning/mermaidExport.ts",
       "source_location": "L28",
       "id": "mermaidexport_exportsvg",
-      "community": 10,
+      "community": 11,
       "norm_label": "exportsvg()"
     },
     {
@@ -1489,7 +1813,7 @@
       "source_file": "src/features/planning/mermaidExport.ts",
       "source_location": "L33",
       "id": "mermaidexport_exportsvgtopng",
-      "community": 10,
+      "community": 11,
       "norm_label": "exportsvgtopng()"
     },
     {
@@ -1498,7 +1822,7 @@
       "source_file": "src/features/planning/mermaidExport.ts",
       "source_location": "L61",
       "id": "mermaidexport_downloadblob",
-      "community": 10,
+      "community": 11,
       "norm_label": "downloadblob()"
     },
     {
@@ -1507,7 +1831,7 @@
       "source_file": "src/features/planning/mermaidExport.ts",
       "source_location": "L81",
       "id": "mermaidexport_loadsvgimage",
-      "community": 10,
+      "community": 11,
       "norm_label": "loadsvgimage()"
     },
     {
@@ -1516,7 +1840,7 @@
       "source_file": "src/features/planning/mermaidExport.ts",
       "source_location": "L94",
       "id": "mermaidexport_createdefaultcanvas",
-      "community": 10,
+      "community": 11,
       "norm_label": "createdefaultcanvas()"
     },
     {
@@ -1525,7 +1849,7 @@
       "source_file": "src/features/planning/mermaidExport.ts",
       "source_location": "L101",
       "id": "mermaidexport_canvastoblob",
-      "community": 10,
+      "community": 11,
       "norm_label": "canvastoblob()"
     },
     {
@@ -1534,7 +1858,7 @@
       "source_file": "src/features/planning/planningSchema.ts",
       "source_location": "L1",
       "id": "src_features_planning_planningschema_ts",
-      "community": 40,
+      "community": 39,
       "norm_label": "planningschema.ts"
     },
     {
@@ -1543,7 +1867,7 @@
       "source_file": "src/features/planning/mermaidGenerator.test.ts",
       "source_location": "L1",
       "id": "src_features_planning_mermaidgenerator_test_ts",
-      "community": 0,
+      "community": 3,
       "norm_label": "mermaidgenerator.test.ts"
     },
     {
@@ -1552,7 +1876,7 @@
       "source_file": "src/features/planning/mermaidGenerator.test.ts",
       "source_location": "L6",
       "id": "mermaidgenerator_test_createsufficientanalysis",
-      "community": 0,
+      "community": 3,
       "norm_label": "createsufficientanalysis()"
     },
     {
@@ -1561,7 +1885,7 @@
       "source_file": "src/features/planning/mermaidGenerator.test.ts",
       "source_location": "L15",
       "id": "mermaidgenerator_test_withstatus",
-      "community": 0,
+      "community": 3,
       "norm_label": "withstatus()"
     },
     {
@@ -1570,7 +1894,7 @@
       "source_file": "src/features/planning/planningContracts.test.ts",
       "source_location": "L1",
       "id": "src_features_planning_planningcontracts_test_ts",
-      "community": 0,
+      "community": 3,
       "norm_label": "planningcontracts.test.ts"
     },
     {
@@ -1579,7 +1903,7 @@
       "source_file": "src/features/planning/planningContracts.test.ts",
       "source_location": "L25",
       "id": "planningcontracts_test_createanalysis",
-      "community": 0,
+      "community": 3,
       "norm_label": "createanalysis()"
     },
     {
@@ -1588,7 +1912,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L1",
       "id": "src_features_planning_mermaidrenderer_ts",
-      "community": 11,
+      "community": 5,
       "norm_label": "mermaidrenderer.ts"
     },
     {
@@ -1597,7 +1921,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L44",
       "id": "mermaidrenderer_rendermermaiddocument",
-      "community": 11,
+      "community": 5,
       "norm_label": "rendermermaiddocument()"
     },
     {
@@ -1606,7 +1930,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L73",
       "id": "mermaidrenderer_correctmermaidsyntax",
-      "community": 11,
+      "community": 5,
       "norm_label": "correctmermaidsyntax()"
     },
     {
@@ -1615,7 +1939,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L83",
       "id": "mermaidrenderer_renderonce",
-      "community": 11,
+      "community": 5,
       "norm_label": "renderonce()"
     },
     {
@@ -1624,7 +1948,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L112",
       "id": "mermaidrenderer_ensuremermaidinitialized",
-      "community": 11,
+      "community": 5,
       "norm_label": "ensuremermaidinitialized()"
     },
     {
@@ -1633,7 +1957,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L127",
       "id": "mermaidrenderer_loadmermaidmodule",
-      "community": 11,
+      "community": 5,
       "norm_label": "loadmermaidmodule()"
     },
     {
@@ -1642,7 +1966,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L132",
       "id": "mermaidrenderer_createrendereddocument",
-      "community": 11,
+      "community": 5,
       "norm_label": "createrendereddocument()"
     },
     {
@@ -1651,7 +1975,7 @@
       "source_file": "src/features/planning/mermaidRenderer.ts",
       "source_location": "L144",
       "id": "mermaidrenderer_geterrormessage",
-      "community": 11,
+      "community": 5,
       "norm_label": "geterrormessage()"
     },
     {
@@ -1687,7 +2011,7 @@
       "source_file": "src/features/planning/planningAnalyzer.test.ts",
       "source_location": "L1",
       "id": "src_features_planning_planninganalyzer_test_ts",
-      "community": 41,
+      "community": 40,
       "norm_label": "planninganalyzer.test.ts"
     },
     {
@@ -1714,7 +2038,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L1",
       "id": "src_features_planning_planninganalyzer_ts",
-      "community": 0,
+      "community": 3,
       "norm_label": "planninganalyzer.ts"
     },
     {
@@ -1723,7 +2047,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L42",
       "id": "planninganalyzer_analyzeplanninginput",
-      "community": 0,
+      "community": 3,
       "norm_label": "analyzeplanninginput()"
     },
     {
@@ -1732,7 +2056,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L78",
       "id": "planninganalyzer_normalizetext",
-      "community": 0,
+      "community": 3,
       "norm_label": "normalizetext()"
     },
     {
@@ -1741,7 +2065,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L82",
       "id": "planninganalyzer_tokenizelines",
-      "community": 0,
+      "community": 3,
       "norm_label": "tokenizelines()"
     },
     {
@@ -1750,7 +2074,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L93",
       "id": "planninganalyzer_extractbykeywords",
-      "community": 0,
+      "community": 3,
       "norm_label": "extractbykeywords()"
     },
     {
@@ -1759,7 +2083,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L97",
       "id": "planninganalyzer_extractpersonas",
-      "community": 0,
+      "community": 3,
       "norm_label": "extractpersonas()"
     },
     {
@@ -1768,7 +2092,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L110",
       "id": "planninganalyzer_extractactions",
-      "community": 0,
+      "community": 3,
       "norm_label": "extractactions()"
     },
     {
@@ -1777,7 +2101,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L125",
       "id": "planninganalyzer_extractentities",
-      "community": 0,
+      "community": 3,
       "norm_label": "extractentities()"
     },
     {
@@ -1786,7 +2110,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L134",
       "id": "planninganalyzer_getmissingfields",
-      "community": 0,
+      "community": 3,
       "norm_label": "getmissingfields()"
     },
     {
@@ -1795,7 +2119,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L157",
       "id": "planninganalyzer_calculatescore",
-      "community": 0,
+      "community": 3,
       "norm_label": "calculatescore()"
     },
     {
@@ -1804,7 +2128,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L165",
       "id": "planninganalyzer_buildassumptions",
-      "community": 0,
+      "community": 3,
       "norm_label": "buildassumptions()"
     },
     {
@@ -1813,7 +2137,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L312",
       "id": "planninganalyzer_generatelogicgapsuggestions",
-      "community": 0,
+      "community": 3,
       "norm_label": "generatelogicgapsuggestions()"
     },
     {
@@ -1822,7 +2146,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L364",
       "id": "planninganalyzer_detectcontradictions",
-      "community": 0,
+      "community": 3,
       "norm_label": "detectcontradictions()"
     },
     {
@@ -1831,7 +2155,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L377",
       "id": "planninganalyzer_uniquetemplates",
-      "community": 0,
+      "community": 3,
       "norm_label": "uniquetemplates()"
     },
     {
@@ -1840,7 +2164,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L390",
       "id": "planninganalyzer_includesany",
-      "community": 0,
+      "community": 3,
       "norm_label": "includesany()"
     },
     {
@@ -1849,7 +2173,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L395",
       "id": "planninganalyzer_cleanlabel",
-      "community": 0,
+      "community": 3,
       "norm_label": "cleanlabel()"
     },
     {
@@ -1858,7 +2182,7 @@
       "source_file": "src/features/planning/planningAnalyzer.ts",
       "source_location": "L399",
       "id": "planninganalyzer_uniquelimited",
-      "community": 0,
+      "community": 3,
       "norm_label": "uniquelimited()"
     },
     {
@@ -1885,7 +2209,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L1",
       "id": "src_features_planning_mermaidgenerator_ts",
-      "community": 5,
+      "community": 7,
       "norm_label": "mermaidgenerator.ts"
     },
     {
@@ -1894,7 +2218,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L24",
       "id": "mermaidgenerator_generatemermaidflow",
-      "community": 5,
+      "community": 7,
       "norm_label": "generatemermaidflow()"
     },
     {
@@ -1903,7 +2227,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L46",
       "id": "mermaidgenerator_createmermaiddraft",
-      "community": 5,
+      "community": 7,
       "norm_label": "createmermaiddraft()"
     },
     {
@@ -1912,7 +2236,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L99",
       "id": "mermaidgenerator_updatemermaiddraftnode",
-      "community": 5,
+      "community": 7,
       "norm_label": "updatemermaiddraftnode()"
     },
     {
@@ -1921,7 +2245,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L115",
       "id": "mermaidgenerator_serializemermaiddraft",
-      "community": 5,
+      "community": 7,
       "norm_label": "serializemermaiddraft()"
     },
     {
@@ -1930,7 +2254,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L135",
       "id": "mermaidgenerator_createblockeddocument",
-      "community": 5,
+      "community": 7,
       "norm_label": "createblockeddocument()"
     },
     {
@@ -1939,7 +2263,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L145",
       "id": "mermaidgenerator_buildlistnodes",
-      "community": 5,
+      "community": 7,
       "norm_label": "buildlistnodes()"
     },
     {
@@ -1948,7 +2272,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L151",
       "id": "mermaidgenerator_buildlistedges",
-      "community": 5,
+      "community": 7,
       "norm_label": "buildlistedges()"
     },
     {
@@ -1957,7 +2281,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L155",
       "id": "mermaidgenerator_buildexceptionnodes",
-      "community": 5,
+      "community": 7,
       "norm_label": "buildexceptionnodes()"
     },
     {
@@ -1966,7 +2290,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L173",
       "id": "mermaidgenerator_buildexceptionedges",
-      "community": 5,
+      "community": 7,
       "norm_label": "buildexceptionedges()"
     },
     {
@@ -1975,7 +2299,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L188",
       "id": "mermaidgenerator_createnode",
-      "community": 5,
+      "community": 7,
       "norm_label": "createnode()"
     },
     {
@@ -1984,7 +2308,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L204",
       "id": "mermaidgenerator_createedge",
-      "community": 5,
+      "community": 7,
       "norm_label": "createedge()"
     },
     {
@@ -1993,7 +2317,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L212",
       "id": "mermaidgenerator_serializenode",
-      "community": 5,
+      "community": 7,
       "norm_label": "serializenode()"
     },
     {
@@ -2002,7 +2326,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L226",
       "id": "mermaidgenerator_serializeedge",
-      "community": 5,
+      "community": 7,
       "norm_label": "serializeedge()"
     },
     {
@@ -2011,7 +2335,7 @@
       "source_file": "src/features/planning/mermaidGenerator.ts",
       "source_location": "L234",
       "id": "mermaidgenerator_escapemermaidlabel",
-      "community": 5,
+      "community": 7,
       "norm_label": "escapemermaidlabel()"
     },
     {
@@ -2020,7 +2344,7 @@
       "source_file": "src/features/planning/components/MermaidOutputPanel.tsx",
       "source_location": "L1",
       "id": "src_features_planning_components_mermaidoutputpanel_tsx",
-      "community": 42,
+      "community": 41,
       "norm_label": "mermaidoutputpanel.tsx"
     },
     {
@@ -2029,7 +2353,7 @@
       "source_file": "src/features/planning/components/AnalysisPanel.tsx",
       "source_location": "L1",
       "id": "src_features_planning_components_analysispanel_tsx",
-      "community": 43,
+      "community": 42,
       "norm_label": "analysispanel.tsx"
     },
     {
@@ -2038,7 +2362,7 @@
       "source_file": "src/features/planning/components/InputPanel.tsx",
       "source_location": "L1",
       "id": "src_features_planning_components_inputpanel_tsx",
-      "community": 44,
+      "community": 43,
       "norm_label": "inputpanel.tsx"
     },
     {
@@ -2050,7 +2374,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "graphify knowledge graph",
       "id": "agents_graphify_knowledge_graph"
     },
@@ -2063,7 +2387,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "graph_report.md",
       "id": "agents_graph_report"
     },
@@ -2076,7 +2400,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "god nodes and community structure",
       "id": "agents_god_nodes_and_community_structure"
     },
@@ -2089,7 +2413,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "graphify wiki index",
       "id": "agents_graphify_wiki_index"
     },
@@ -2102,7 +2426,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "raw files",
       "id": "agents_raw_files"
     },
@@ -2115,7 +2439,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "cross-module relationship questions",
       "id": "agents_cross_module_relationship_questions"
     },
@@ -2128,7 +2452,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "graphify query",
       "id": "agents_graphify_query"
     },
@@ -2141,7 +2465,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "graphify path",
       "id": "agents_graphify_path"
     },
@@ -2154,7 +2478,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "graphify explain",
       "id": "agents_graphify_explain"
     },
@@ -2167,7 +2491,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "grep",
       "id": "agents_grep"
     },
@@ -2180,7 +2504,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "extracted and inferred edges",
       "id": "agents_extracted_and_inferred_edges"
     },
@@ -2193,7 +2517,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "graphify update",
       "id": "agents_graphify_update"
     },
@@ -2206,7 +2530,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "code modification session",
       "id": "agents_code_modification_session"
     },
@@ -2219,7 +2543,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "ast-only no api cost update",
       "id": "agents_ast_only_no_api_cost"
     },
@@ -2232,7 +2556,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "rationale: prefer graph navigation over raw file reading",
       "id": "agents_rationale_graph_navigation_over_raw_reading"
     },
@@ -2245,7 +2569,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
+      "community": 6,
       "norm_label": "rationale: keep graph current after code changes",
       "id": "agents_rationale_keep_graph_current"
     }
@@ -2399,7 +2723,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L32",
+      "source_location": "L35",
       "weight": 1.0,
       "_src": "apps_backend_src_planning_planning_service_ts",
       "_tgt": "planning_service_planningservice",
@@ -2411,7 +2735,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L95",
+      "source_location": "L131",
       "weight": 1.0,
       "_src": "apps_backend_src_planning_planning_service_ts",
       "_tgt": "planning_service_normalizeplanninginput",
@@ -2423,7 +2747,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L107",
+      "source_location": "L143",
       "weight": 1.0,
       "_src": "apps_backend_src_planning_planning_service_ts",
       "_tgt": "planning_service_calculatecompleteness",
@@ -2435,7 +2759,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L134",
+      "source_location": "L170",
       "weight": 1.0,
       "_src": "apps_backend_src_planning_planning_service_ts",
       "_tgt": "planning_service_createsessionsnapshot",
@@ -2447,7 +2771,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L163",
+      "source_location": "L199",
       "weight": 1.0,
       "_src": "apps_backend_src_planning_planning_service_ts",
       "_tgt": "planning_service_createsessionsnapshotfrominput",
@@ -2459,7 +2783,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L176",
+      "source_location": "L212",
       "weight": 1.0,
       "_src": "apps_backend_src_planning_planning_service_ts",
       "_tgt": "planning_service_createmermaidvalidationdocument",
@@ -2471,7 +2795,19 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L191",
+      "source_location": "L227",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_service_ts",
+      "_tgt": "planning_service_getgenerationsnapshotstatus",
+      "source": "apps_backend_src_planning_planning_service_ts",
+      "target": "planning_service_getgenerationsnapshotstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.service.ts",
+      "source_location": "L246",
       "weight": 1.0,
       "_src": "apps_backend_src_planning_planning_service_ts",
       "_tgt": "planning_service_throwvalidationerror",
@@ -2483,7 +2819,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L33",
+      "source_location": "L36",
       "weight": 1.0,
       "_src": "planning_service_planningservice",
       "_tgt": "planning_service_planningservice_constructor",
@@ -2495,7 +2831,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L39",
+      "source_location": "L44",
       "weight": 1.0,
       "_src": "planning_service_planningservice",
       "_tgt": "planning_service_planningservice_createplanningsession",
@@ -2507,7 +2843,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L56",
+      "source_location": "L61",
       "weight": 1.0,
       "_src": "planning_service_planningservice",
       "_tgt": "planning_service_planningservice_analyzeplanningsession",
@@ -2519,7 +2855,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L74",
+      "source_location": "L79",
       "weight": 1.0,
       "_src": "planning_service_planningservice",
       "_tgt": "planning_service_planningservice_validatemermaid",
@@ -2528,10 +2864,22 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.service.ts",
+      "source_location": "L99",
+      "weight": 1.0,
+      "_src": "planning_service_planningservice",
+      "_tgt": "planning_service_planningservice_generatemermaid",
+      "source": "planning_service_planningservice",
+      "target": "planning_service_planningservice_generatemermaid",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L42",
+      "source_location": "L47",
       "weight": 1.0,
       "_src": "planning_service_planningservice_createplanningsession",
       "_tgt": "planning_service_throwvalidationerror",
@@ -2543,7 +2891,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L45",
+      "source_location": "L50",
       "weight": 1.0,
       "_src": "planning_service_planningservice_createplanningsession",
       "_tgt": "planning_service_normalizeplanninginput",
@@ -2555,7 +2903,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L50",
+      "source_location": "L55",
       "weight": 1.0,
       "_src": "planning_service_planningservice_createplanningsession",
       "_tgt": "planning_service_calculatecompleteness",
@@ -2567,7 +2915,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L51",
+      "source_location": "L56",
       "weight": 1.0,
       "_src": "planning_service_planningservice_createplanningsession",
       "_tgt": "planning_service_createsessionsnapshot",
@@ -2639,7 +2987,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L58",
+      "source_location": "L63",
       "weight": 1.0,
       "_src": "planning_service_planningservice_analyzeplanningsession",
       "_tgt": "planning_service_throwvalidationerror",
@@ -2651,7 +2999,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L66",
+      "source_location": "L71",
       "weight": 1.0,
       "_src": "planning_service_planningservice_analyzeplanningsession",
       "_tgt": "planning_service_createsessionsnapshotfrominput",
@@ -2699,7 +3047,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L77",
+      "source_location": "L82",
       "weight": 1.0,
       "_src": "planning_service_planningservice_validatemermaid",
       "_tgt": "planning_service_throwvalidationerror",
@@ -2711,7 +3059,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L86",
+      "source_location": "L91",
       "weight": 1.0,
       "_src": "planning_service_planningservice_validatemermaid",
       "_tgt": "planning_service_createmermaidvalidationdocument",
@@ -2795,7 +3143,79 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L168",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_src": "planning_service_planningservice_generatemermaid",
+      "_tgt": "planning_service_throwvalidationerror",
+      "source": "planning_service_planningservice_generatemermaid",
+      "target": "planning_service_throwvalidationerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.service.ts",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_src": "planning_service_planningservice_generatemermaid",
+      "_tgt": "planning_service_getgenerationsnapshotstatus",
+      "source": "planning_service_planningservice_generatemermaid",
+      "target": "planning_service_getgenerationsnapshotstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.service.ts",
+      "source_location": "L104",
+      "weight": 1.0,
+      "_src": "planning_service_planningservice_generatemermaid",
+      "_tgt": "zod_validation_safeparsewithmessages",
+      "source": "planning_service_planningservice_generatemermaid",
+      "target": "zod_validation_safeparsewithmessages"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.service.ts",
+      "source_location": "L114",
+      "weight": 1.0,
+      "_src": "planning_service_planningservice_generatemermaid",
+      "_tgt": "planning_state_machine_service_planningstatemachineservice_buildstatemachine",
+      "source": "planning_service_planningservice_generatemermaid",
+      "target": "planning_state_machine_service_planningstatemachineservice_buildstatemachine"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.service.ts",
+      "source_location": "L115",
+      "weight": 1.0,
+      "_src": "planning_service_planningservice_generatemermaid",
+      "_tgt": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "source": "planning_service_planningservice_generatemermaid",
+      "target": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.service.ts",
+      "source_location": "L118",
+      "weight": 1.0,
+      "_src": "planning_service_planningservice_generatemermaid",
+      "_tgt": "planningcontracts_createsuccessenvelope",
+      "source": "planning_service_planningservice_generatemermaid",
+      "target": "planningcontracts_createsuccessenvelope"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.service.ts",
+      "source_location": "L204",
       "weight": 1.0,
       "_src": "planning_service_createsessionsnapshotfrominput",
       "_tgt": "planning_service_normalizeplanninginput",
@@ -2807,7 +3227,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L171",
+      "source_location": "L207",
       "weight": 1.0,
       "_src": "planning_service_createsessionsnapshotfrominput",
       "_tgt": "planning_service_calculatecompleteness",
@@ -2819,7 +3239,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L171",
+      "source_location": "L207",
       "weight": 1.0,
       "_src": "planning_service_createsessionsnapshotfrominput",
       "_tgt": "planning_service_createsessionsnapshot",
@@ -2831,7 +3251,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.service.ts",
-      "source_location": "L165",
+      "source_location": "L201",
       "weight": 1.0,
       "_src": "planning_service_createsessionsnapshotfrominput",
       "_tgt": "planning_service_throwvalidationerror",
@@ -2849,6 +3269,66 @@
       "_src": "planning_service_createsessionsnapshotfrominput",
       "_tgt": "planning_validator_createpassedreport",
       "source": "planning_service_createsessionsnapshotfrominput",
+      "target": "planning_validator_createpassedreport"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.state-machine.service.spec.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_state_machine_service_spec_ts",
+      "_tgt": "planning_state_machine_service_spec_createsnapshot",
+      "source": "apps_backend_src_planning_planning_state_machine_service_spec_ts",
+      "target": "planning_state_machine_service_spec_createsnapshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.state-machine.service.spec.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_src": "planning_state_machine_service_spec_createsnapshot",
+      "_tgt": "planning_validator_createpassedreport",
+      "source": "planning_state_machine_service_spec_createsnapshot",
+      "target": "planning_validator_createpassedreport"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.spec.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_spec_ts",
+      "_tgt": "planning_mermaid_generator_service_spec_createsnapshot",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_spec_ts",
+      "target": "planning_mermaid_generator_service_spec_createsnapshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.spec.ts",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_spec_ts",
+      "_tgt": "planning_mermaid_generator_service_spec_createservice",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_spec_ts",
+      "target": "planning_mermaid_generator_service_spec_createservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.spec.ts",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_spec_createsnapshot",
+      "_tgt": "planning_validator_createpassedreport",
+      "source": "planning_mermaid_generator_service_spec_createsnapshot",
       "target": "planning_validator_createpassedreport"
     },
     {
@@ -2909,6 +3389,654 @@
       "_tgt": "planning_ai_client_openaiplanningaiclient_extractplanninglogic",
       "source": "planning_ai_client_openaiplanningaiclient",
       "target": "planning_ai_client_openaiplanningaiclient_extractplanninglogic",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_planningmermaidgeneratorservice",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_planningmermaidgeneratorservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L124",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_getblockedreason",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_getblockedreason",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L149",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_createmermaiddraft",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_createmermaiddraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L215",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_buildrecoverynodes",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_buildrecoverynodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L244",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_buildrecoveryedges",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_buildrecoveryedges",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L263",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_buildlistnodes",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_buildlistnodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L269",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_buildlistedges",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_buildlistedges",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L273",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_createnode",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_createnode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L289",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_createedge",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_createedge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L297",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_serializemermaiddraft",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_serializemermaiddraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L317",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_serializenode",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_serializenode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L331",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_serializeedge",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_serializeedge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L339",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_normalizeflowdraftlabels",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_normalizeflowdraftlabels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L354",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_normalizenode",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_normalizenode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L361",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_normalizelabel",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_normalizelabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L372",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_escapemermaidlabel",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_escapemermaidlabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L376",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_dedupenodes",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_dedupenodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L388",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_creategenerateddocument",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_creategenerateddocument",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L400",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_createblockeddocument",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_createblockeddocument",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L412",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "_tgt": "planning_mermaid_generator_service_createfallbackdocument",
+      "source": "apps_backend_src_planning_planning_mermaid_generator_service_ts",
+      "target": "planning_mermaid_generator_service_createfallbackdocument",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice",
+      "_tgt": "planning_mermaid_generator_service_planningmermaidgeneratorservice_constructor",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice",
+      "target": "planning_mermaid_generator_service_planningmermaidgeneratorservice_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice",
+      "_tgt": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice",
+      "target": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice",
+      "_tgt": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice",
+      "target": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "_tgt": "planning_mermaid_generator_service_getblockedreason",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "target": "planning_mermaid_generator_service_getblockedreason",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "_tgt": "planning_mermaid_generator_service_createblockeddocument",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "target": "planning_mermaid_generator_service_createblockeddocument",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "_tgt": "planning_mermaid_generator_service_createmermaiddraft",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "target": "planning_mermaid_generator_service_createmermaiddraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "_tgt": "planning_mermaid_generator_service_createfallbackdocument",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "target": "planning_mermaid_generator_service_createfallbackdocument",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "_tgt": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "target": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "_tgt": "planning_validator_planningvalidator_mergevalidationreports",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "target": "planning_validator_planningvalidator_mergevalidationreports"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "_tgt": "planning_validator_createpassedreport",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "target": "planning_validator_createpassedreport"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "_tgt": "planning_validator_planningvalidator_validategraphcycles",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "target": "planning_validator_planningvalidator_validategraphcycles"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "_tgt": "planning_validator_planningvalidator_validateflowdraftshape",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_generate",
+      "target": "planning_validator_planningvalidator_validateflowdraftshape"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "_tgt": "planning_mermaid_generator_service_serializemermaiddraft",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "target": "planning_mermaid_generator_service_serializemermaiddraft",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "_tgt": "planning_mermaid_generator_service_creategenerateddocument",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "target": "planning_mermaid_generator_service_creategenerateddocument",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "_tgt": "planning_mermaid_generator_service_createfallbackdocument",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "target": "planning_mermaid_generator_service_createfallbackdocument",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L91",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "_tgt": "planning_mermaid_generator_service_normalizeflowdraftlabels",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "target": "planning_mermaid_generator_service_normalizeflowdraftlabels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "_tgt": "planning_validator_planningvalidator_validatemermaidsafety",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "target": "planning_validator_planningvalidator_validatemermaidsafety"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "_tgt": "planning_validator_createpassedreport",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "target": "planning_validator_createpassedreport"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "_tgt": "mermaid_syntax_service_mermaidsyntaxservice_validatesyntax",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "target": "mermaid_syntax_service_mermaidsyntaxservice_validatesyntax"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "_tgt": "planning_validator_planningvalidator_mergevalidationreports",
+      "source": "planning_mermaid_generator_service_planningmermaidgeneratorservice_validateserializeddraft",
+      "target": "planning_validator_planningvalidator_mergevalidationreports"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L158",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_createmermaiddraft",
+      "_tgt": "planning_mermaid_generator_service_createnode",
+      "source": "planning_mermaid_generator_service_createmermaiddraft",
+      "target": "planning_mermaid_generator_service_createnode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L163",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_createmermaiddraft",
+      "_tgt": "planning_mermaid_generator_service_buildlistnodes",
+      "source": "planning_mermaid_generator_service_createmermaiddraft",
+      "target": "planning_mermaid_generator_service_buildlistnodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L170",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_createmermaiddraft",
+      "_tgt": "planning_mermaid_generator_service_buildrecoverynodes",
+      "source": "planning_mermaid_generator_service_createmermaiddraft",
+      "target": "planning_mermaid_generator_service_buildrecoverynodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L177",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_createmermaiddraft",
+      "_tgt": "planning_mermaid_generator_service_createedge",
+      "source": "planning_mermaid_generator_service_createmermaiddraft",
+      "target": "planning_mermaid_generator_service_createedge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L184",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_createmermaiddraft",
+      "_tgt": "planning_mermaid_generator_service_buildlistedges",
+      "source": "planning_mermaid_generator_service_createmermaiddraft",
+      "target": "planning_mermaid_generator_service_buildlistedges",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L190",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_createmermaiddraft",
+      "_tgt": "planning_mermaid_generator_service_buildrecoveryedges",
+      "source": "planning_mermaid_generator_service_createmermaiddraft",
+      "target": "planning_mermaid_generator_service_buildrecoveryedges",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L199",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_createmermaiddraft",
+      "_tgt": "planning_mermaid_generator_service_dedupenodes",
+      "source": "planning_mermaid_generator_service_createmermaiddraft",
+      "target": "planning_mermaid_generator_service_dedupenodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L238",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_buildrecoverynodes",
+      "_tgt": "planning_mermaid_generator_service_createnode",
+      "source": "planning_mermaid_generator_service_buildrecoverynodes",
+      "target": "planning_mermaid_generator_service_createnode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L257",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_buildrecoveryedges",
+      "_tgt": "planning_mermaid_generator_service_createedge",
+      "source": "planning_mermaid_generator_service_buildrecoveryedges",
+      "target": "planning_mermaid_generator_service_createedge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L307",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_serializemermaiddraft",
+      "_tgt": "planning_mermaid_generator_service_escapemermaidlabel",
+      "source": "planning_mermaid_generator_service_serializemermaiddraft",
+      "target": "planning_mermaid_generator_service_escapemermaidlabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L318",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_serializenode",
+      "_tgt": "planning_mermaid_generator_service_escapemermaidlabel",
+      "source": "planning_mermaid_generator_service_serializenode",
+      "target": "planning_mermaid_generator_service_escapemermaidlabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L333",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_serializeedge",
+      "_tgt": "planning_mermaid_generator_service_escapemermaidlabel",
+      "source": "planning_mermaid_generator_service_serializeedge",
+      "target": "planning_mermaid_generator_service_escapemermaidlabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L357",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_normalizenode",
+      "_tgt": "planning_mermaid_generator_service_normalizelabel",
+      "source": "planning_mermaid_generator_service_normalizenode",
+      "target": "planning_mermaid_generator_service_normalizelabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.mermaid-generator.service.ts",
+      "source_location": "L373",
+      "weight": 1.0,
+      "_src": "planning_mermaid_generator_service_escapemermaidlabel",
+      "_tgt": "planning_mermaid_generator_service_normalizelabel",
+      "source": "planning_mermaid_generator_service_normalizelabel",
+      "target": "planning_mermaid_generator_service_escapemermaidlabel",
       "confidence_score": 1.0
     },
     {
@@ -3371,7 +4499,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.module.ts",
-      "source_location": "L28",
+      "source_location": "L32",
       "weight": 1.0,
       "_src": "apps_backend_src_planning_planning_module_ts",
       "_tgt": "planning_module_planningmodule",
@@ -3437,6 +4565,18 @@
       "_tgt": "planning_controller_planningcontroller_validatemermaid",
       "source": "planning_controller_planningcontroller",
       "target": "planning_controller_planningcontroller_validatemermaid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.controller.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "planning_controller_planningcontroller",
+      "_tgt": "planning_controller_planningcontroller_generatemermaid",
+      "source": "planning_controller_planningcontroller",
+      "target": "planning_controller_planningcontroller_generatemermaid",
       "confidence_score": 1.0
     },
     {
@@ -3851,6 +4991,18 @@
       "relation": "calls",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
+      "source_file": "apps/backend/src/planning/planning.service.spec.ts",
+      "source_location": "L117",
+      "weight": 1.0,
+      "_src": "planning_service_spec_createreadysnapshot",
+      "_tgt": "planning_validator_createpassedreport",
+      "source": "planning_validator_createpassedreport",
+      "target": "planning_service_spec_createreadysnapshot"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "apps/backend/src/planning/mermaid-syntax.service.ts",
       "source_location": "L32",
       "weight": 1.0,
@@ -3905,6 +5057,42 @@
       "_tgt": "planning_validator_hascycle",
       "source": "planning_validator_validateedgesforcycles",
       "target": "planning_validator_hascycle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.state-machine.service.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_state_machine_service_ts",
+      "_tgt": "planning_state_machine_service_planningstatemachineservice",
+      "source": "apps_backend_src_planning_planning_state_machine_service_ts",
+      "target": "planning_state_machine_service_planningstatemachineservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.state-machine.service.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "planning_state_machine_service_planningstatemachineservice",
+      "_tgt": "planning_state_machine_service_planningstatemachineservice_buildstatemachine",
+      "source": "planning_state_machine_service_planningstatemachineservice",
+      "target": "planning_state_machine_service_planningstatemachineservice_buildstatemachine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.service.spec.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_service_spec_ts",
+      "_tgt": "planning_service_spec_createreadysnapshot",
+      "source": "apps_backend_src_planning_planning_service_spec_ts",
+      "target": "planning_service_spec_createreadysnapshot",
       "confidence_score": 1.0
     },
     {
