@@ -36,6 +36,26 @@ export const contradictionSchema = z.object({
   resolutionPrompt: z.string()
 })
 
+export const mermaidRenderStatusSchema = z.enum([
+  'idle',
+  'blocked',
+  'generated',
+  'rendering',
+  'rendered',
+  'correcting',
+  'fallback'
+])
+
+export const mermaidDocumentSchema = z.object({
+  code: z.string(),
+  renderStatus: mermaidRenderStatusSchema,
+  retryCount: z.number().int().min(0),
+  renderError: z.string().nullable(),
+  svg: z.string().nullable(),
+  isHappyPathBiased: z.boolean(),
+  blockedReason: z.string().nullable()
+})
+
 export const planningAnalysisSchema = z.object({
   rawText: z.string(),
   personas: z.array(z.string()),
@@ -56,4 +76,6 @@ export type LogicGapCategory = z.infer<typeof logicGapCategorySchema>
 export type LogicGapSuggestion = z.infer<typeof logicGapSuggestionSchema>
 export type ContradictionSeverity = z.infer<typeof contradictionSeveritySchema>
 export type Contradiction = z.infer<typeof contradictionSchema>
+export type MermaidRenderStatus = z.infer<typeof mermaidRenderStatusSchema>
+export type MermaidDocument = z.infer<typeof mermaidDocumentSchema>
 export type PlanningAnalysis = z.infer<typeof planningAnalysisSchema>

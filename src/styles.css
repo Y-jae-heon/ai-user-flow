@@ -323,10 +323,88 @@ h4 {
   background: #f8ddd5;
 }
 
+.review-status.idle,
+.review-status.generated,
+.review-status.rendering,
+.review-status.correcting {
+  color: #405045;
+  background: #eef2eb;
+}
+
+.review-status.rendered {
+  color: #1e5d37;
+  background: #dff4e6;
+}
+
+.review-status.fallback,
+.review-status.blocked {
+  color: #7a2e1a;
+  background: #f8ddd5;
+}
+
 .review-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.mermaid-output-section {
+  display: grid;
+  gap: 12px;
+}
+
+.generation-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.output-banner {
+  display: grid;
+  gap: 4px;
+  border: 1px solid #e0e6dd;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.output-banner.warning {
+  border-color: #ead98d;
+  background: #fff9db;
+}
+
+.output-banner.danger {
+  border-color: #e7c7be;
+  background: #fff7f4;
+}
+
+.mermaid-preview {
+  min-height: 180px;
+  overflow: auto;
+  border: 1px solid #dfe8dc;
+  border-radius: 8px;
+  padding: 10px;
+  background: #ffffff;
+}
+
+.mermaid-preview svg {
+  display: block;
+  width: 100%;
+  min-width: 640px;
+  height: auto;
+}
+
+.mermaid-code {
+  max-height: 320px;
+  overflow: auto;
+  margin: 0;
+  border: 1px solid #dfe8dc;
+  border-radius: 8px;
+  padding: 12px;
+  color: #18221b;
+  background: #fbfcfa;
+  font-size: 0.78rem;
+  line-height: 1.5;
 }
 
 .muted {

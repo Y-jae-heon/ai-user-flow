@@ -7,3 +7,15 @@ artifacts/
 !.env.example
 playwright-report/
 test-results/
+
+# .graphifyignore
+vendor/
+node_modules/
+dist/
+*.generated.py
+
+# keep graph outputs, skip heavy/local-only files
+graphify-out/cache/
+graphify-out/manifest.json
+graphify-out/cost.json
+graphify-out/.graphify_*

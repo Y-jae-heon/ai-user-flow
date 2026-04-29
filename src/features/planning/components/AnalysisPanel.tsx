@@ -1,12 +1,22 @@
 import type { Contradiction, LogicGapSuggestion, PlanningAnalysis, SuggestionStatus } from '../planningSchema'
+import type { MermaidDocument } from '../planningSchema'
+import { MermaidOutputPanel } from './MermaidOutputPanel'
 
 interface AnalysisPanelProps {
   analysis: PlanningAnalysis | null
   suggestions: readonly LogicGapSuggestion[]
   onSuggestionStatusChange: (id: string, status: SuggestionStatus) => void
+  mermaidDocument: MermaidDocument | null
+  onGenerateMermaid: () => Promise<void>
 }
 
-export function AnalysisPanel({ analysis, suggestions, onSuggestionStatusChange }: AnalysisPanelProps) {
+export function AnalysisPanel({
+  analysis,
+  suggestions,
+  onSuggestionStatusChange,
+  mermaidDocument,
+  onGenerateMermaid
+}: AnalysisPanelProps) {
   if (!analysis) {
     return (
       <section className="tool-panel analysis-panel" aria-label="Analysis result">
@@ -58,6 +68,13 @@ export function AnalysisPanel({ analysis, suggestions, onSuggestionStatusChange 
       {suggestions.length > 0 && (
         <SuggestionReview suggestions={suggestions} onSuggestionStatusChange={onSuggestionStatusChange} />
       )}
+
+      <MermaidOutputPanel
+        analysis={analysis}
+        suggestions={suggestions}
+        mermaidDocument={mermaidDocument}
+        onGenerateMermaid={onGenerateMermaid}
+      />
 
       <AnalysisList title="Personas" items={analysis.personas} emptyText="사용자 정보가 아직 충분하지 않습니다." />
       <AnalysisList title="Entities" items={analysis.entities} emptyText="시스템 또는 데이터 엔티티가 명시되지 않았습니다." />

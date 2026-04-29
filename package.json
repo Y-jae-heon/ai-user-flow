@@ -14,10 +14,11 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
+    "mermaid": "^11.14.0",
     "react": "latest",
     "react-dom": "latest",
+    "typescript": "latest",
+    "vite": "latest",
     "zod": "latest"
   },
   "devDependencies": {
@@ -29,6 +30,8 @@
     "@vitest/coverage-v8": "latest",
     "jsdom": "latest",
     "vitest": "latest"
+  },
+  "overrides": {
+    "uuid": "^14.0.0"
   }
 }
-
