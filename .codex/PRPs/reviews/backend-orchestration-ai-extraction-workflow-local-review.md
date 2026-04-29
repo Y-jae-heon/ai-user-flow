@@ -16,6 +16,8 @@ File: `apps/backend/package.json`
 
 Adding `@langchain/langgraph` introduces four moderate `uuid <14.0.0` advisories through nested LangGraph packages. `npm audit --workspace @ai-user-flow/backend --omit=dev` exits non-zero. The suggested `npm audit fix --force` is a breaking downgrade, so this needs either a documented acceptance with CI policy alignment, a safe override/resolution, or an upstream version update when available.
 
+Status after follow-up: explicitly accepted in `.codex/PRPs/reports/backend-orchestration-ai-extraction-workflow-report.md` under "Audit Risk Acceptance"; keep CI aligned with that temporary exception until a safe LangGraph update is available.
+
 ## Validation
 
 Passed:
@@ -36,4 +38,3 @@ npm audit --workspace @ai-user-flow/backend --omit=dev
 ```
 
 Failure: 4 moderate `uuid <14.0.0` advisories through `@langchain/langgraph`, `@langchain/langgraph-checkpoint`, and `@langchain/langgraph-sdk`.
-

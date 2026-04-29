@@ -60,6 +60,17 @@ npm audit --workspace @ai-user-flow/backend --omit=dev
 
 Audit result: 4 moderate `uuid <14.0.0` advisories through nested `@langchain/langgraph`, `@langchain/langgraph-checkpoint`, and `@langchain/langgraph-sdk` dependencies. `npm audit fix --force` suggested a breaking downgrade to `@langchain/langgraph@0.0.12`, so no automatic fix was applied.
 
+## Audit Risk Acceptance
+
+Accepted temporarily for Phase 3:
+
+- Advisory: `uuid <14.0.0` missing buffer bounds check when caller supplies a mutable buffer.
+- Source: transitive runtime dependencies of `@langchain/langgraph@1.2.9`.
+- Scope in this implementation: the backend uses LangGraph only as an in-process bounded workflow wrapper and does not pass user-controlled buffers to `uuid`.
+- Decision: do not run `npm audit fix --force` because it downgrades LangGraph to `0.0.12`, which is a breaking dependency change and would invalidate the implemented API surface.
+- CI policy note: if CI gates on `npm audit --omit=dev`, add a scoped temporary exception for this advisory/package chain and remove it when LangGraph publishes a non-breaking dependency update that resolves the nested `uuid` versions.
+- Follow-up owner: Phase 4 or dependency-maintenance pass should re-run `npm audit --workspace @ai-user-flow/backend --omit=dev` and upgrade LangGraph when a safe fixed version is available.
+
 ## Deviations
 
 - The analyze endpoint accepts either a supplied session snapshot or raw input and uses the route `sessionId` for input-only requests. This keeps Phase 3 usable before Phase 5 adds Redis-backed session lookup.
@@ -76,4 +87,3 @@ Audit result: 4 moderate `uuid <14.0.0` advisories through nested `@langchain/la
 ## Next Step
 
 Proceed to Phase 4: state-machine and Mermaid generation.
-
