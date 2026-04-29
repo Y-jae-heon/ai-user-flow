@@ -40,7 +40,7 @@
       "source_file": "vite.config.ts",
       "source_location": "L1",
       "id": "vite_config_ts",
-      "community": 13,
+      "community": 14,
       "norm_label": "vite.config.ts"
     },
     {
@@ -49,7 +49,7 @@
       "source_file": "coverage/block-navigation.js",
       "source_location": "L1",
       "id": "coverage_block_navigation_js",
-      "community": 7,
+      "community": 8,
       "norm_label": "block-navigation.js"
     },
     {
@@ -58,7 +58,7 @@
       "source_file": "coverage/block-navigation.js",
       "source_location": "L24",
       "id": "block_navigation_toggleclass",
-      "community": 7,
+      "community": 8,
       "norm_label": "toggleclass()"
     },
     {
@@ -67,7 +67,7 @@
       "source_file": "coverage/block-navigation.js",
       "source_location": "L31",
       "id": "block_navigation_makecurrent",
-      "community": 7,
+      "community": 8,
       "norm_label": "makecurrent()"
     },
     {
@@ -76,7 +76,7 @@
       "source_file": "coverage/block-navigation.js",
       "source_location": "L41",
       "id": "block_navigation_gotoprevious",
-      "community": 7,
+      "community": 8,
       "norm_label": "gotoprevious()"
     },
     {
@@ -85,7 +85,7 @@
       "source_file": "coverage/block-navigation.js",
       "source_location": "L52",
       "id": "block_navigation_gotonext",
-      "community": 7,
+      "community": 8,
       "norm_label": "gotonext()"
     },
     {
@@ -319,7 +319,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L1",
       "id": "src_app_tsx",
-      "community": 9,
+      "community": 10,
       "norm_label": "app.tsx"
     },
     {
@@ -328,7 +328,7 @@
       "source_file": "src/App.tsx",
       "source_location": "L3",
       "id": "app_app",
-      "community": 9,
+      "community": 10,
       "norm_label": "app()"
     },
     {
@@ -337,7 +337,7 @@
       "source_file": "src/main.tsx",
       "source_location": "L1",
       "id": "src_main_tsx",
-      "community": 14,
+      "community": 15,
       "norm_label": "main.tsx"
     },
     {
@@ -346,7 +346,7 @@
       "source_file": "src/App.test.tsx",
       "source_location": "L1",
       "id": "src_app_test_tsx",
-      "community": 15,
+      "community": 16,
       "norm_label": "app.test.tsx"
     },
     {
@@ -355,7 +355,7 @@
       "source_file": "src/vite-env.d.ts",
       "source_location": "L1",
       "id": "src_vite_env_d_ts",
-      "community": 16,
+      "community": 17,
       "norm_label": "vite-env.d.ts"
     },
     {
@@ -364,7 +364,7 @@
       "source_file": "src/types/mermaid-esm.d.ts",
       "source_location": "L1",
       "id": "src_types_mermaid_esm_d_ts",
-      "community": 17,
+      "community": 18,
       "norm_label": "mermaid-esm.d.ts"
     },
     {
@@ -373,8 +373,71 @@
       "source_file": "src/test/setup.ts",
       "source_location": "L1",
       "id": "src_test_setup_ts",
-      "community": 18,
+      "community": 19,
       "norm_label": "setup.ts"
+    },
+    {
+      "label": "planningContracts.ts",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L1",
+      "id": "src_features_planning_planningcontracts_ts",
+      "community": 7,
+      "norm_label": "planningcontracts.ts"
+    },
+    {
+      "label": "normalizePlanningSessionInput()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L18",
+      "id": "planningcontracts_normalizeplanningsessioninput",
+      "community": 7,
+      "norm_label": "normalizeplanningsessioninput()"
+    },
+    {
+      "label": "createPlanningSessionSnapshot()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L28",
+      "id": "planningcontracts_createplanningsessionsnapshot",
+      "community": 7,
+      "norm_label": "createplanningsessionsnapshot()"
+    },
+    {
+      "label": "createSuccessEnvelope()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L55",
+      "id": "planningcontracts_createsuccessenvelope",
+      "community": 7,
+      "norm_label": "createsuccessenvelope()"
+    },
+    {
+      "label": "createFailureEnvelope()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L63",
+      "id": "planningcontracts_createfailureenvelope",
+      "community": 7,
+      "norm_label": "createfailureenvelope()"
+    },
+    {
+      "label": "normalizeElements()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L71",
+      "id": "planningcontracts_normalizeelements",
+      "community": 7,
+      "norm_label": "normalizeelements()"
+    },
+    {
+      "label": "getSessionStatus()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L87",
+      "id": "planningcontracts_getsessionstatus",
+      "community": 7,
+      "norm_label": "getsessionstatus()"
     },
     {
       "label": "PlanningWorkspace.tsx",
@@ -382,7 +445,7 @@
       "source_file": "src/features/planning/PlanningWorkspace.tsx",
       "source_location": "L1",
       "id": "src_features_planning_planningworkspace_tsx",
-      "community": 10,
+      "community": 11,
       "norm_label": "planningworkspace.tsx"
     },
     {
@@ -391,7 +454,7 @@
       "source_file": "src/features/planning/PlanningWorkspace.tsx",
       "source_location": "L24",
       "id": "planningworkspace_planningworkspace",
-      "community": 10,
+      "community": 11,
       "norm_label": "planningworkspace()"
     },
     {
@@ -472,7 +535,7 @@
       "source_file": "src/features/planning/planningSchema.ts",
       "source_location": "L1",
       "id": "src_features_planning_planningschema_ts",
-      "community": 19,
+      "community": 20,
       "norm_label": "planningschema.ts"
     },
     {
@@ -501,6 +564,24 @@
       "id": "mermaidgenerator_test_withstatus",
       "community": 0,
       "norm_label": "withstatus()"
+    },
+    {
+      "label": "planningContracts.test.ts",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningContracts.test.ts",
+      "source_location": "L1",
+      "id": "src_features_planning_planningcontracts_test_ts",
+      "community": 0,
+      "norm_label": "planningcontracts.test.ts"
+    },
+    {
+      "label": "createAnalysis()",
+      "file_type": "code",
+      "source_file": "src/features/planning/planningContracts.test.ts",
+      "source_location": "L25",
+      "id": "planningcontracts_test_createanalysis",
+      "community": 0,
+      "norm_label": "createanalysis()"
     },
     {
       "label": "mermaidRenderer.ts",
@@ -580,7 +661,7 @@
       "source_file": "src/features/planning/mermaidExport.test.ts",
       "source_location": "L1",
       "id": "src_features_planning_mermaidexport_test_ts",
-      "community": 8,
+      "community": 9,
       "norm_label": "mermaidexport.test.ts"
     },
     {
@@ -589,7 +670,7 @@
       "source_file": "src/features/planning/mermaidExport.test.ts",
       "source_location": "L4",
       "id": "mermaidexport_test_createurldependencies",
-      "community": 8,
+      "community": 9,
       "norm_label": "createurldependencies()"
     },
     {
@@ -598,7 +679,7 @@
       "source_file": "src/features/planning/mermaidExport.test.ts",
       "source_location": "L29",
       "id": "mermaidexport_test_createcanvas",
-      "community": 8,
+      "community": 9,
       "norm_label": "createcanvas()"
     },
     {
@@ -607,7 +688,7 @@
       "source_file": "src/features/planning/planningAnalyzer.test.ts",
       "source_location": "L1",
       "id": "src_features_planning_planninganalyzer_test_ts",
-      "community": 20,
+      "community": 21,
       "norm_label": "planninganalyzer.test.ts"
     },
     {
@@ -616,7 +697,7 @@
       "source_file": "src/features/planning/mermaidRenderer.test.ts",
       "source_location": "L1",
       "id": "src_features_planning_mermaidrenderer_test_ts",
-      "community": 11,
+      "community": 12,
       "norm_label": "mermaidrenderer.test.ts"
     },
     {
@@ -625,7 +706,7 @@
       "source_file": "src/features/planning/mermaidRenderer.test.ts",
       "source_location": "L11",
       "id": "mermaidrenderer_test_createadapter",
-      "community": 11,
+      "community": 12,
       "norm_label": "createadapter()"
     },
     {
@@ -787,7 +868,7 @@
       "source_file": "src/features/planning/PlanningWorkspace.test.tsx",
       "source_location": "L1",
       "id": "src_features_planning_planningworkspace_test_tsx",
-      "community": 12,
+      "community": 13,
       "norm_label": "planningworkspace.test.tsx"
     },
     {
@@ -796,7 +877,7 @@
       "source_file": "src/features/planning/PlanningWorkspace.test.tsx",
       "source_location": "L343",
       "id": "planningworkspace_test_resolvecopy",
-      "community": 12,
+      "community": 13,
       "norm_label": "resolvecopy()"
     },
     {
@@ -940,7 +1021,7 @@
       "source_file": "src/features/planning/components/MermaidOutputPanel.tsx",
       "source_location": "L1",
       "id": "src_features_planning_components_mermaidoutputpanel_tsx",
-      "community": 21,
+      "community": 22,
       "norm_label": "mermaidoutputpanel.tsx"
     },
     {
@@ -949,7 +1030,7 @@
       "source_file": "src/features/planning/components/AnalysisPanel.tsx",
       "source_location": "L1",
       "id": "src_features_planning_components_analysispanel_tsx",
-      "community": 22,
+      "community": 23,
       "norm_label": "analysispanel.tsx"
     },
     {
@@ -958,7 +1039,7 @@
       "source_file": "src/features/planning/components/InputPanel.tsx",
       "source_location": "L1",
       "id": "src_features_planning_components_inputpanel_tsx",
-      "community": 23,
+      "community": 24,
       "norm_label": "inputpanel.tsx"
     },
     {
@@ -1798,6 +1879,114 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "src_features_planning_planningcontracts_ts",
+      "_tgt": "planningcontracts_normalizeplanningsessioninput",
+      "source": "src_features_planning_planningcontracts_ts",
+      "target": "planningcontracts_normalizeplanningsessioninput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "src_features_planning_planningcontracts_ts",
+      "_tgt": "planningcontracts_createplanningsessionsnapshot",
+      "source": "src_features_planning_planningcontracts_ts",
+      "target": "planningcontracts_createplanningsessionsnapshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "src_features_planning_planningcontracts_ts",
+      "_tgt": "planningcontracts_createsuccessenvelope",
+      "source": "src_features_planning_planningcontracts_ts",
+      "target": "planningcontracts_createsuccessenvelope",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_src": "src_features_planning_planningcontracts_ts",
+      "_tgt": "planningcontracts_createfailureenvelope",
+      "source": "src_features_planning_planningcontracts_ts",
+      "target": "planningcontracts_createfailureenvelope",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_src": "src_features_planning_planningcontracts_ts",
+      "_tgt": "planningcontracts_normalizeelements",
+      "source": "src_features_planning_planningcontracts_ts",
+      "target": "planningcontracts_normalizeelements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_src": "src_features_planning_planningcontracts_ts",
+      "_tgt": "planningcontracts_getsessionstatus",
+      "source": "src_features_planning_planningcontracts_ts",
+      "target": "planningcontracts_getsessionstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "planningcontracts_normalizeplanningsessioninput",
+      "_tgt": "planningcontracts_normalizeelements",
+      "source": "planningcontracts_normalizeplanningsessioninput",
+      "target": "planningcontracts_normalizeelements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "planningcontracts_createplanningsessionsnapshot",
+      "_tgt": "planningcontracts_normalizeplanningsessioninput",
+      "source": "planningcontracts_normalizeplanningsessioninput",
+      "target": "planningcontracts_createplanningsessionsnapshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningContracts.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_src": "planningcontracts_createplanningsessionsnapshot",
+      "_tgt": "planningcontracts_getsessionstatus",
+      "source": "planningcontracts_createplanningsessionsnapshot",
+      "target": "planningcontracts_getsessionstatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/features/planning/PlanningWorkspace.tsx",
       "source_location": "L24",
       "weight": 1.0,
@@ -1973,6 +2162,30 @@
       "_src": "mermaidgenerator_test_createsufficientanalysis",
       "_tgt": "planninganalyzer_analyzeplanninginput",
       "source": "mermaidgenerator_test_createsufficientanalysis",
+      "target": "planninganalyzer_analyzeplanninginput"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/planning/planningContracts.test.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "src_features_planning_planningcontracts_test_ts",
+      "_tgt": "planningcontracts_test_createanalysis",
+      "source": "src_features_planning_planningcontracts_test_ts",
+      "target": "planningcontracts_test_createanalysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/features/planning/planningContracts.test.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "planningcontracts_test_createanalysis",
+      "_tgt": "planninganalyzer_analyzeplanninginput",
+      "source": "planningcontracts_test_createanalysis",
       "target": "planninganalyzer_analyzeplanninginput"
     },
     {

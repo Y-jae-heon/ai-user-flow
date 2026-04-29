@@ -1,12 +1,12 @@
 # Graph Report - ai-user-flow  (2026-04-29)
 
 ## Corpus Check
-- 24 files · ~41,512 words
+- 26 files · ~47,030 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 119 nodes · 161 edges · 8 communities detected
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.82)
+- 128 nodes · 172 edges · 9 communities detected
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -18,9 +18,10 @@
 - [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
+- [[_COMMUNITY_Community 8|Community 8]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `analyzePlanningInput()` - 14 edges
+1. `analyzePlanningInput()` - 15 edges
 2. `createMermaidDraft()` - 8 edges
 3. `g()` - 5 edges
 4. `getNthColumn()` - 5 edges
@@ -34,6 +35,8 @@
 ## Surprising Connections (you probably didn't know these)
 - `createSufficientAnalysis()` --calls--> `analyzePlanningInput()`  [INFERRED]
   src/features/planning/mermaidGenerator.test.ts → src/features/planning/planningAnalyzer.ts
+- `createAnalysis()` --calls--> `analyzePlanningInput()`  [INFERRED]
+  src/features/planning/planningContracts.test.ts → src/features/planning/planningAnalyzer.ts
 
 ## Hyperedges (group relationships)
 - **Graphify Navigation Tools** — agents_graphify_query, agents_graphify_path, agents_graphify_explain, agents_extracted_and_inferred_edges [EXTRACTED 1.00]
@@ -42,8 +45,8 @@
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.17
-Nodes (15): createSufficientAnalysis(), analyzePlanningInput(), buildAssumptions(), calculateScore(), detectContradictions(), extractActions(), extractByKeywords(), extractEntities() (+7 more)
+Cohesion: 0.15
+Nodes (16): createSufficientAnalysis(), analyzePlanningInput(), buildAssumptions(), calculateScore(), detectContradictions(), extractActions(), extractByKeywords(), extractEntities() (+8 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.17
@@ -70,6 +73,10 @@ Cohesion: 0.43
 Nodes (6): correctMermaidSyntax(), createRenderedDocument(), ensureMermaidInitialized(), getErrorMessage(), renderMermaidDocument(), renderOnce()
 
 ### Community 7 - "Community 7"
+Cohesion: 0.43
+Nodes (4): createPlanningSessionSnapshot(), getSessionStatus(), normalizeElements(), normalizePlanningSessionInput()
+
+### Community 8 - "Community 8"
 Cohesion: 0.7
 Nodes (4): goToNext(), goToPrevious(), makeCurrent(), toggleClass()
 
@@ -80,5 +87,7 @@ Nodes (4): goToNext(), goToPrevious(), makeCurrent(), toggleClass()
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
+- **Are the 2 inferred relationships involving `analyzePlanningInput()` (e.g. with `createSufficientAnalysis()` and `createAnalysis()`) actually correct?**
+  _`analyzePlanningInput()` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `God Nodes and Community Structure`, `Raw Files`, `Code Modification Session` to the rest of the system?**
   _5 weakly-connected nodes found - possible documentation gaps or missing edges._
