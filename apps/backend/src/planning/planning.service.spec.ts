@@ -4,6 +4,26 @@ import { PlanningValidator, createPassedReport } from './planning.validator'
 import { PlanningStateMachineService } from './planning.state-machine.service'
 import { PlanningMermaidGeneratorService } from './planning.mermaid-generator.service'
 import { type PlanningSessionSnapshot } from './dto/planning.dto'
+import { InMemoryPlanningPersistence } from './planning.persistence'
+import { PlanningIdempotencyService } from './planning.idempotency.service'
+import { PlanningRetryCounterService } from './planning.retry-counter.service'
+import { PlanningAuditService } from './planning.audit.service'
+
+const config = {
+  port: 3001,
+  frontendOrigin: 'http://localhost:5173',
+  redisUrl: null,
+  planningSessionTtlSeconds: 60,
+  planningIdempotencyTtlSeconds: 60,
+  planningAuditTtlSeconds: 60,
+  planningMaxGenerationRetries: 10,
+  rateLimitTtlMs: 60000,
+  rateLimitMaxRequests: 120,
+  openAiApiKey: null,
+  openAiModel: 'gpt-test',
+  openAiTimeoutMs: 30000,
+  openAiMaxAttempts: 2
+}
 
 describe('PlanningService', () => {
   const validator = new PlanningValidator()
@@ -19,10 +39,27 @@ describe('PlanningService', () => {
   } as unknown as MermaidSyntaxService
   const stateMachineService = new PlanningStateMachineService()
   const mermaidGeneratorService = new PlanningMermaidGeneratorService(validator, mermaidSyntaxService)
-  const service = new PlanningService(validator, mermaidSyntaxService, undefined, stateMachineService, mermaidGeneratorService)
+  let persistence: InMemoryPlanningPersistence
+  let service: PlanningService
 
-  it('creates a normalized planning session snapshot', () => {
-    const response = service.createPlanningSession({
+  beforeEach(() => {
+    jest.mocked(mermaidSyntaxService.validateSyntax).mockClear()
+    persistence = new InMemoryPlanningPersistence(config)
+    service = new PlanningService(
+      validator,
+      mermaidSyntaxService,
+      undefined,
+      stateMachineService,
+      mermaidGeneratorService,
+      persistence,
+      new PlanningIdempotencyService(persistence),
+      new PlanningRetryCounterService(persistence),
+      new PlanningAuditService(persistence)
+    )
+  })
+
+  it('creates and persists a normalized planning session snapshot', async () => {
+    const response = await service.createPlanningSession({
       rawText: '  사용자: PM\n문제: 재작업\n기능: 분석 결과 생성  ',
       elements: {
         targetUser: '  Product planner  ',
@@ -37,17 +74,34 @@ describe('PlanningService', () => {
       targetUser: 'Product planner'
     })
     expect(response.data.validation?.jsonSchema).toBe('passed')
+    await expect(persistence.getSession(response.data.id)).resolves.toMatchObject({
+      id: response.data.id,
+      input: response.data.input
+    })
   })
 
-  it('throws validation errors for unknown fields', () => {
-    expect(() =>
+  it('throws validation errors for unknown fields', async () => {
+    await expect(
       service.createPlanningSession({
         rawText: 'input',
         elements: {
           unsupportedElement: 'nope'
         }
       })
-    ).toThrow()
+    ).rejects.toThrow()
+  })
+
+  it('loads a persisted planning session', async () => {
+    const createResponse = await service.createPlanningSession({
+      rawText: '사용자: PM\n문제: 재작업\n기능: 분석 결과 생성'
+    })
+
+    await expect(service.getPlanningSession(createResponse.data.id)).resolves.toMatchObject({
+      success: true,
+      data: {
+        id: createResponse.data.id
+      }
+    })
   })
 
   it('generates Mermaid and updates the planning session snapshot', async () => {
@@ -63,6 +117,30 @@ describe('PlanningService', () => {
     expect(response.data.mermaidDocument?.renderStatus).toBe('generated')
     expect(response.data.mermaidDocument?.code).toContain('flowchart TD')
     expect(response.data.validation?.mermaidSyntax).toBe('passed')
+  })
+
+  it('generates Mermaid from a persisted snapshot when the body is empty', async () => {
+    await persistence.saveSession(createReadySnapshot())
+
+    const response = await service.generateMermaid('session_test', {})
+
+    expect(response.success).toBe(true)
+    expect(response.data.status).toBe('ready')
+    await expect(persistence.getSession('session_test')).resolves.toMatchObject({
+      status: 'ready',
+      mermaidDocument: {
+        renderStatus: 'generated'
+      }
+    })
+  })
+
+  it('replays idempotent Mermaid generation without rerunning parser validation', async () => {
+    await persistence.saveSession(createReadySnapshot())
+
+    await service.generateMermaid('session_test', {}, 'client-key-1')
+    await service.generateMermaid('session_test', {}, 'client-key-1')
+
+    expect(mermaidSyntaxService.validateSyntax).toHaveBeenCalledTimes(1)
   })
 
   it('throws validation errors when route and body session ids differ', async () => {

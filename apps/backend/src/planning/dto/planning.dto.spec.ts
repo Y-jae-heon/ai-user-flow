@@ -7,10 +7,13 @@ import {
   mermaidGenerationRequestSchema,
   mermaidGenerationResponseSchema,
   planningAnalysisSchema,
+  planningAuditEventSchema,
   planningEntityMappingSchema,
   planningExtractionResultSchema,
+  planningIdempotencyRecordSchema,
   planningInputSchema,
-  planningSessionSnapshotSchema
+  planningSessionSnapshotSchema,
+  storedPlanningSessionSchema
 } from './planning.dto'
 
 const completeElements = {
@@ -237,7 +240,7 @@ describe('planning DTO compatibility', () => {
       isHappyPathBiased: false
     }
 
-    expect(mermaidGenerationRequestSchema.parse({ session }).session.id).toBe('session_test')
+    expect(mermaidGenerationRequestSchema.parse({ session }).session?.id).toBe('session_test')
     expect(() =>
       mermaidGenerationResponseSchema.parse({
         flowDraft,
@@ -288,6 +291,97 @@ describe('planning DTO compatibility', () => {
         validation: null,
         flowDraft: null,
         mermaidDocument: null
+      })
+    ).toThrow()
+  })
+
+  it('validates strict persistence records', () => {
+    const session = planningSessionSnapshotSchema.parse({
+      id: 'session_test',
+      version: '2026-04-29',
+      status: 'input_received',
+      input: {
+        rawText: '사용자: PM\n문제: 재작업\n기능: 분석'
+      },
+      analysis: null,
+      dependencyAnalysis: [],
+      entities: {
+        actors: [],
+        objects: [],
+        actions: [],
+        businessRules: [],
+        exceptionPaths: []
+      },
+      stateMachine: null,
+      validation: null,
+      flowDraft: null,
+      mermaidDocument: null
+    })
+
+    expect(
+      storedPlanningSessionSchema.parse({
+        schemaVersion: '2026-04-29',
+        savedAt: '2026-04-30T00:00:00.000Z',
+        expiresAt: '2026-05-01T00:00:00.000Z',
+        session
+      }).session.id
+    ).toBe('session_test')
+    expect(() =>
+      storedPlanningSessionSchema.parse({
+        schemaVersion: '2026-04-29',
+        savedAt: '2026-04-30T00:00:00.000Z',
+        expiresAt: '2026-05-01T00:00:00.000Z',
+        session,
+        extra: true
+      })
+    ).toThrow()
+  })
+
+  it('validates bounded audit and idempotency records', () => {
+    expect(() =>
+      planningAuditEventSchema.parse({
+        eventId: 'event_1',
+        sessionId: 'session_test',
+        type: 'analysis_completed',
+        createdAt: '2026-04-30T00:00:00.000Z',
+        status: 'success',
+        summary: 'Analysis completed.',
+        validation: null,
+        retryCount: null,
+        modelMetadata: {
+          provider: 'openai',
+          model: 'gpt-test',
+          usedFallback: false
+        }
+      })
+    ).not.toThrow()
+
+    expect(() =>
+      planningIdempotencyRecordSchema.parse({
+        schemaVersion: '2026-04-29',
+        key: 'client-key',
+        scope: 'POST:/api/planning-sessions/session_test/analyze',
+        requestHash: 'a'.repeat(64),
+        status: 'completed',
+        createdAt: '2026-04-30T00:00:00.000Z',
+        expiresAt: '2026-04-30T01:00:00.000Z',
+        response: {
+          success: true
+        }
+      })
+    ).not.toThrow()
+
+    expect(() =>
+      planningAuditEventSchema.parse({
+        eventId: 'event_1',
+        sessionId: 'session_test',
+        type: 'unknown',
+        createdAt: '2026-04-30T00:00:00.000Z',
+        status: 'success',
+        summary: 'x',
+        validation: null,
+        retryCount: null,
+        modelMetadata: null
       })
     ).toThrow()
   })

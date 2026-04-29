@@ -119,7 +119,7 @@ describe('Planning API (e2e)', () => {
   })
 
   it('creates a planning session from raw text and nine elements', async () => {
-    await request(app.getHttpServer())
+    const response = await request(app.getHttpServer())
       .post('/api/planning-sessions')
       .send({
         rawText: '사용자: PM\n문제: Mermaid 재작업\n기능: MVP 메모를 분석하고 Mermaid 코드를 생성한다.',
@@ -141,6 +141,15 @@ describe('Planning API (e2e)', () => {
         expect(body.data.id).toMatch(/^session_/)
         expect(body.data.input.elements.targetUser).toBe('Product planner')
         expect(body.data.validation.jsonSchema).toBe('passed')
+      })
+
+    await request(app.getHttpServer())
+      .get(`/api/planning-sessions/${response.body.data.id}`)
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body.success).toBe(true)
+        expect(body.data.id).toBe(response.body.data.id)
+        expect(body.data.input.elements.targetUser).toBe('Product planner')
       })
   })
 
@@ -196,6 +205,99 @@ describe('Planning API (e2e)', () => {
         expect(body.data.analysis.personas).toEqual(['Product planner'])
         expect(body.data.dependencyAnalysis[0].type).toBe('requires')
         expect(body.data.entities.actors[0].id).toBe('actor_primary_user')
+      })
+  })
+
+  it('analyzes and generates from persisted session state without resending snapshots', async () => {
+    const createResponse = await request(app.getHttpServer())
+      .post('/api/planning-sessions')
+      .send({
+        rawText: '사용자: PM\n문제: Mermaid 재작업\n기능: MVP 메모를 분석하고 Mermaid 코드를 생성한다.',
+        elements: {
+          targetUser: 'Product planner',
+          problem: 'Incomplete user flows create rework.',
+          coreScenario: 'Planner submits notes and reviews generated gaps.',
+          dataDependency: 'Session cache',
+          exceptionCase: 'Mermaid parser fails.'
+        }
+      })
+      .expect(201)
+    const sessionId = createResponse.body.data.id
+
+    await request(app.getHttpServer())
+      .post(`/api/planning-sessions/${sessionId}/analyze`)
+      .send({})
+      .expect(201)
+      .expect(({ body }) => {
+        expect(body.data.id).toBe(sessionId)
+        expect(body.data.status).toBe('ready_for_generation')
+      })
+
+    await request(app.getHttpServer())
+      .post(`/api/planning-sessions/${sessionId}/mermaid`)
+      .send({})
+      .expect(201)
+      .expect(({ body }) => {
+        expect(body.data.id).toBe(sessionId)
+        expect(body.data.status).toBe('ready')
+        expect(body.data.mermaidDocument.renderStatus).toBe('generated')
+      })
+  })
+
+  it('replays idempotent analyze responses without invoking AI twice', async () => {
+    jest.mocked(planningAiClient.extractPlanningLogic).mockClear()
+    const requestBody = {
+      input: {
+        rawText: '사용자: PM\n문제: Mermaid 재작업\n기능: MVP 메모를 분석하고 Mermaid 코드를 생성한다.',
+        elements: {
+          targetUser: 'Product planner',
+          problem: 'Incomplete user flows create rework.',
+          coreScenario: 'Planner submits notes and reviews generated gaps.'
+        }
+      }
+    }
+
+    const firstResponse = await request(app.getHttpServer())
+      .post('/api/planning-sessions/session_idempotent/analyze')
+      .set('Idempotency-Key', 'analyze-key-1')
+      .send(requestBody)
+      .expect(201)
+
+    await request(app.getHttpServer())
+      .post('/api/planning-sessions/session_idempotent/analyze')
+      .set('Idempotency-Key', 'analyze-key-1')
+      .send(requestBody)
+      .expect(201)
+      .expect(({ body }) => {
+        expect(body).toEqual(firstResponse.body)
+      })
+
+    expect(planningAiClient.extractPlanningLogic).toHaveBeenCalledTimes(1)
+  })
+
+  it('rejects idempotency key reuse with a different body', async () => {
+    await request(app.getHttpServer())
+      .post('/api/planning-sessions/session_conflict/analyze')
+      .set('Idempotency-Key', 'analyze-key-2')
+      .send({
+        input: {
+          rawText: '사용자: PM\n문제: 재작업\n기능: 분석'
+        }
+      })
+      .expect(201)
+
+    await request(app.getHttpServer())
+      .post('/api/planning-sessions/session_conflict/analyze')
+      .set('Idempotency-Key', 'analyze-key-2')
+      .send({
+        input: {
+          rawText: '사용자: PM\n문제: 다른 재작업\n기능: 분석'
+        }
+      })
+      .expect(409)
+      .expect(({ body }) => {
+        expect(body.success).toBe(false)
+        expect(body.error.code).toBe('IDEMPOTENCY_KEY_CONFLICT')
       })
   })
 

@@ -62,9 +62,13 @@ function defaultCodeForStatus(status: number): string {
     return 'NOT_FOUND'
   }
 
-  if (status === HttpStatus.NOT_IMPLEMENTED) {
-    return 'NOT_IMPLEMENTED'
-  }
+    if (status === HttpStatus.NOT_IMPLEMENTED) {
+      return 'NOT_IMPLEMENTED'
+    }
 
-  return 'REQUEST_FAILED'
-}
+    if (status === HttpStatus.TOO_MANY_REQUESTS) {
+      return 'RATE_LIMITED'
+    }
+
+    return 'REQUEST_FAILED'
+  }

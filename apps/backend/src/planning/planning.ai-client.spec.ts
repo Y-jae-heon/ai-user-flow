@@ -5,6 +5,13 @@ describe('OpenAIPlanningAiClient', () => {
     const client = new OpenAIPlanningAiClient({
       port: 3001,
       frontendOrigin: 'http://localhost:5173',
+      redisUrl: null,
+      planningSessionTtlSeconds: 86400,
+      planningIdempotencyTtlSeconds: 3600,
+      planningAuditTtlSeconds: 86400,
+      planningMaxGenerationRetries: 5,
+      rateLimitTtlMs: 60000,
+      rateLimitMaxRequests: 120,
       openAiApiKey: null,
       openAiModel: 'gpt-5.2-chat-latest',
       openAiTimeoutMs: 1000,

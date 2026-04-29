@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from '@nestjs/common'
+import { BadRequestException, Inject, Injectable, Optional } from '@nestjs/common'
 import { randomUUID } from 'crypto'
 import { createSuccessEnvelope } from '../common/api-envelope'
 import { safeParseWithMessages } from '../common/validation/zod-validation'
@@ -22,6 +22,10 @@ import { MermaidSyntaxService } from './mermaid-syntax.service'
 import { createFailedReport, createPassedReport, PlanningValidator } from './planning.validator'
 import { PlanningStateMachineService } from './planning.state-machine.service'
 import { PlanningMermaidGeneratorService } from './planning.mermaid-generator.service'
+import { PlanningIdempotencyService } from './planning.idempotency.service'
+import { PLANNING_PERSISTENCE, requirePlanningSession, type PlanningPersistence } from './planning.persistence'
+import { PlanningRetryCounterService } from './planning.retry-counter.service'
+import { PlanningAuditService } from './planning.audit.service'
 
 const CONTRACT_VERSION = '2026-04-29'
 
@@ -38,10 +42,36 @@ export class PlanningService {
     private readonly mermaidSyntaxService: MermaidSyntaxService,
     private readonly planningExtractionService?: PlanningExtractionService,
     private readonly planningStateMachineService?: PlanningStateMachineService,
-    private readonly planningMermaidGeneratorService?: PlanningMermaidGeneratorService
+    private readonly planningMermaidGeneratorService?: PlanningMermaidGeneratorService,
+    @Optional() @Inject(PLANNING_PERSISTENCE) private readonly persistence?: PlanningPersistence,
+    @Optional() private readonly planningIdempotencyService?: PlanningIdempotencyService,
+    @Optional() private readonly planningRetryCounterService?: PlanningRetryCounterService,
+    @Optional() private readonly planningAuditService?: PlanningAuditService
   ) {}
 
-  createPlanningSession(input: unknown) {
+  async createPlanningSession(input: unknown, idempotencyKey?: string | null) {
+    return this.runIdempotently({
+      idempotencyKey,
+      method: 'POST',
+      path: '/api/planning-sessions',
+      requestBody: input,
+      execute: async () => this.createPlanningSessionOnce(input)
+    })
+  }
+
+  async getPlanningSession(sessionId: string) {
+    const snapshot = await this.requireStoredSession(sessionId)
+    await this.recordAudit({
+      sessionId,
+      type: 'session_loaded',
+      status: 'success',
+      summary: 'Planning session loaded.'
+    })
+
+    return createSuccessEnvelope(snapshot)
+  }
+
+  private async createPlanningSessionOnce(input: unknown) {
     const parsedInput = safeParseWithMessages(planningInputSchema, input)
     if (!parsedInput.ok) {
       throwValidationError(parsedInput.errors)
@@ -55,10 +85,30 @@ export class PlanningService {
     const completeness = calculateCompleteness(normalizedInput)
     const snapshot = createSessionSnapshot(normalizedInput, completeness, validation)
 
+    await this.persistence?.saveSession(snapshot)
+    await this.recordAudit({
+      sessionId: snapshot.id,
+      type: 'session_created',
+      status: validation.promptInjectionCheck === 'failed' ? 'blocked' : 'success',
+      summary: 'Planning session created.',
+      validation: snapshot.validation
+    })
+
     return createSuccessEnvelope(snapshot)
   }
 
-  async analyzePlanningSession(sessionId: string, request: unknown) {
+  async analyzePlanningSession(sessionId: string, request: unknown, idempotencyKey?: string | null) {
+    return this.runIdempotently({
+      idempotencyKey,
+      method: 'POST',
+      path: `/api/planning-sessions/${sessionId}/analyze`,
+      sessionId,
+      requestBody: request ?? {},
+      execute: async () => this.analyzePlanningSessionOnce(sessionId, request ?? {})
+    })
+  }
+
+  private async analyzePlanningSessionOnce(sessionId: string, request: unknown) {
     if (!this.planningExtractionService) {
       throwValidationError(['Planning extraction service is not configured.'])
     }
@@ -68,20 +118,42 @@ export class PlanningService {
       throwValidationError(parsedRequest.errors)
     }
 
-    const snapshot = parsedRequest.value.session ?? createSessionSnapshotFromInput(sessionId, parsedRequest.value.input)
+    const snapshot = parsedRequest.value.session ?? (parsedRequest.value.input ? createSessionSnapshotFromInput(sessionId, parsedRequest.value.input) : await this.requireStoredSession(sessionId))
     if (snapshot.id !== sessionId) {
       throwValidationError(['Route sessionId must match the supplied session id.'])
     }
 
-    return createSuccessEnvelope(await this.planningExtractionService.analyzeSession(snapshot))
+    const analyzedSnapshot = await this.planningExtractionService.analyzeSession(snapshot)
+    await this.persistence?.saveSession(analyzedSnapshot)
+    await this.recordAudit({
+      sessionId,
+      type: 'analysis_completed',
+      status: analyzedSnapshot.status === 'needs_clarification' ? 'blocked' : 'success',
+      summary: 'Planning analysis completed.',
+      validation: analyzedSnapshot.validation
+    })
+
+    return createSuccessEnvelope(analyzedSnapshot)
   }
 
-  async validateMermaid(request: unknown) {
+  async validateMermaid(sessionId: string, request: unknown, idempotencyKey?: string | null) {
+    return this.runIdempotently({
+      idempotencyKey,
+      method: 'POST',
+      path: `/api/planning-sessions/${sessionId}/mermaid/validate`,
+      sessionId,
+      requestBody: request,
+      execute: async () => this.validateMermaidOnce(sessionId, request)
+    })
+  }
+
+  private async validateMermaidOnce(sessionId: string, request: unknown) {
     const parsedRequest = safeParseWithMessages(mermaidValidationRequestSchema, request)
     if (!parsedRequest.ok) {
       throwValidationError(parsedRequest.errors)
     }
 
+    await this.planningRetryCounterService?.incrementOrThrow(sessionId, 'validate_mermaid')
     const safetyReport = this.planningValidator.validateMermaidSafety(parsedRequest.value.code)
     const syntaxReport =
       safetyReport.mermaidSyntax === 'failed'
@@ -90,13 +162,33 @@ export class PlanningService {
     const validation = this.planningValidator.mergeValidationReports([safetyReport, syntaxReport])
     const mermaidDocument = createMermaidValidationDocument(parsedRequest.value, validation)
 
+    await this.recordAudit({
+      sessionId,
+      type: 'mermaid_validated',
+      status: validation.mermaidSyntax === 'failed' ? 'failed' : 'success',
+      summary: 'Mermaid code validated.',
+      validation,
+      retryCount: validation.retryCount
+    })
+
     return createSuccessEnvelope({
       mermaidDocument,
       validation
     })
   }
 
-  async generateMermaid(sessionId: string, request: unknown) {
+  async generateMermaid(sessionId: string, request: unknown, idempotencyKey?: string | null) {
+    return this.runIdempotently({
+      idempotencyKey,
+      method: 'POST',
+      path: `/api/planning-sessions/${sessionId}/mermaid`,
+      sessionId,
+      requestBody: request ?? {},
+      execute: async () => this.generateMermaidOnce(sessionId, request ?? {})
+    })
+  }
+
+  private async generateMermaidOnce(sessionId: string, request: unknown) {
     if (!this.planningStateMachineService || !this.planningMermaidGeneratorService) {
       throwValidationError(['Planning Mermaid generation service is not configured.'])
     }
@@ -106,25 +198,90 @@ export class PlanningService {
       throwValidationError(parsedRequest.errors)
     }
 
-    const snapshot = parsedRequest.value.session
+    const snapshot = parsedRequest.value.session ?? (await this.requireStoredSession(sessionId))
     if (snapshot.id !== sessionId) {
       throwValidationError(['Route sessionId must match the supplied session id.'])
     }
 
+    await this.planningRetryCounterService?.incrementOrThrow(sessionId, 'generate_mermaid')
     const stateMachine = this.planningStateMachineService.buildStateMachine(snapshot)
     const generation = await this.planningMermaidGeneratorService.generate(snapshot, stateMachine)
     const nextStatus = getGenerationSnapshotStatus(generation.mermaidDocument, generation.validation)
 
-    return createSuccessEnvelope(
-      planningSessionSnapshotSchema.parse({
-        ...snapshot,
-        status: nextStatus,
-        stateMachine,
-        flowDraft: generation.flowDraft,
-        mermaidDocument: generation.mermaidDocument,
-        validation: generation.validation
+    const nextSnapshot = planningSessionSnapshotSchema.parse({
+      ...snapshot,
+      status: nextStatus,
+      stateMachine,
+      flowDraft: generation.flowDraft,
+      mermaidDocument: generation.mermaidDocument,
+      validation: generation.validation
+    })
+
+    await this.persistence?.saveSession(nextSnapshot)
+    await this.recordAudit({
+      sessionId,
+      type: 'mermaid_generated',
+      status: generation.mermaidDocument.renderStatus === 'blocked' ? 'blocked' : generation.validation.mermaidSyntax === 'failed' ? 'failed' : 'success',
+      summary: 'Mermaid generation completed.',
+      validation: generation.validation,
+      retryCount: generation.validation.retryCount
+    })
+
+    return createSuccessEnvelope(nextSnapshot)
+  }
+
+  private async requireStoredSession(sessionId: string): Promise<PlanningSessionSnapshot> {
+    if (!this.persistence) {
+      throwValidationError(['Planning session persistence is not configured.'])
+    }
+
+    return requirePlanningSession(this.persistence, sessionId)
+  }
+
+  private async runIdempotently<TData>(input: {
+    idempotencyKey?: string | null
+    method: string
+    path: string
+    sessionId?: string
+    requestBody: unknown
+    execute: () => Promise<ReturnType<typeof createSuccessEnvelope<TData>>>
+  }) {
+    if (!this.planningIdempotencyService) {
+      return input.execute()
+    }
+
+    const response = await this.planningIdempotencyService.run({
+      key: input.idempotencyKey,
+      scope: {
+        method: input.method,
+        path: input.path,
+        sessionId: input.sessionId
+      },
+      requestBody: input.requestBody,
+      execute: input.execute
+    })
+
+    if (input.idempotencyKey && input.sessionId) {
+      await this.recordAudit({
+        sessionId: input.sessionId,
+        type: 'idempotency_replayed',
+        status: 'replayed',
+        summary: 'Idempotent response returned or stored.'
       })
-    )
+    }
+
+    return response
+  }
+
+  private async recordAudit(input: {
+    sessionId: string
+    type: Parameters<PlanningAuditService['record']>[0]['type']
+    status: Parameters<PlanningAuditService['record']>[0]['status']
+    summary: string
+    validation?: PlanningValidationReport | null
+    retryCount?: number | null
+  }): Promise<void> {
+    await this.planningAuditService?.record(input)
   }
 }
 

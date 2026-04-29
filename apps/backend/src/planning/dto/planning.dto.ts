@@ -293,13 +293,10 @@ export const planningAnalysisRequestSchema = z
     input: planningInputSchema.optional()
   })
   .strict()
-  .refine((value) => value.session !== undefined || value.input !== undefined, {
-    message: 'Either session or input is required.'
-  })
 
 export const mermaidGenerationRequestSchema = z
   .object({
-    session: planningSessionSnapshotSchema
+    session: planningSessionSnapshotSchema.optional()
   })
   .strict()
 
@@ -314,6 +311,61 @@ export const mermaidGenerationResponseSchema = z
 export const mermaidValidationRequestSchema = z
   .object({
     code: z.string().min(1)
+  })
+  .strict()
+
+export const storedPlanningSessionSchema = z
+  .object({
+    schemaVersion: z.literal('2026-04-29'),
+    savedAt: z.string().datetime(),
+    expiresAt: z.string().datetime(),
+    session: planningSessionSnapshotSchema
+  })
+  .strict()
+
+export const planningAuditEventTypeSchema = z.enum([
+  'session_created',
+  'session_loaded',
+  'analysis_completed',
+  'mermaid_generated',
+  'mermaid_validated',
+  'idempotency_replayed',
+  'retry_limit_exceeded',
+  'validation_failed',
+  'store_integrity_failed'
+])
+
+export const planningAuditEventSchema = z
+  .object({
+    eventId: nonEmptyStringSchema,
+    sessionId: nonEmptyStringSchema,
+    type: planningAuditEventTypeSchema,
+    createdAt: z.string().datetime(),
+    status: z.enum(['success', 'blocked', 'failed', 'replayed']),
+    summary: z.string().max(240),
+    validation: planningValidationReportSchema.nullable(),
+    retryCount: z.number().int().min(0).nullable(),
+    modelMetadata: z
+      .object({
+        provider: z.string().max(40),
+        model: z.string().max(80),
+        usedFallback: z.boolean()
+      })
+      .strict()
+      .nullable()
+  })
+  .strict()
+
+export const planningIdempotencyRecordSchema = z
+  .object({
+    schemaVersion: z.literal('2026-04-29'),
+    key: nonEmptyStringSchema,
+    scope: nonEmptyStringSchema,
+    requestHash: z.string().regex(/^[a-f0-9]{64}$/),
+    status: z.enum(['in_progress', 'completed']),
+    createdAt: z.string().datetime(),
+    expiresAt: z.string().datetime(),
+    response: z.unknown().nullable()
   })
   .strict()
 
@@ -336,3 +388,7 @@ export type MermaidDocument = z.infer<typeof mermaidDocumentSchema>
 export type MermaidValidationRequest = z.infer<typeof mermaidValidationRequestSchema>
 export type DependencyAnalysisItem = z.infer<typeof dependencyAnalysisItemSchema>
 export type PlanningEntityMapping = z.infer<typeof planningEntityMappingSchema>
+export type StoredPlanningSession = z.infer<typeof storedPlanningSessionSchema>
+export type PlanningAuditEvent = z.infer<typeof planningAuditEventSchema>
+export type PlanningAuditEventType = z.infer<typeof planningAuditEventTypeSchema>
+export type PlanningIdempotencyRecord = z.infer<typeof planningIdempotencyRecordSchema>
