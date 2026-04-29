@@ -184,7 +184,7 @@ function createFallbackExtraction(input: PlanningInput, reason: string): Plannin
           {
             id: 'rule_policy_constraint',
             title: 'Policy constraint',
-            description: input.elements.policyConstraint,
+            description: limitGeneratedText(input.elements.policyConstraint),
             sourceElement: 'policyConstraint',
             severity: 'warning'
           }
@@ -195,7 +195,7 @@ function createFallbackExtraction(input: PlanningInput, reason: string): Plannin
           {
             id: 'exception_known_case',
             title: 'Known exception case',
-            trigger: input.elements.exceptionCase,
+            trigger: limitGeneratedText(input.elements.exceptionCase),
             expectedBehavior: 'System provides a safe recovery path.',
             recoveryAction: 'Return clarification or retry guidance.',
             riskLevel: 'medium'
@@ -316,9 +316,14 @@ function createDependencyAnalysis(input: PlanningInput): DependencyAnalysisItem[
 }
 
 function cleanLabel(value: string): string {
-  return value.replace(/\s+/g, ' ').replace(/^[가-힣A-Za-z ]+[:：]\s*/, '').trim().slice(0, 200)
+  return limitGeneratedText(value.replace(/\s+/g, ' ').replace(/^[가-힣A-Za-z ]+[:：]\s*/, '').trim(), 200)
 }
 
 function uniqueLimited(values: readonly string[]): string[] {
   return Array.from(new Set(values.filter(Boolean))).slice(0, MAX_ITEMS_PER_GROUP)
+}
+
+function limitGeneratedText(value: string, maxLength = 240): string {
+  const normalizedValue = value.replace(/\s+/g, ' ').trim()
+  return normalizedValue.length > maxLength ? normalizedValue.slice(0, maxLength) : normalizedValue
 }
