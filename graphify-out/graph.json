@@ -103,7 +103,7 @@
       "source_file": "apps/backend/src/health.controller.ts",
       "source_location": "L1",
       "id": "apps_backend_src_health_controller_ts",
-      "community": 2,
+      "community": 1,
       "norm_label": "health.controller.ts"
     },
     {
@@ -112,7 +112,7 @@
       "source_file": "apps/backend/src/health.controller.ts",
       "source_location": "L5",
       "id": "health_controller_healthcontroller",
-      "community": 2,
+      "community": 1,
       "norm_label": "healthcontroller"
     },
     {
@@ -121,7 +121,7 @@
       "source_file": "apps/backend/src/health.controller.ts",
       "source_location": "L7",
       "id": "health_controller_healthcontroller_gethealth",
-      "community": 2,
+      "community": 1,
       "norm_label": ".gethealth()"
     },
     {
@@ -175,7 +175,7 @@
       "source_file": "apps/backend/src/planning/planning.service.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_planning_service_ts",
-      "community": 2,
+      "community": 1,
       "norm_label": "planning.service.ts"
     },
     {
@@ -184,7 +184,7 @@
       "source_file": "apps/backend/src/planning/planning.service.ts",
       "source_location": "L32",
       "id": "planning_service_planningservice",
-      "community": 2,
+      "community": 1,
       "norm_label": "planningservice"
     },
     {
@@ -193,7 +193,7 @@
       "source_file": "apps/backend/src/planning/planning.service.ts",
       "source_location": "L33",
       "id": "planning_service_planningservice_constructor",
-      "community": 2,
+      "community": 1,
       "norm_label": ".constructor()"
     },
     {
@@ -202,7 +202,7 @@
       "source_file": "apps/backend/src/planning/planning.service.ts",
       "source_location": "L39",
       "id": "planning_service_planningservice_createplanningsession",
-      "community": 2,
+      "community": 1,
       "norm_label": ".createplanningsession()"
     },
     {
@@ -211,7 +211,7 @@
       "source_file": "apps/backend/src/planning/planning.service.ts",
       "source_location": "L56",
       "id": "planning_service_planningservice_analyzeplanningsession",
-      "community": 2,
+      "community": 1,
       "norm_label": ".analyzeplanningsession()"
     },
     {
@@ -220,7 +220,7 @@
       "source_file": "apps/backend/src/planning/planning.service.ts",
       "source_location": "L74",
       "id": "planning_service_planningservice_validatemermaid",
-      "community": 2,
+      "community": 1,
       "norm_label": ".validatemermaid()"
     },
     {
@@ -229,7 +229,7 @@
       "source_file": "apps/backend/src/planning/planning.service.ts",
       "source_location": "L95",
       "id": "planning_service_normalizeplanninginput",
-      "community": 2,
+      "community": 1,
       "norm_label": "normalizeplanninginput()"
     },
     {
@@ -238,7 +238,7 @@
       "source_file": "apps/backend/src/planning/planning.service.ts",
       "source_location": "L107",
       "id": "planning_service_calculatecompleteness",
-      "community": 2,
+      "community": 1,
       "norm_label": "calculatecompleteness()"
     },
     {
@@ -247,7 +247,7 @@
       "source_file": "apps/backend/src/planning/planning.service.ts",
       "source_location": "L134",
       "id": "planning_service_createsessionsnapshot",
-      "community": 2,
+      "community": 1,
       "norm_label": "createsessionsnapshot()"
     },
     {
@@ -256,7 +256,7 @@
       "source_file": "apps/backend/src/planning/planning.service.ts",
       "source_location": "L163",
       "id": "planning_service_createsessionsnapshotfrominput",
-      "community": 2,
+      "community": 1,
       "norm_label": "createsessionsnapshotfrominput()"
     },
     {
@@ -265,7 +265,7 @@
       "source_file": "apps/backend/src/planning/planning.service.ts",
       "source_location": "L176",
       "id": "planning_service_createmermaidvalidationdocument",
-      "community": 2,
+      "community": 1,
       "norm_label": "createmermaidvalidationdocument()"
     },
     {
@@ -274,7 +274,7 @@
       "source_file": "apps/backend/src/planning/planning.service.ts",
       "source_location": "L191",
       "id": "planning_service_throwvalidationerror",
-      "community": 2,
+      "community": 1,
       "norm_label": "throwvalidationerror()"
     },
     {
@@ -346,7 +346,7 @@
       "source_file": "apps/backend/src/planning/planning.workflow.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_planning_workflow_ts",
-      "community": 3,
+      "community": 2,
       "norm_label": "planning.workflow.ts"
     },
     {
@@ -355,7 +355,7 @@
       "source_file": "apps/backend/src/planning/planning.workflow.ts",
       "source_location": "L26",
       "id": "planning_workflow_planningworkflow",
-      "community": 3,
+      "community": 2,
       "norm_label": "planningworkflow"
     },
     {
@@ -364,7 +364,7 @@
       "source_file": "apps/backend/src/planning/planning.workflow.ts",
       "source_location": "L27",
       "id": "planning_workflow_planningworkflow_run",
-      "community": 3,
+      "community": 2,
       "norm_label": ".run()"
     },
     {
@@ -373,7 +373,7 @@
       "source_file": "apps/backend/src/planning/planning.workflow.ts",
       "source_location": "L76",
       "id": "planning_workflow_geterrormessage",
-      "community": 3,
+      "community": 2,
       "norm_label": "geterrormessage()"
     },
     {
@@ -382,7 +382,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.spec.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_planning_extraction_service_spec_ts",
-      "community": 1,
+      "community": 3,
       "norm_label": "planning.extraction.service.spec.ts"
     },
     {
@@ -391,7 +391,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.spec.ts",
       "source_location": "L22",
       "id": "planning_extraction_service_spec_createsnapshot",
-      "community": 1,
+      "community": 3,
       "norm_label": "createsnapshot()"
     },
     {
@@ -400,7 +400,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.spec.ts",
       "source_location": "L48",
       "id": "planning_extraction_service_spec_createextraction",
-      "community": 1,
+      "community": 3,
       "norm_label": "createextraction()"
     },
     {
@@ -409,7 +409,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_planning_extraction_service_ts",
-      "community": 3,
+      "community": 2,
       "norm_label": "planning.extraction.service.ts"
     },
     {
@@ -418,7 +418,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L22",
       "id": "planning_extraction_service_planningextractionservice",
-      "community": 3,
+      "community": 2,
       "norm_label": "planningextractionservice"
     },
     {
@@ -427,7 +427,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L23",
       "id": "planning_extraction_service_planningextractionservice_constructor",
-      "community": 3,
+      "community": 2,
       "norm_label": ".constructor()"
     },
     {
@@ -436,7 +436,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L29",
       "id": "planning_extraction_service_planningextractionservice_analyzesession",
-      "community": 3,
+      "community": 2,
       "norm_label": ".analyzesession()"
     },
     {
@@ -445,7 +445,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L77",
       "id": "planning_extraction_service_getcompleteness",
-      "community": 3,
+      "community": 2,
       "norm_label": "getcompleteness()"
     },
     {
@@ -454,7 +454,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L90",
       "id": "planning_extraction_service_getsnapshotstatus",
-      "community": 3,
+      "community": 2,
       "norm_label": "getsnapshotstatus()"
     },
     {
@@ -463,7 +463,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L110",
       "id": "planning_extraction_service_createfallbackextraction",
-      "community": 3,
+      "community": 2,
       "norm_label": "createfallbackextraction()"
     },
     {
@@ -472,7 +472,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L221",
       "id": "planning_extraction_service_normalizetext",
-      "community": 3,
+      "community": 2,
       "norm_label": "normalizetext()"
     },
     {
@@ -481,7 +481,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L225",
       "id": "planning_extraction_service_extractvalues",
-      "community": 3,
+      "community": 2,
       "norm_label": "extractvalues()"
     },
     {
@@ -490,7 +490,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L239",
       "id": "planning_extraction_service_calculatefallbackcompleteness",
-      "community": 3,
+      "community": 2,
       "norm_label": "calculatefallbackcompleteness()"
     },
     {
@@ -499,7 +499,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L277",
       "id": "planning_extraction_service_detectcontradictions",
-      "community": 3,
+      "community": 2,
       "norm_label": "detectcontradictions()"
     },
     {
@@ -508,7 +508,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L294",
       "id": "planning_extraction_service_createdependencyanalysis",
-      "community": 3,
+      "community": 2,
       "norm_label": "createdependencyanalysis()"
     },
     {
@@ -517,7 +517,7 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L318",
       "id": "planning_extraction_service_cleanlabel",
-      "community": 3,
+      "community": 2,
       "norm_label": "cleanlabel()"
     },
     {
@@ -526,8 +526,17 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L322",
       "id": "planning_extraction_service_uniquelimited",
-      "community": 3,
+      "community": 2,
       "norm_label": "uniquelimited()"
+    },
+    {
+      "label": "limitGeneratedText()",
+      "file_type": "code",
+      "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
+      "source_location": "L326",
+      "id": "planning_extraction_service_limitgeneratedtext",
+      "community": 2,
+      "norm_label": "limitgeneratedtext()"
     },
     {
       "label": "mermaid-syntax.service.spec.ts",
@@ -634,7 +643,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L1",
       "id": "apps_backend_src_planning_planning_validator_ts",
-      "community": 1,
+      "community": 3,
       "norm_label": "planning.validator.ts"
     },
     {
@@ -643,7 +652,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L42",
       "id": "planning_validator_planningvalidator",
-      "community": 1,
+      "community": 3,
       "norm_label": "planningvalidator"
     },
     {
@@ -652,7 +661,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L43",
       "id": "planning_validator_planningvalidator_validateplanninginput",
-      "community": 1,
+      "community": 3,
       "norm_label": ".validateplanninginput()"
     },
     {
@@ -661,7 +670,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L54",
       "id": "planning_validator_planningvalidator_validateplanningsessionsnapshot",
-      "community": 1,
+      "community": 3,
       "norm_label": ".validateplanningsessionsnapshot()"
     },
     {
@@ -670,7 +679,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L65",
       "id": "planning_validator_planningvalidator_validatepromptinjection",
-      "community": 1,
+      "community": 3,
       "norm_label": ".validatepromptinjection()"
     },
     {
@@ -679,7 +688,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L78",
       "id": "planning_validator_planningvalidator_validatemermaidsafety",
-      "community": 1,
+      "community": 3,
       "norm_label": ".validatemermaidsafety()"
     },
     {
@@ -688,7 +697,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L90",
       "id": "planning_validator_planningvalidator_validateflowdraftshape",
-      "community": 1,
+      "community": 3,
       "norm_label": ".validateflowdraftshape()"
     },
     {
@@ -697,7 +706,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L104",
       "id": "planning_validator_planningvalidator_validategraphcycles",
-      "community": 1,
+      "community": 3,
       "norm_label": ".validategraphcycles()"
     },
     {
@@ -706,7 +715,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L130",
       "id": "planning_validator_planningvalidator_mergevalidationreports",
-      "community": 2,
+      "community": 1,
       "norm_label": ".mergevalidationreports()"
     },
     {
@@ -715,7 +724,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L142",
       "id": "planning_validator_createpassedreport",
-      "community": 1,
+      "community": 3,
       "norm_label": "createpassedreport()"
     },
     {
@@ -724,7 +733,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L154",
       "id": "planning_validator_createfailedreport",
-      "community": 1,
+      "community": 3,
       "norm_label": "createfailedreport()"
     },
     {
@@ -733,7 +742,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L170",
       "id": "planning_validator_getflowdraftshapeerrors",
-      "community": 1,
+      "community": 3,
       "norm_label": "getflowdraftshapeerrors()"
     },
     {
@@ -742,7 +751,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L212",
       "id": "planning_validator_issafelabel",
-      "community": 1,
+      "community": 3,
       "norm_label": "issafelabel()"
     },
     {
@@ -751,7 +760,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L222",
       "id": "planning_validator_validateedgesforcycles",
-      "community": 1,
+      "community": 3,
       "norm_label": "validateedgesforcycles()"
     },
     {
@@ -760,7 +769,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L248",
       "id": "planning_validator_hascycle",
-      "community": 1,
+      "community": 3,
       "norm_label": "hascycle()"
     },
     {
@@ -778,7 +787,7 @@
       "source_file": "apps/backend/src/planning/planning.validator.ts",
       "source_location": "L287",
       "id": "planning_validator_limiterrormessage",
-      "community": 1,
+      "community": 3,
       "norm_label": "limiterrormessage()"
     },
     {
@@ -1003,7 +1012,7 @@
       "source_file": "apps/backend/src/common/validation/zod-validation.ts",
       "source_location": "L1",
       "id": "apps_backend_src_common_validation_zod_validation_ts",
-      "community": 2,
+      "community": 1,
       "norm_label": "zod-validation.ts"
     },
     {
@@ -1012,7 +1021,7 @@
       "source_file": "apps/backend/src/common/validation/zod-validation.ts",
       "source_location": "L15",
       "id": "zod_validation_safeparsewithmessages",
-      "community": 2,
+      "community": 1,
       "norm_label": "safeparsewithmessages()"
     },
     {
@@ -1021,7 +1030,7 @@
       "source_file": "apps/backend/src/common/validation/zod-validation.ts",
       "source_location": "L31",
       "id": "zod_validation_formatzodissues",
-      "community": 1,
+      "community": 3,
       "norm_label": "formatzodissues()"
     },
     {
@@ -1030,7 +1039,7 @@
       "source_file": "apps/backend/src/common/validation/zod-validation.ts",
       "source_location": "L35",
       "id": "zod_validation_formatzodissue",
-      "community": 2,
+      "community": 1,
       "norm_label": "formatzodissue()"
     },
     {
@@ -1399,7 +1408,7 @@
       "source_file": "src/features/planning/planningContracts.ts",
       "source_location": "L55",
       "id": "planningcontracts_createsuccessenvelope",
-      "community": 2,
+      "community": 1,
       "norm_label": "createsuccessenvelope()"
     },
     {
@@ -2945,8 +2954,8 @@
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L44",
       "weight": 1.0,
-      "_src": "planning_extraction_service_planningextractionservice_analyzesession",
-      "_tgt": "planning_workflow_planningworkflow_run",
+      "_src": "planning_workflow_planningworkflow_run",
+      "_tgt": "planning_extraction_service_planningextractionservice_analyzesession",
       "source": "planning_workflow_planningworkflow_run",
       "target": "planning_extraction_service_planningextractionservice_analyzesession"
     },
@@ -3116,6 +3125,18 @@
       "_tgt": "planning_extraction_service_uniquelimited",
       "source": "apps_backend_src_planning_planning_extraction_service_ts",
       "target": "planning_extraction_service_uniquelimited",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
+      "source_location": "L326",
+      "weight": 1.0,
+      "_src": "apps_backend_src_planning_planning_extraction_service_ts",
+      "_tgt": "planning_extraction_service_limitgeneratedtext",
+      "source": "apps_backend_src_planning_planning_extraction_service_ts",
+      "target": "planning_extraction_service_limitgeneratedtext",
       "confidence_score": 1.0
     },
     {
@@ -3290,6 +3311,18 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
+      "source_location": "L187",
+      "weight": 1.0,
+      "_src": "planning_extraction_service_createfallbackextraction",
+      "_tgt": "planning_extraction_service_limitgeneratedtext",
+      "source": "planning_extraction_service_createfallbackextraction",
+      "target": "planning_extraction_service_limitgeneratedtext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
       "source_location": "L209",
       "weight": 1.0,
       "_src": "planning_extraction_service_createfallbackextraction",
@@ -3308,6 +3341,18 @@
       "_tgt": "planning_extraction_service_normalizetext",
       "source": "planning_extraction_service_normalizetext",
       "target": "planning_extraction_service_extractvalues",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/backend/src/planning/planning.extraction.service.ts",
+      "source_location": "L319",
+      "weight": 1.0,
+      "_src": "planning_extraction_service_cleanlabel",
+      "_tgt": "planning_extraction_service_limitgeneratedtext",
+      "source": "planning_extraction_service_cleanlabel",
+      "target": "planning_extraction_service_limitgeneratedtext",
       "confidence_score": 1.0
     },
     {

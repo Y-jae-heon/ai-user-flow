@@ -1,11 +1,11 @@
 # Graph Report - ai-user-flow  (2026-04-29)
 
 ## Corpus Check
-- 52 files · ~53,872 words
+- 52 files · ~53,971 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 238 nodes · 335 edges · 18 communities detected
+- 239 nodes · 338 edges · 18 communities detected
 - Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 38 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -32,8 +32,8 @@
 ## God Nodes (most connected - your core abstractions)
 1. `analyzePlanningInput()` - 15 edges
 2. `createPassedReport()` - 11 edges
-3. `createFailedReport()` - 9 edges
-4. `createFallbackExtraction()` - 8 edges
+3. `createFallbackExtraction()` - 9 edges
+4. `createFailedReport()` - 9 edges
 5. `PlanningValidator` - 8 edges
 6. `createMermaidDraft()` - 8 edges
 7. `createSessionSnapshotFromInput()` - 7 edges
@@ -64,16 +64,16 @@ Cohesion: 0.15
 Nodes (16): createSufficientAnalysis(), analyzePlanningInput(), buildAssumptions(), calculateScore(), detectContradictions(), extractActions(), extractByKeywords(), extractEntities() (+8 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.2
-Nodes (10): createSnapshot(), createFailedReport(), createPassedReport(), getFlowDraftShapeErrors(), hasCycle(), isSafeLabel(), mergeStatus(), PlanningValidator (+2 more)
+Cohesion: 0.18
+Nodes (11): HealthController, calculateCompleteness(), createMermaidValidationDocument(), createSessionSnapshot(), createSessionSnapshotFromInput(), normalizePlanningInput(), PlanningService, throwValidationError() (+3 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.19
-Nodes (10): HealthController, calculateCompleteness(), createMermaidValidationDocument(), createSessionSnapshot(), createSessionSnapshotFromInput(), normalizePlanningInput(), PlanningService, throwValidationError() (+2 more)
+Cohesion: 0.18
+Nodes (13): calculateFallbackCompleteness(), cleanLabel(), createDependencyAnalysis(), createFallbackExtraction(), detectContradictions(), extractValues(), getCompleteness(), getSnapshotStatus() (+5 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.18
-Nodes (11): calculateFallbackCompleteness(), createDependencyAnalysis(), createFallbackExtraction(), detectContradictions(), extractValues(), getCompleteness(), getSnapshotStatus(), normalizeText() (+3 more)
+Cohesion: 0.22
+Nodes (9): createSnapshot(), createFailedReport(), createPassedReport(), getFlowDraftShapeErrors(), hasCycle(), isSafeLabel(), PlanningValidator, validateEdgesForCycles() (+1 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.17
@@ -146,12 +146,12 @@ Nodes (1): PlanningModule
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `createPassedReport()` connect `Community 1` to `Community 9`, `Community 2`, `Community 3`?**
-  _High betweenness centrality (0.045) - this node is a cross-community bridge._
+- **Why does `createPassedReport()` connect `Community 3` to `Community 1`, `Community 2`, `Community 9`?**
+  _High betweenness centrality (0.046) - this node is a cross-community bridge._
 - **Why does `getErrorMessage()` connect `Community 11` to `Community 8`, `Community 9`?**
   _High betweenness centrality (0.031) - this node is a cross-community bridge._
-- **Why does `createSuccessEnvelope()` connect `Community 2` to `Community 8`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
+- **Why does `createSuccessEnvelope()` connect `Community 1` to `Community 8`?**
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `analyzePlanningInput()` (e.g. with `createSufficientAnalysis()` and `createAnalysis()`) actually correct?**
   _`analyzePlanningInput()` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 5 inferred relationships involving `createPassedReport()` (e.g. with `.validateMermaid()` and `createSessionSnapshotFromInput()`) actually correct?**
