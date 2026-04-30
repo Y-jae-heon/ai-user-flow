@@ -1,15 +1,17 @@
 interface InputPanelProps {
   rawText: string
   onRawTextChange: (value: string) => void
-  onAnalyze: () => void
+  onAnalyze: () => void | Promise<void>
+  isAnalyzing?: boolean
+  errorMessage?: string | null
 }
 
 const EXAMPLE_PLACEHOLDER = `예: 주요 사용자: 초기 창업가
 문제: 해피 패스만 생각해 예외 상황을 놓친다.
 핵심 기능: 사용자가 MVP 메모를 입력하면 시스템이 페르소나와 액션을 분석한다.`
 
-export function InputPanel({ rawText, onRawTextChange, onAnalyze }: InputPanelProps) {
-  const isAnalyzeDisabled = rawText.trim().length === 0
+export function InputPanel({ rawText, onRawTextChange, onAnalyze, isAnalyzing = false, errorMessage = null }: InputPanelProps) {
+  const isAnalyzeDisabled = rawText.trim().length === 0 || isAnalyzing
 
   return (
     <form
@@ -17,7 +19,7 @@ export function InputPanel({ rawText, onRawTextChange, onAnalyze }: InputPanelPr
       onSubmit={(event) => {
         event.preventDefault()
         if (!isAnalyzeDisabled) {
-          onAnalyze()
+          void onAnalyze()
         }
       }}
     >
@@ -43,10 +45,14 @@ export function InputPanel({ rawText, onRawTextChange, onAnalyze }: InputPanelPr
 
       <div className="panel-actions">
         <button type="submit" disabled={isAnalyzeDisabled}>
-          Analyze
+          {isAnalyzing ? 'Analyzing' : 'Analyze'}
         </button>
       </div>
+      {errorMessage && (
+        <div className="output-banner danger" role="alert">
+          <strong>{errorMessage}</strong>
+        </div>
+      )}
     </form>
   )
 }
-

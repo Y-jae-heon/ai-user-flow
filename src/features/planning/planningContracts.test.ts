@@ -245,11 +245,14 @@ describe('planning contract schemas', () => {
     ).toThrow()
   })
 
-  test('embeds FlowDraft and MermaidDocument in generation response envelopes', () => {
+  test('embeds the updated session snapshot in generation response envelopes', () => {
     const analysis = createAnalysis()
     const draft = createMermaidDraft({ analysis, suggestions: analysis.suggestions })
     const mermaidDocument = generateMermaidFlow({ analysis, suggestions: analysis.suggestions })
+    const snapshot = createPlanningSessionSnapshot({ rawText: analysis.rawText }, analysis)
     const response = createSuccessEnvelope({
+      ...snapshot,
+      status: 'ready',
       flowDraft: draft,
       mermaidDocument,
       validation: {

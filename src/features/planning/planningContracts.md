@@ -1,6 +1,16 @@
 # Planning API Contract
 
-This file documents the Phase 1 backend contract surface for the planning feature. Zod schemas in `planningSchema.ts` remain the source of truth.
+This file documents the active backend contract surface for the planning feature. Zod schemas in `planningSchema.ts` remain the frontend source of truth, and the NestJS backend mirrors these DTOs at the API boundary.
+
+## Runtime Configuration
+
+The frontend calls `VITE_PLANNING_API_BASE_URL` when it is set. If the variable is omitted, the API client defaults to:
+
+```text
+http://localhost:3001
+```
+
+For local development, run the frontend on `http://localhost:5173` and configure the backend `FRONTEND_ORIGIN` to match if the origin differs.
 
 ## Input
 
@@ -47,13 +57,17 @@ The local helper `createPlanningSessionSnapshot` maps current analysis state to 
 
 ## Endpoint Mapping
 
-| Future endpoint | Primary schema |
+| Endpoint | Primary schema |
 |---|---|
 | `POST /api/planning-sessions` | `planningInputSchema`, `planningSessionResponseSchema` |
 | `GET /api/planning-sessions/{sessionId}` | `planningSessionResponseSchema` |
-| `POST /api/planning-sessions/{sessionId}/analyze` | `planningAnalysisResponseSchema` |
+| `POST /api/planning-sessions/{sessionId}/analyze` | `planningSessionResponseSchema` |
 | `POST /api/planning-sessions/{sessionId}/mermaid` | `mermaidGenerationResponseSchema` |
-| `POST /api/planning-sessions/{sessionId}/mermaid/validate` | `mermaidDocumentSchema`, `planningValidationReportSchema` |
+| `POST /api/planning-sessions/{sessionId}/mermaid/validate` | `mermaidValidationResponseSchema` |
+
+`POST /api/planning-sessions/{sessionId}/mermaid` returns the full updated `PlanningSessionSnapshot`, including `flowDraft`, `mermaidDocument`, and `validation`. It does not return only the nested generation payload.
+
+Backend Mermaid validation returns safe Mermaid code and validation status, but not rendered SVG. The browser still renders `mermaidDocument.code` for preview, SVG export, and PNG export.
 
 ## Response Envelope
 
@@ -81,6 +95,6 @@ Failure responses use:
 }
 ```
 
-## Local-Only For Now
+## Frontend Integration
 
-Phase 1 does not add a server, network client, LangGraph workflow, Redis, persistence, or API routing. The existing React workspace continues to call local analyzer and Mermaid utilities directly.
+The React workspace creates a session, analyzes it, and generates Mermaid through the backend API. Suggestion review status is sent by embedding the updated suggestions in the session snapshot passed to the generation endpoint. Node label refinement remains local until a backend node-refinement endpoint exists.

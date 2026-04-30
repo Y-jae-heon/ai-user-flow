@@ -36,7 +36,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@vitest/coverage-v8": "latest",
-    "jsdom": "latest",
+    "jsdom": "^26.1.0",
     "vitest": "latest"
   },
   "overrides": {

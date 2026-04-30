@@ -6,6 +6,8 @@ interface MermaidOutputPanelProps {
   mermaidDocument: MermaidDocument | null
   flowDraft: FlowDraft | null
   exportStatus: ExportStatus
+  isGenerating: boolean
+  generationError: string | null
   onGenerateMermaid: () => Promise<void>
   onNodeLabelChange: (nodeId: string, label: string) => Promise<void>
   onCopyMermaid: () => Promise<void>
@@ -19,6 +21,8 @@ export function MermaidOutputPanel({
   mermaidDocument,
   flowDraft,
   exportStatus,
+  isGenerating,
+  generationError,
   onGenerateMermaid,
   onNodeLabelChange,
   onCopyMermaid,
@@ -30,7 +34,7 @@ export function MermaidOutputPanel({
   }
 
   const hasBlockingContradiction = analysis.contradictions.some((contradiction) => contradiction.severity === 'blocking')
-  const isRendering = mermaidDocument?.renderStatus === 'rendering' || mermaidDocument?.renderStatus === 'correcting'
+  const isRendering = isGenerating || mermaidDocument?.renderStatus === 'rendering' || mermaidDocument?.renderStatus === 'correcting'
   const isHappyPathBiased =
     suggestions.length > 0 && suggestions.every((suggestion) => suggestion.status === 'rejected')
   const acceptedCount = suggestions.filter((suggestion) => suggestion.status === 'accepted').length
@@ -60,7 +64,7 @@ export function MermaidOutputPanel({
 
       <div className="generation-row">
         <button type="button" onClick={onGenerateMermaid} disabled={hasBlockingContradiction || isRendering}>
-          {isRendering ? 'Rendering Mermaid' : 'Generate Mermaid'}
+          {isGenerating ? 'Generating Mermaid' : isRendering ? 'Rendering Mermaid' : 'Generate Mermaid'}
         </button>
         <MermaidActionRow
           canCopy={hasCode}
@@ -74,6 +78,12 @@ export function MermaidOutputPanel({
       </div>
 
       <ExportStatusBanner exportStatus={exportStatus} />
+
+      {generationError && (
+        <div className="output-banner danger" role="alert">
+          <strong>{generationError}</strong>
+        </div>
+      )}
 
       {mermaidDocument?.blockedReason && (
         <div className="output-banner warning">

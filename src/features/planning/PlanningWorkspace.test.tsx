@@ -1,11 +1,95 @@
 import { act, fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { afterEach, describe, expect, test, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
 import * as mermaidExport from './mermaidExport'
 import * as mermaidRenderer from './mermaidRenderer'
+import { createMermaidDraft, generateMermaidFlow } from './mermaidGenerator'
+import { analyzePlanningInput } from './planningAnalyzer'
+import * as planningApiClient from './planningApiClient'
+import { createPlanningSessionSnapshot } from './planningContracts'
 import { PlanningWorkspace } from './PlanningWorkspace'
+import type { PlanningInput, PlanningSessionSnapshot } from './planningSchema'
+
+vi.mock('./planningApiClient', () => {
+  class PlanningApiClientError extends Error {
+    readonly code: string
+    readonly retryable: boolean
+    readonly details?: unknown
+
+    constructor(error: { code: string; message: string; retryable: boolean; details?: unknown }) {
+      super(error.message)
+      this.name = 'PlanningApiClientError'
+      this.code = error.code
+      this.retryable = error.retryable
+      this.details = error.details
+    }
+  }
+
+  return {
+    PlanningApiClientError,
+    createPlanningSession: vi.fn(),
+    analyzePlanningSession: vi.fn(),
+    generatePlanningMermaid: vi.fn(),
+    validatePlanningMermaid: vi.fn()
+  }
+})
+
+const DEFAULT_SESSION_ID = 'session_frontend_test'
+
+let latestPlanningInput: PlanningInput = {
+  rawText: ''
+}
+
+function setupPlanningApiMocks(): void {
+  vi.mocked(planningApiClient.createPlanningSession).mockImplementation(async (input) => {
+    latestPlanningInput = input
+    return {
+      ...createPlanningSessionSnapshot(input, null),
+      id: DEFAULT_SESSION_ID
+    }
+  })
+
+  vi.mocked(planningApiClient.analyzePlanningSession).mockImplementation(async (sessionId) => {
+    const analysis = analyzePlanningInput(latestPlanningInput.rawText)
+    return {
+      ...createPlanningSessionSnapshot(latestPlanningInput, analysis),
+      id: sessionId
+    }
+  })
+
+  vi.mocked(planningApiClient.generatePlanningMermaid).mockImplementation(async (sessionId, request) => {
+    const session = request?.session
+    if (!session?.analysis) {
+      throw new Error('Missing planning analysis')
+    }
+
+    const mermaidDocument = generateMermaidFlow({
+      analysis: session.analysis,
+      suggestions: session.analysis.suggestions
+    })
+    const flowDraft =
+      mermaidDocument.renderStatus === 'blocked'
+        ? null
+        : createMermaidDraft({
+            analysis: session.analysis,
+            suggestions: session.analysis.suggestions
+          })
+
+    return {
+      ...session,
+      id: sessionId,
+      status: mermaidDocument.renderStatus === 'generated' ? 'ready' : 'needs_clarification',
+      flowDraft,
+      mermaidDocument
+    } satisfies PlanningSessionSnapshot
+  })
+}
 
 describe('PlanningWorkspace', () => {
+  beforeEach(() => {
+    setupPlanningApiMocks()
+  })
+
   afterEach(() => {
     vi.restoreAllMocks()
   })
@@ -29,7 +113,7 @@ describe('PlanningWorkspace', () => {
     await user.type(screen.getByLabelText(/MVP 기획 텍스트/i), '아이디어 앱')
     await user.click(screen.getByRole('button', { name: /Analyze/i }))
 
-    expect(screen.getByText('최소 정보가 부족합니다')).toBeInTheDocument()
+    expect(await screen.findByText('최소 정보가 부족합니다')).toBeInTheDocument()
     expect(screen.getByText('주요 사용자가 누구인지 최소 1개 이상 적어주세요.')).toBeInTheDocument()
   })
 
@@ -46,7 +130,7 @@ describe('PlanningWorkspace', () => {
     )
     await user.click(screen.getByRole('button', { name: /Analyze/i }))
 
-    expect(screen.getByText('분석 가능한 입력입니다')).toBeInTheDocument()
+    expect(await screen.findByText('분석 가능한 입력입니다')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Personas' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Actions' })).toBeInTheDocument()
     expect(screen.getByText('PM과 개발자')).toBeInTheDocument()
@@ -66,7 +150,7 @@ describe('PlanningWorkspace', () => {
     )
     await user.click(screen.getByRole('button', { name: /Analyze/i }))
 
-    expect(screen.getByRole('heading', { name: 'Assumptions' })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: 'Assumptions' })).toBeInTheDocument()
     expect(screen.getByText('medium confidence')).toBeInTheDocument()
     expect(screen.getByText('low confidence')).toBeInTheDocument()
     expect(screen.getByText(/입력 완료, 분석 성공, 오류, 보류/)).toBeInTheDocument()
@@ -84,6 +168,7 @@ describe('PlanningWorkspace', () => {
 상태: 입력 완료, 분석 성공, 오류`
     )
     await user.click(screen.getByRole('button', { name: /Analyze/i }))
+    await screen.findByRole('heading', { name: 'Logic gap suggestions' })
     await user.click(screen.getByRole('button', { name: 'Accept Data sync failure' }))
     await user.click(screen.getByRole('button', { name: 'Reject Multi-persona notification gap' }))
 
@@ -109,7 +194,7 @@ describe('PlanningWorkspace', () => {
     )
     await user.click(screen.getByRole('button', { name: /Analyze/i }))
 
-    expect(screen.getByText('분석 가능한 입력입니다')).toBeInTheDocument()
+    expect(await screen.findByText('분석 가능한 입력입니다')).toBeInTheDocument()
 
     await user.clear(textarea)
 
@@ -130,7 +215,7 @@ describe('PlanningWorkspace', () => {
     )
     await user.click(screen.getByRole('button', { name: /Analyze/i }))
 
-    expect(screen.getByRole('heading', { name: 'Logic gap suggestions' })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: 'Logic gap suggestions' })).toBeInTheDocument()
     expect(screen.getAllByText('pending').length).toBeGreaterThanOrEqual(3)
 
     await user.click(screen.getByRole('button', { name: 'Accept Data sync failure' }))
@@ -155,7 +240,7 @@ describe('PlanningWorkspace', () => {
     )
     await user.click(screen.getByRole('button', { name: /Analyze/i }))
 
-    expect(screen.getByRole('heading', { name: 'Contradictions' })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: 'Contradictions' })).toBeInTheDocument()
     expect(screen.getByText('Guest purchase conflicts with member-only benefit')).toBeInTheDocument()
     expect(screen.getByText('blocking')).toBeInTheDocument()
   })
@@ -172,6 +257,7 @@ describe('PlanningWorkspace', () => {
 핵심 기능: 사용자가 MVP 메모를 입력하면 시스템이 분석 결과를 생성하고 공유한다.`
     )
     await user.click(screen.getByRole('button', { name: /Analyze/i }))
+    await screen.findByRole('heading', { name: 'Logic gap suggestions' })
     await user.click(screen.getByRole('button', { name: 'Accept Data sync failure' }))
 
     expect(screen.getByText('1 accepted / 0 rejected / 4 pending')).toBeInTheDocument()
@@ -203,6 +289,7 @@ describe('PlanningWorkspace', () => {
 상태: 입력 완료, 분석 성공, 오류`
     )
     await user.click(screen.getByRole('button', { name: /Analyze/i }))
+    await screen.findByRole('heading', { name: 'Logic gap suggestions' })
     await user.click(screen.getByRole('button', { name: 'Accept Data sync failure' }))
     await user.click(screen.getByRole('button', { name: /Generate Mermaid/i }))
 
@@ -257,7 +344,7 @@ describe('PlanningWorkspace', () => {
     )
     await user.click(screen.getByRole('button', { name: /Analyze/i }))
 
-    expect(screen.getByRole('button', { name: /Generate Mermaid/i })).toBeDisabled()
+    expect(await screen.findByRole('button', { name: /Generate Mermaid/i })).toBeDisabled()
     expect(screen.getByText('Resolve blocking contradictions before generating Mermaid.')).toBeInTheDocument()
   })
 
@@ -274,6 +361,7 @@ describe('PlanningWorkspace', () => {
 상태: 입력 완료, 분석 성공, 오류`
     )
     await user.click(screen.getByRole('button', { name: /Analyze/i }))
+    await screen.findByRole('heading', { name: 'Logic gap suggestions' })
     await user.click(screen.getByRole('button', { name: 'Accept Data sync failure' }))
     await user.click(screen.getByRole('button', { name: /Generate Mermaid/i }))
 
@@ -297,7 +385,7 @@ describe('PlanningWorkspace', () => {
     )
     await user.click(screen.getByRole('button', { name: /Analyze/i }))
 
-    expect(screen.getByRole('button', { name: 'Copy Mermaid' })).toBeDisabled()
+    expect(await screen.findByRole('button', { name: 'Copy Mermaid' })).toBeDisabled()
     expect(screen.getByRole('button', { name: 'Export SVG' })).toBeDisabled()
     expect(screen.getByRole('button', { name: 'Export PNG' })).toBeDisabled()
   })

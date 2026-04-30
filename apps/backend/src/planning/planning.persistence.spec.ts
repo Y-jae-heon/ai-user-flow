@@ -32,14 +32,16 @@ describe('InMemoryPlanningPersistence', () => {
 
   it('claims idempotency once and completes replay records', async () => {
     const persistence = new InMemoryPlanningPersistence(config)
+    const createdAt = new Date()
+    const expiresAt = new Date(createdAt.getTime() + 60_000)
     const record = {
       schemaVersion: '2026-04-29' as const,
       key: 'client-key',
       scope: 'POST:/api/planning-sessions/session_test/analyze',
       requestHash: 'a'.repeat(64),
       status: 'in_progress' as const,
-      createdAt: '2026-04-30T00:00:00.000Z',
-      expiresAt: '2026-04-30T01:00:00.000Z',
+      createdAt: createdAt.toISOString(),
+      expiresAt: expiresAt.toISOString(),
       response: null
     }
 

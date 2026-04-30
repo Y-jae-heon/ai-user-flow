@@ -298,8 +298,13 @@ export const planningAnalysisResponseSchema = z.object({
 
 export const mermaidGenerationResponseSchema = z.object({
   success: z.literal(true),
+  data: planningSessionSnapshotSchema,
+  error: z.null()
+})
+
+export const mermaidValidationResponseSchema = z.object({
+  success: z.literal(true),
   data: z.object({
-    flowDraft: flowDraftSchema,
     mermaidDocument: mermaidDocumentSchema,
     validation: planningValidationReportSchema
   }),
@@ -351,3 +356,4 @@ export type ApiFailureEnvelope = z.infer<typeof apiFailureEnvelopeSchema>
 export type PlanningSessionResponse = z.infer<typeof planningSessionResponseSchema>
 export type PlanningAnalysisResponse = z.infer<typeof planningAnalysisResponseSchema>
 export type MermaidGenerationResponse = z.infer<typeof mermaidGenerationResponseSchema>
+export type MermaidValidationResponse = z.infer<typeof mermaidValidationResponseSchema>

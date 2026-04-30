@@ -13,6 +13,9 @@ import { MermaidOutputPanel } from './MermaidOutputPanel'
 interface AnalysisPanelProps {
   analysis: PlanningAnalysis | null
   suggestions: readonly LogicGapSuggestion[]
+  analysisStatus: 'idle' | 'loading' | 'success' | 'failed'
+  generationStatus: 'idle' | 'loading' | 'success' | 'failed'
+  generationError: string | null
   onSuggestionStatusChange: (id: string, status: SuggestionStatus) => void
   mermaidDocument: MermaidDocument | null
   flowDraft: FlowDraft | null
@@ -27,6 +30,9 @@ interface AnalysisPanelProps {
 export function AnalysisPanel({
   analysis,
   suggestions,
+  analysisStatus,
+  generationStatus,
+  generationError,
   onSuggestionStatusChange,
   mermaidDocument,
   flowDraft,
@@ -46,9 +52,15 @@ export function AnalysisPanel({
             <h2>Readiness check</h2>
           </div>
         </div>
-        <div className="empty-state">
-          <p>Paste MVP notes and run analysis to see completeness, extracted actors, and planning signals.</p>
-        </div>
+        {analysisStatus === 'loading' ? (
+          <div className="empty-state">
+            <p>Analyzing planning input...</p>
+          </div>
+        ) : (
+          <div className="empty-state">
+            <p>Paste MVP notes and run analysis to see completeness, extracted actors, and planning signals.</p>
+          </div>
+        )}
       </section>
     )
   }
@@ -97,6 +109,8 @@ export function AnalysisPanel({
         mermaidDocument={mermaidDocument}
         flowDraft={flowDraft}
         exportStatus={exportStatus}
+        isGenerating={generationStatus === 'loading'}
+        generationError={generationError}
         onGenerateMermaid={onGenerateMermaid}
         onNodeLabelChange={onNodeLabelChange}
         onCopyMermaid={onCopyMermaid}
